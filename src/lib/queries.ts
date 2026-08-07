@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import * as demo from '@/lib/demo';
 import type {
   AgentCampaignStats,
   AgentLifetimeStats,
@@ -19,6 +20,11 @@ import type {
  *      needs computing, it belongs in supabase/migrations/0003_statistics_views.sql.
  *   2. Nothing here is campaign-specific. There is no `getStarsForPeace()`. A new
  *      campaign is a row, so every function takes a slug or an id.
+ *
+ * Each function opens with a demo-mode guard. When no Supabase project is
+ * configured, reads are served from the committed archive JSON instead, so the
+ * platform can be reviewed before a backend exists. The guard checks the env var
+ * only — a configured-but-unreachable database still fails loudly. See lib/demo.ts.
  */
 
 // ---------------------------------------------------------------------------
@@ -31,6 +37,9 @@ import type {
  * dates and branding.
  */
 export async function getActiveCampaign(): Promise<Campaign | null> {
+  // No campaign is active in demo mode: Stars for Peace is still a draft
+  // awaiting real dates, so the homepage shows the Archive instead.
+  if (demo.isDemoMode()) return null;
   const supabase = await createClient();
   const { data } = await supabase
     .from('campaigns')
@@ -41,12 +50,17 @@ export async function getActiveCampaign(): Promise<Campaign | null> {
 }
 
 export async function getCampaignBySlug(slug: string): Promise<Campaign | null> {
+  if (demo.isDemoMode()) {
+    const c = demo.demoCampaign();
+    return c.slug === slug ? c : null;
+  }
   const supabase = await createClient();
   const { data } = await supabase.from('campaigns').select('*').eq('slug', slug).maybeSingle();
   return data as Campaign | null;
 }
 
 export async function getArchivedCampaigns(): Promise<CampaignStats[]> {
+  if (demo.isDemoMode()) return [demo.demoCampaignStats()];
   const supabase = await createClient();
   const { data } = await supabase
     .from('campaign_stats')
@@ -57,6 +71,7 @@ export async function getArchivedCampaigns(): Promise<CampaignStats[]> {
 }
 
 export async function getCampaignStats(campaignId: string): Promise<CampaignStats | null> {
+  if (demo.isDemoMode()) return demo.demoCampaignStats();
   const supabase = await createClient();
   const { data } = await supabase
     .from('campaign_stats')
@@ -74,6 +89,7 @@ export async function getCampaignStats(campaignId: string): Promise<CampaignStat
  * crossfaction *team* — because no individual is themselves crossfaction.
  */
 export async function getFactionStats(campaignId: string): Promise<FactionStats[]> {
+  if (demo.isDemoMode()) return demo.demoFactionStats();
   const supabase = await createClient();
   const { data } = await supabase
     .from('campaign_faction_stats')
@@ -83,6 +99,7 @@ export async function getFactionStats(campaignId: string): Promise<FactionStats[
 }
 
 export async function getCountryStats(campaignId: string): Promise<CountryStats[]> {
+  if (demo.isDemoMode()) return demo.demoCountryStats();
   const supabase = await createClient();
   const { data } = await supabase
     .from('campaign_country_stats')
@@ -115,6 +132,8 @@ export async function getTeams(
   campaignId: string,
   filters: TeamFilters = {},
 ): Promise<TeamWithStatus[]> {
+  if (demo.isDemoMode()) return demo.demoTeams(filters);
+
   const supabase = await createClient();
   let query = supabase.from('teams_view').select('*').eq('campaign_id', campaignId);
 
@@ -146,12 +165,14 @@ export async function getTeams(
 }
 
 export async function getTeam(teamId: string): Promise<TeamWithStatus | null> {
+  if (demo.isDemoMode()) return demo.demoTeam(teamId);
   const supabase = await createClient();
   const { data } = await supabase.from('teams_view').select('*').eq('id', teamId).maybeSingle();
   return data as TeamWithStatus | null;
 }
 
 export async function getTeamMembers(teamId: string): Promise<AgentLifetimeStats[]> {
+  if (demo.isDemoMode()) return demo.demoTeamMembers(teamId);
   const supabase = await createClient();
   const { data } = await supabase
     .from('team_membership')
@@ -177,6 +198,8 @@ export interface AgentDirectoryFilters {
 export async function getAgentDirectory(
   filters: AgentDirectoryFilters = {},
 ): Promise<AgentLifetimeStats[]> {
+  if (demo.isDemoMode()) return demo.demoAgentDirectory(filters);
+
   const supabase = await createClient();
   let query = supabase.from('agent_lifetime_stats').select('*');
 
@@ -210,6 +233,7 @@ export async function getAgentDirectory(
 }
 
 export async function getAgentByHandle(handle: string): Promise<AgentLifetimeStats | null> {
+  if (demo.isDemoMode()) return demo.demoAgentByHandle(handle);
   const supabase = await createClient();
   const withAt = handle.startsWith('@') ? handle : `@${handle}`;
   const { data } = await supabase
@@ -224,6 +248,8 @@ export async function getAgentByHandle(handle: string): Promise<AgentLifetimeSta
 export async function getAgentParticipation(agentId: string): Promise<
   Array<AgentCampaignStats & { campaign: Pick<Campaign, 'slug' | 'name' | 'status' | 'end_date'> }>
 > {
+  if (demo.isDemoMode()) return demo.demoAgentParticipation(agentId) as never;
+
   const supabase = await createClient();
   const { data } = await supabase
     .from('agent_campaign_stats')
@@ -237,6 +263,8 @@ export async function getCampaignLeaderboard(
   campaignId: string,
   limit = 10,
 ): Promise<AgentCampaignStats[]> {
+  if (demo.isDemoMode()) return demo.demoLeaderboard(limit);
+
   const supabase = await createClient();
   const { data } = await supabase
     .from('agent_campaign_stats')
@@ -252,6 +280,10 @@ export async function getCampaignLeaderboard(
 // ---------------------------------------------------------------------------
 
 export async function getTeamMedia(teamId: string): Promise<MediaItem[]> {
+  // Team galleries are genuinely empty for the 2020 archive - media filenames
+  // carry real names while the CSV carries handles, and no mapping exists.
+  if (demo.isDemoMode()) return [];
+
   const supabase = await createClient();
   const { data } = await supabase
     .from('media')
@@ -262,6 +294,8 @@ export async function getTeamMedia(teamId: string): Promise<MediaItem[]> {
 }
 
 export async function getCampaignMedia(campaignId: string, limit = 60): Promise<MediaItem[]> {
+  if (demo.isDemoMode()) return demo.demoCampaignMedia(limit);
+
   const supabase = await createClient();
   const { data } = await supabase
     .from('media')
@@ -278,6 +312,7 @@ export async function getCampaignMedia(campaignId: string, limit = 60): Promise<
 
 /** The frozen "as published" numbers for an archived campaign. */
 export async function getArchiveSnapshot(campaignId: string): Promise<ArchiveSnapshot | null> {
+  if (demo.isDemoMode()) return demo.demoArchiveSnapshot();
   const supabase = await createClient();
   const { data } = await supabase
     .from('campaign_archive_snapshots')
@@ -294,6 +329,7 @@ export async function getArchiveSnapshot(campaignId: string): Promise<ArchiveSna
  * where two source documents disagreed with each other.
  */
 export async function getImportAnomalies(campaignId: string): Promise<ImportAnomaly[]> {
+  if (demo.isDemoMode()) return demo.demoAnomalies();
   const supabase = await createClient();
   const { data } = await supabase
     .from('import_anomalies')

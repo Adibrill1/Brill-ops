@@ -99,11 +99,31 @@ and the plan for moving the media into Supabase Storage.
 
 ## Getting started
 
+### See it running in one minute (no database)
+
 ```bash
 npm install
+npm run dev            # http://localhost:3000
+```
+
+With no `.env.local`, Brill Ops starts in **demo mode** and serves the archive from the
+committed import files in `data/archive-imports/`. That is the real 2020 campaign — 124
+agents, 32 country teams, 9,449 links — computed by the same arithmetic the SQL views
+use, so the pages show real numbers rather than fixtures.
+
+A banner says so at the top of every page. Sign-in, submissions and uploads are inert in
+demo mode; they need the real backend.
+
+### With Supabase
+
+```bash
 cp .env.example .env.local        # fill in your Supabase project values
 npm run dev
 ```
+
+Demo mode switches off as soon as `NEXT_PUBLIC_SUPABASE_URL` holds a real value. It is
+not a fallback for an unreachable database — a configured-but-broken backend fails
+loudly, which is what you want.
 
 ### Database
 
