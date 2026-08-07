@@ -1,0 +1,865 @@
+{
+  "campaign": "the-big-bang-2020",
+  "count": 32,
+  "note": "Every team in this file is INFERRED. See inference_basis on each record.",
+  "teams": [
+    {
+      "slug": "big-bang-2020-argentina",
+      "name": "Argentina — The Big Bang",
+      "country": "Argentina",
+      "city": null,
+      "faction": "green",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 321,
+      "links_created_confidence": "computed",
+      "participant_count": 2,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@DarklifeOrigin",
+      "faction_breakdown": {
+        "blue": 0,
+        "green": 2,
+        "unknown": 0
+      },
+      "members": [
+        "@DarklifeOrigin",
+        "@LuchianoA"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-australia",
+      "name": "Australia — The Big Bang",
+      "country": "Australia",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 633,
+      "links_created_confidence": "computed",
+      "participant_count": 7,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@wodvic",
+      "faction_breakdown": {
+        "blue": 6,
+        "green": 1,
+        "unknown": 0
+      },
+      "members": [
+        "@wodvic",
+        "@r0ug",
+        "@MikeDeville000",
+        "@TedTwinkie",
+        "@WCPL",
+        "@Nieumi",
+        "@parsleypop"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-belarus",
+      "name": "Belarus — The Big Bang",
+      "country": "Belarus",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 221,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@pinnine",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@pinnine"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-belgium",
+      "name": "Belgium — The Big Bang",
+      "country": "Belgium",
+      "city": null,
+      "faction": "green",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 168,
+      "links_created_confidence": "computed",
+      "participant_count": 3,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@Josske",
+      "faction_breakdown": {
+        "blue": 0,
+        "green": 3,
+        "unknown": 0
+      },
+      "members": [
+        "@Josske",
+        "@saarstahl",
+        "@liyu1"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-bolivia",
+      "name": "Bolivia — The Big Bang",
+      "country": "Bolivia",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 16,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@taly77",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@taly77"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-brazil",
+      "name": "Brazil — The Big Bang",
+      "country": "Brazil",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 1571,
+      "links_created_confidence": "computed",
+      "participant_count": 11,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@edyuji",
+      "faction_breakdown": {
+        "blue": 7,
+        "green": 4,
+        "unknown": 0
+      },
+      "members": [
+        "@edyuji",
+        "@LindaFlor19",
+        "@marcelomotoyama",
+        "@Hydraulinski",
+        "@Danielkommers",
+        "@SrTretelez",
+        "@igor972",
+        "@NenesoM",
+        "@Aartsengel",
+        "@Zzeno1987",
+        "@Ducate007"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-bulgaria",
+      "name": "Bulgaria — The Big Bang",
+      "country": "Bulgaria",
+      "city": null,
+      "faction": "green",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 109,
+      "links_created_confidence": "computed",
+      "participant_count": 2,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@dess4ence",
+      "faction_breakdown": {
+        "blue": 0,
+        "green": 2,
+        "unknown": 0
+      },
+      "members": [
+        "@dess4ence",
+        "@arkinbg"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-canada",
+      "name": "Canada — The Big Bang",
+      "country": "Canada",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 102,
+      "links_created_confidence": "computed",
+      "participant_count": 3,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@ChevChelios1976",
+      "faction_breakdown": {
+        "blue": 3,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@ChevChelios1976",
+        "@GregSeventy7",
+        "@Pierreanoid"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-china",
+      "name": "China — The Big Bang",
+      "country": "China",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 141,
+      "links_created_confidence": "computed",
+      "participant_count": 2,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@MegaSteeliX",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 1,
+        "unknown": 0
+      },
+      "members": [
+        "@MegaSteeliX",
+        "@SiennaU"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-czechia",
+      "name": "Czechia — The Big Bang",
+      "country": "Czechia",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 10,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@kiwiwoe",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@kiwiwoe"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-finland",
+      "name": "Finland — The Big Bang",
+      "country": "Finland",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 39,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@Haikk1",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@Haikk1"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-france",
+      "name": "France — The Big Bang",
+      "country": "France",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 67,
+      "links_created_confidence": "computed",
+      "participant_count": 2,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@Orenonh",
+      "faction_breakdown": {
+        "blue": 2,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@Orenonh",
+        "@Djoulay88"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-germany",
+      "name": "Germany — The Big Bang",
+      "country": "Germany",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 639,
+      "links_created_confidence": "computed",
+      "participant_count": 12,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@Belfas8",
+      "faction_breakdown": {
+        "blue": 9,
+        "green": 3,
+        "unknown": 0
+      },
+      "members": [
+        "@Belfas8",
+        "@Kerris",
+        "@HomerGAdams",
+        "@GuppyCk",
+        "@speedy301188",
+        "@KarlWinter",
+        "@Sternenputzi",
+        "@WeeFreeFang",
+        "@Cartman45",
+        "@SyrinxRHD",
+        "@Fuechsin95",
+        "@sinopokayo"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-greece",
+      "name": "Greece — The Big Bang",
+      "country": "Greece",
+      "city": null,
+      "faction": "green",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 11,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@sestances",
+      "faction_breakdown": {
+        "blue": 0,
+        "green": 1,
+        "unknown": 0
+      },
+      "members": [
+        "@sestances"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-india",
+      "name": "India — The Big Bang",
+      "country": "India",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 154,
+      "links_created_confidence": "computed",
+      "participant_count": 7,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@lifehaxer",
+      "faction_breakdown": {
+        "blue": 3,
+        "green": 4,
+        "unknown": 0
+      },
+      "members": [
+        "@lifehaxer",
+        "@JOKI1110",
+        "@KDdar5han",
+        "@Maujpuriya",
+        "@MerXcoolZ",
+        "@KirushnaEnlight",
+        "@Ironsides39852"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-israel",
+      "name": "Israel — The Big Bang",
+      "country": "Israel",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 863,
+      "links_created_confidence": "computed",
+      "participant_count": 10,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@Jepakazol",
+      "faction_breakdown": {
+        "blue": 7,
+        "green": 3,
+        "unknown": 0
+      },
+      "members": [
+        "@CofBas",
+        "@Jepakazol",
+        "@ravidor",
+        "@reformy",
+        "@AlexCSLion",
+        "@gilrun",
+        "@king2k",
+        "@ethan1701",
+        "@rubicon615",
+        "@AdiBrill"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-italy",
+      "name": "Italy — The Big Bang",
+      "country": "Italy",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 365,
+      "links_created_confidence": "computed",
+      "participant_count": 8,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@ifonz",
+      "faction_breakdown": {
+        "blue": 6,
+        "green": 2,
+        "unknown": 0
+      },
+      "members": [
+        "@ifonz",
+        "@Zenamivir",
+        "@miketrevis",
+        "@Bulow",
+        "@keeper1966",
+        "@Gabry147",
+        "@infinito8r",
+        "@Kaisose"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-japan",
+      "name": "Japan — The Big Bang",
+      "country": "Japan",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 357,
+      "links_created_confidence": "computed_partial",
+      "participant_count": 10,
+      "participants_with_unknown_links": 1,
+      "top_agent": "@zapper0",
+      "faction_breakdown": {
+        "blue": 10,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@zapper0",
+        "@noranekoinko",
+        "@WOLFROCK7",
+        "@sakakiparano",
+        "@gogoz7uni",
+        "@unadon12",
+        "@meronpanda",
+        "@dummytest",
+        "@yantensh",
+        "@SakuraaaN"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-luxembourg",
+      "name": "Luxembourg — The Big Bang",
+      "country": "Luxembourg",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 427,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@DoctorWho00",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@DoctorWho00"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-mayotte",
+      "name": "Mayotte — The Big Bang",
+      "country": "Mayotte",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 11,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@RussellDev",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@RussellDev"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-mexico",
+      "name": "Mexico — The Big Bang",
+      "country": "Mexico",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 282,
+      "links_created_confidence": "computed",
+      "participant_count": 2,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@aitj",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 1,
+        "unknown": 0
+      },
+      "members": [
+        "@aitj",
+        "@Six3lMM"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-netherlands",
+      "name": "Netherlands — The Big Bang",
+      "country": "Netherlands",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 50,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@ShengDu",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@ShengDu"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-peru",
+      "name": "Peru — The Big Bang",
+      "country": "Peru",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 52,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@RizzaHawkeye12",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@RizzaHawkeye12"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-portugal",
+      "name": "Portugal — The Big Bang",
+      "country": "Portugal",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 54,
+      "links_created_confidence": "computed_partial",
+      "participant_count": 3,
+      "participants_with_unknown_links": 1,
+      "top_agent": "@myshadowPT",
+      "faction_breakdown": {
+        "blue": 2,
+        "green": 1,
+        "unknown": 0
+      },
+      "members": [
+        "@myshadowPT",
+        "@Djfenyx",
+        "@dakidali"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-romania",
+      "name": "Romania — The Big Bang",
+      "country": "Romania",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 0,
+      "links_created_confidence": "computed_partial",
+      "participant_count": 1,
+      "participants_with_unknown_links": 1,
+      "top_agent": null,
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@DwF"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-russia",
+      "name": "Russia — The Big Bang",
+      "country": "Russia",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 581,
+      "links_created_confidence": "computed",
+      "participant_count": 3,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@SergeFernanDes",
+      "faction_breakdown": {
+        "blue": 2,
+        "green": 1,
+        "unknown": 0
+      },
+      "members": [
+        "@SergeFernanDes",
+        "@Neokondor",
+        "@kirvland"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-spain",
+      "name": "Spain — The Big Bang",
+      "country": "Spain",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 782,
+      "links_created_confidence": "computed",
+      "participant_count": 8,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@ValenPortonovo",
+      "faction_breakdown": {
+        "blue": 3,
+        "green": 5,
+        "unknown": 0
+      },
+      "members": [
+        "@ValenPortonovo",
+        "@HaLfY",
+        "@Eliazhaar",
+        "@ReinaMayla",
+        "@ErreKrbo",
+        "@bunbun1979",
+        "@BTT91",
+        "@lseee"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-sweden",
+      "name": "Sweden — The Big Bang",
+      "country": "Sweden",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 48,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@vastis",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@vastis"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-thailand",
+      "name": "Thailand — The Big Bang",
+      "country": "Thailand",
+      "city": null,
+      "faction": "green",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 24,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@Brownphy",
+      "faction_breakdown": {
+        "blue": 0,
+        "green": 1,
+        "unknown": 0
+      },
+      "members": [
+        "@Brownphy"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-ukraine",
+      "name": "Ukraine — The Big Bang",
+      "country": "Ukraine",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 41,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@V1tharr",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@V1tharr"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-united-kingdom",
+      "name": "United Kingdom — The Big Bang",
+      "country": "United Kingdom",
+      "city": null,
+      "faction": "blue",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 82,
+      "links_created_confidence": "computed",
+      "participant_count": 1,
+      "participants_with_unknown_links": 0,
+      "top_agent": "@haslegs",
+      "faction_breakdown": {
+        "blue": 1,
+        "green": 0,
+        "unknown": 0
+      },
+      "members": [
+        "@haslegs"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    },
+    {
+      "slug": "big-bang-2020-united-states",
+      "name": "United States — The Big Bang",
+      "country": "United States",
+      "city": null,
+      "faction": "crossfaction",
+      "confidence": "inferred",
+      "inference_basis": "The Big Bang recorded no teams. Grouped by country to mirror the organiser's own \"Country Stats\" tab, which reported participants / total links / top agent per country.",
+      "links_created": 1202,
+      "links_created_confidence": "computed_partial",
+      "participant_count": 13,
+      "participants_with_unknown_links": 1,
+      "top_agent": "@eigood",
+      "faction_breakdown": {
+        "blue": 6,
+        "green": 7,
+        "unknown": 0
+      },
+      "members": [
+        "@eigood",
+        "@EldrenCoralon",
+        "@DigitalDeviance",
+        "@earthtraveler5",
+        "@TheGreenTardis",
+        "@MalleusVos",
+        "@NegansLucille",
+        "@lIlIIIIIIlIIlII",
+        "@jv090791",
+        "@Brit0martis",
+        "@Azntiger791",
+        "@HokeyBugle",
+        "@tristeele"
+      ],
+      "status": "completed",
+      "status_confidence": "inferred"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "the-big-bang-2020",
+  "name": "Operation \"The Big Bang\"",
+  "short_name": "The Big Bang",
+  "description": "A global crossfaction Ingress operation held on 31 July 2020. Agents from both factions built link stars from a single portal and submitted their results, portal details and photos through a Google Form. Imported into Brill Ops as the platform's first archived campaign.",
+  "status": "archived",
+  "start_date": "2020-07-31",
+  "end_date": "2020-07-31",
+  "date_confidence": "source",
+  "date_basis": "Campaign name in the original spreadsheet is 'Operation \"The Big Bang\" - July 31st, 2020 (Responses)' (visible in Txt/Screen Shot 2020-08-06 at 2.39.48.png). Submissions continued into early August; end_date reflects the event, not the submission window.",
+  "submission_window_end": "2020-08-06",
+  "submission_window_end_confidence": "estimated",
+  "submission_window_end_basis": "latest statistics screenshot in the handoff package is dated 2020-08-06",
+  "hero_image": null,
+  "hero_image_confidence": "missing",
+  "hero_image_basis": "No campaign branding was supplied. Candidate: Videos/TheBigBang.mp4 poster frame.",
+  "original_submission_method": "Google Form -> Google Sheet (\"OP \\\"The Big Bang\\\" (Responses)\")",
+  "imported_at": "2026-08-07T05:34:42.412Z",
+  "import_script": "scripts/import-big-bang.mjs",
+  "source_directory": "source-data/historical-campaigns/2020-07-the-big-bang",
+  "totals": {
+    "agents": 124,
+    "agents_with_known_links": 120,
+    "agents_with_unknown_links": 4,
+    "countries": 32,
+    "total_links": 9449,
+    "blue_agents": 81,
+    "green_agents": 43,
+    "crossfaction_teams": 12,
+    "blue_teams": 15,
+    "green_teams": 5
+  }
+}
