@@ -1,0 +1,67 @@
+{
+  "$comment": [
+    "Transcribed by hand from source-data/historical-campaigns/2020-07-the-big-bang/Txt/countries1.jpg,",
+    "which is a screenshot of the 'Country Stats1' tab of the original Google Sheet",
+    "'OP \"The Big Bang\" (Responses)'. There is no machine-readable copy of this tab in the handoff.",
+    "",
+    "These are the organiser's OWN published figures. They do NOT always agree with the row-level",
+    "CSV (TheBigBang - All agents.csv) - the two artefacts were exported on different dates",
+    "(countries1.jpg is dated 2020-08-04, and an earlier countries.jpg is dated 2020-08-02).",
+    "",
+    "We keep BOTH. scripts/import-big-bang.mjs computes figures from the CSV and diffs them",
+    "against this file, writing the disagreements to reconciliation.json rather than picking a winner.",
+    "See docs/import/the-big-bang-2020-provenance.md."
+  ],
+  "source_file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/countries1.jpg",
+  "source_tab": "Country Stats1",
+  "transcribed_by": "manual transcription from screenshot",
+  "confidence": "high (figures were clearly legible)",
+  "columns": ["country", "participants", "total_links", "star_with_max_link", "top_agent"],
+  "rows": [
+    { "country": "Argentina",      "participants": 2,  "total_links": 321,  "star_with_max_link": 286, "top_agent": ["@DarklifeOrigin"] },
+    { "country": "Australia",      "participants": 7,  "total_links": 633,  "star_with_max_link": 237, "top_agent": ["@wodvic"] },
+    { "country": "Belarus",        "participants": 1,  "total_links": 221,  "star_with_max_link": 221, "top_agent": ["@pinnine"] },
+    { "country": "Belgium",        "participants": 2,  "total_links": 90,   "star_with_max_link": 63,  "top_agent": ["@saarstahl"] },
+    { "country": "Bolivia",        "participants": 1,  "total_links": 16,   "star_with_max_link": 16,  "top_agent": ["@taly77"] },
+    { "country": "Brazil",         "participants": 11, "total_links": 1534, "star_with_max_link": 500, "top_agent": ["@edyuji", "@LindaFlor19"] },
+    { "country": "Bulgaria",       "participants": 2,  "total_links": 109,  "star_with_max_link": 56,  "top_agent": ["@dess4ence"] },
+    { "country": "Canada",         "participants": 2,  "total_links": 102,  "star_with_max_link": 54,  "top_agent": ["@ChevChelios1976"] },
+    { "country": "China",          "participants": 2,  "total_links": 141,  "star_with_max_link": 104, "top_agent": ["@MegaSteeliX"] },
+    { "country": "Czechia",        "participants": 1,  "total_links": 10,   "star_with_max_link": 10,  "top_agent": ["@kiwiwoe"] },
+    { "country": "Finland",        "participants": 1,  "total_links": 39,   "star_with_max_link": 39,  "top_agent": ["@Haikk1"] },
+    { "country": "France",         "participants": 2,  "total_links": 67,   "star_with_max_link": 44,  "top_agent": ["@Orenonh"] },
+    { "country": "Germany",        "participants": 11, "total_links": 604,  "star_with_max_link": 124, "top_agent": ["@Belfas8"] },
+    { "country": "Greece",         "participants": 1,  "total_links": 11,   "star_with_max_link": 11,  "top_agent": ["@sestances"] },
+    { "country": "India",          "participants": 7,  "total_links": 154,  "star_with_max_link": 65,  "top_agent": ["@lifehaxer"] },
+    { "country": "Israel",         "participants": 10, "total_links": 797,  "star_with_max_link": 184, "top_agent": ["@Jepakazol"] },
+    { "country": "Italy",          "participants": 8,  "total_links": 365,  "star_with_max_link": 126, "top_agent": ["@ifonz"] },
+    { "country": "Japan",          "participants": 10, "total_links": 357,  "star_with_max_link": 108, "top_agent": ["@zapper0"] },
+    { "country": "Luxembourg",     "participants": 1,  "total_links": 427,  "star_with_max_link": 427, "top_agent": ["@DoctorWho00"] },
+    { "country": "Mayotte",        "participants": 1,  "total_links": 11,   "star_with_max_link": 11,  "top_agent": ["@RussellDev"] },
+    { "country": "Mexico",         "participants": 2,  "total_links": 282,  "star_with_max_link": 150, "top_agent": ["@aitj"] },
+    { "country": "Netherlands",    "participants": 1,  "total_links": 50,   "star_with_max_link": 50,  "top_agent": ["@ShengDu"] },
+    { "country": "Peru",           "participants": 1,  "total_links": 52,   "star_with_max_link": 52,  "top_agent": ["@RizzaHawkeye12"] },
+    { "country": "Portugal",       "participants": 2,  "total_links": 54,   "star_with_max_link": 43,  "top_agent": ["@myshadowPT"] },
+    { "country": "Romania",        "participants": 1,  "total_links": 0,    "star_with_max_link": 0,   "top_agent": ["@DwF"] },
+    { "country": "Russia",         "participants": 3,  "total_links": 581,  "star_with_max_link": 333, "top_agent": ["@SergeFernanDes"] },
+    { "country": "Spain",          "participants": 8,  "total_links": 782,  "star_with_max_link": 204, "top_agent": ["@ValenPortonovo"] },
+    { "country": "Sweden",         "participants": 1,  "total_links": 48,   "star_with_max_link": 48,  "top_agent": ["@vastis"] },
+    { "country": "Thailand",       "participants": 1,  "total_links": 24,   "star_with_max_link": 24,  "top_agent": ["@Brownphy"] },
+    { "country": "United Kingdom", "participants": 1,  "total_links": 82,   "star_with_max_link": 82,  "top_agent": ["@haslegs"] },
+    { "country": "United States",  "participants": 11, "total_links": 998,  "star_with_max_link": 225, "top_agent": ["@eigood"] }
+  ],
+  "podium": {
+    "$comment": "From the 'The Biggest stars' and 'most links per agent' columns in thebigbangcores.jpg.",
+    "source_file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/thebigbangcores.jpg",
+    "biggest_stars": [
+      { "rank": 1, "agents": ["@edyuji", "@LindaFlor19"] },
+      { "rank": 2, "agents": ["@Jepakazol", "@DoctorWho00"] },
+      { "rank": 3, "agents": ["@aitj", "@SergeFernanDes"] }
+    ],
+    "most_links_per_agent": [
+      { "rank": 1, "agents": ["@eigood"] },
+      { "rank": 2, "agents": ["@Jepakazol"] },
+      { "rank": 3, "agents": ["@aitj"] }
+    ]
+  }
+}

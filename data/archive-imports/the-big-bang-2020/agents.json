@@ -1,0 +1,2023 @@
+{
+  "campaign": "the-big-bang-2020",
+  "count": 124,
+  "agents": [
+    {
+      "handle": "@DarklifeOrigin",
+      "display_name": "DarklifeOrigin",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Argentina",
+      "city": null,
+      "links_created": 286,
+      "links_confidence": "source",
+      "country_max_links": 286,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 2
+      },
+      "notes": []
+    },
+    {
+      "handle": "@LuchianoA",
+      "display_name": "LuchianoA",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Argentina",
+      "city": null,
+      "links_created": 35,
+      "links_confidence": "source",
+      "country_max_links": 286,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 3
+      },
+      "notes": []
+    },
+    {
+      "handle": "@wodvic",
+      "display_name": "wodvic",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Australia",
+      "city": null,
+      "links_created": 237,
+      "links_confidence": "source",
+      "country_max_links": 237,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 4
+      },
+      "notes": []
+    },
+    {
+      "handle": "@r0ug",
+      "display_name": "r0ug",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Australia",
+      "city": null,
+      "links_created": 156,
+      "links_confidence": "source",
+      "country_max_links": 237,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 5
+      },
+      "notes": []
+    },
+    {
+      "handle": "@MikeDeville000",
+      "display_name": "MikeDeville000",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Australia",
+      "city": null,
+      "links_created": 99,
+      "links_confidence": "source",
+      "country_max_links": 237,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 6
+      },
+      "notes": []
+    },
+    {
+      "handle": "@TedTwinkie",
+      "display_name": "TedTwinkie",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Australia",
+      "city": null,
+      "links_created": 99,
+      "links_confidence": "source",
+      "country_max_links": 237,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 7
+      },
+      "notes": []
+    },
+    {
+      "handle": "@WCPL",
+      "display_name": "WCPL",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Australia",
+      "city": null,
+      "links_created": 13,
+      "links_confidence": "source",
+      "country_max_links": 237,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 8
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Nieumi",
+      "display_name": "Nieumi",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Australia",
+      "city": null,
+      "links_created": 12,
+      "links_confidence": "source",
+      "country_max_links": 237,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 9
+      },
+      "notes": []
+    },
+    {
+      "handle": "@parsleypop",
+      "display_name": "parsleypop",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Australia",
+      "city": null,
+      "links_created": 17,
+      "links_confidence": "source",
+      "country_max_links": 237,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 10
+      },
+      "notes": []
+    },
+    {
+      "handle": "@pinnine",
+      "display_name": "pinnine",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Belarus",
+      "city": null,
+      "links_created": 221,
+      "links_confidence": "source",
+      "country_max_links": 221,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 11
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Josske",
+      "display_name": "Josske",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Belgium",
+      "city": null,
+      "links_created": 78,
+      "links_confidence": "source",
+      "country_max_links": 78,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 12
+      },
+      "notes": []
+    },
+    {
+      "handle": "@saarstahl",
+      "display_name": "saarstahl",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Belgium",
+      "city": null,
+      "links_created": 63,
+      "links_confidence": "source",
+      "country_max_links": 78,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 13
+      },
+      "notes": []
+    },
+    {
+      "handle": "@liyu1",
+      "display_name": "liyu1",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Belgium",
+      "city": null,
+      "links_created": 27,
+      "links_confidence": "source",
+      "country_max_links": 78,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 14
+      },
+      "notes": []
+    },
+    {
+      "handle": "@CofBas",
+      "display_name": "CofBas",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Israel",
+      "city": null,
+      "links_created": 17,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 15
+      },
+      "notes": [
+        "links_created was blank in source - recorded as unknown, not zero",
+        "links_created taken from duplicate row at line 83"
+      ],
+      "duplicate_rows": [
+        {
+          "handle": "@CofBas",
+          "display_name": "CofBas",
+          "faction": "Resistance",
+          "faction_colour": "blue",
+          "country": "Israel",
+          "city": null,
+          "links_created": 17,
+          "links_confidence": "source",
+          "country_max_links": 184,
+          "source": {
+            "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+            "line": 83
+          },
+          "notes": []
+        }
+      ]
+    },
+    {
+      "handle": "@taly77",
+      "display_name": "taly77",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Bolivia",
+      "city": null,
+      "links_created": 16,
+      "links_confidence": "source",
+      "country_max_links": 16,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 16
+      },
+      "notes": []
+    },
+    {
+      "handle": "@edyuji",
+      "display_name": "edyuji",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 500,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 17
+      },
+      "notes": []
+    },
+    {
+      "handle": "@LindaFlor19",
+      "display_name": "LindaFlor19",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 500,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 21
+      },
+      "notes": []
+    },
+    {
+      "handle": "@marcelomotoyama",
+      "display_name": "marcelomotoyama",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 307,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 22
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Hydraulinski",
+      "display_name": "Hydraulinski",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 55,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 23
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Danielkommers",
+      "display_name": "Danielkommers",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 32,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 24
+      },
+      "notes": []
+    },
+    {
+      "handle": "@SrTretelez",
+      "display_name": "SrTretelez",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 30,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 25
+      },
+      "notes": []
+    },
+    {
+      "handle": "@igor972",
+      "display_name": "igor972",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 29,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 26
+      },
+      "notes": []
+    },
+    {
+      "handle": "@NenesoM",
+      "display_name": "NenesoM",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 25,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 27
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Aartsengel",
+      "display_name": "Aartsengel",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 23,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 37
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Zzeno1987",
+      "display_name": "Zzeno1987",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 10,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 38
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Ducate007",
+      "display_name": "Ducate007",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Brazil",
+      "city": null,
+      "links_created": 60,
+      "links_confidence": "source",
+      "country_max_links": 500,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 39
+      },
+      "notes": []
+    },
+    {
+      "handle": "@dess4ence",
+      "display_name": "dess4ence",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Bulgaria",
+      "city": null,
+      "links_created": 56,
+      "links_confidence": "source",
+      "country_max_links": 56,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 40
+      },
+      "notes": []
+    },
+    {
+      "handle": "@arkinbg",
+      "display_name": "arkinbg",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Bulgaria",
+      "city": null,
+      "links_created": 53,
+      "links_confidence": "source",
+      "country_max_links": 56,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 41
+      },
+      "notes": []
+    },
+    {
+      "handle": "@ChevChelios1976",
+      "display_name": "ChevChelios1976",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Canada",
+      "city": null,
+      "links_created": 54,
+      "links_confidence": "source",
+      "country_max_links": 54,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 46
+      },
+      "notes": []
+    },
+    {
+      "handle": "@GregSeventy7",
+      "display_name": "GregSeventy7",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Canada",
+      "city": null,
+      "links_created": 29,
+      "links_confidence": "source",
+      "country_max_links": 54,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 47
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Pierreanoid",
+      "display_name": "Pierreanoid",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Canada",
+      "city": null,
+      "links_created": 19,
+      "links_confidence": "source",
+      "country_max_links": 54,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 48
+      },
+      "notes": []
+    },
+    {
+      "handle": "@MegaSteeliX",
+      "display_name": "MegaSteeliX",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "China",
+      "city": null,
+      "links_created": 104,
+      "links_confidence": "source",
+      "country_max_links": 104,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 49
+      },
+      "notes": []
+    },
+    {
+      "handle": "@SiennaU",
+      "display_name": "SiennaU",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "China",
+      "city": null,
+      "links_created": 37,
+      "links_confidence": "source",
+      "country_max_links": 104,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 50
+      },
+      "notes": []
+    },
+    {
+      "handle": "@kiwiwoe",
+      "display_name": "kiwiwoe",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Czechia",
+      "city": null,
+      "links_created": 10,
+      "links_confidence": "source",
+      "country_max_links": 10,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 51
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Haikk1",
+      "display_name": "Haikk1",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Finland",
+      "city": null,
+      "links_created": 39,
+      "links_confidence": "source",
+      "country_max_links": 39,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 52
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Orenonh",
+      "display_name": "Orenonh",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "France",
+      "city": null,
+      "links_created": 44,
+      "links_confidence": "source",
+      "country_max_links": 44,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 53
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Djoulay88",
+      "display_name": "Djoulay88",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "France",
+      "city": null,
+      "links_created": 23,
+      "links_confidence": "source",
+      "country_max_links": 44,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 54
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Belfas8",
+      "display_name": "Belfas8",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Germany",
+      "city": null,
+      "links_created": 124,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 55
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Kerris",
+      "display_name": "Kerris",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Germany",
+      "city": null,
+      "links_created": 118,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 56
+      },
+      "notes": []
+    },
+    {
+      "handle": "@HomerGAdams",
+      "display_name": "HomerGAdams",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Germany",
+      "city": null,
+      "links_created": 104,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 57
+      },
+      "notes": []
+    },
+    {
+      "handle": "@GuppyCk",
+      "display_name": "GuppyCk",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Germany",
+      "city": null,
+      "links_created": 91,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 58
+      },
+      "notes": []
+    },
+    {
+      "handle": "@speedy301188",
+      "display_name": "speedy301188",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Germany",
+      "city": null,
+      "links_created": 44,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 59
+      },
+      "notes": []
+    },
+    {
+      "handle": "@KarlWinter",
+      "display_name": "KarlWinter",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Germany",
+      "city": null,
+      "links_created": 35,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 60
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Sternenputzi",
+      "display_name": "Sternenputzi",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Germany",
+      "city": null,
+      "links_created": 31,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 61
+      },
+      "notes": []
+    },
+    {
+      "handle": "@WeeFreeFang",
+      "display_name": "WeeFreeFang",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Germany",
+      "city": null,
+      "links_created": 26,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 62
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Cartman45",
+      "display_name": "Cartman45",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Germany",
+      "city": null,
+      "links_created": 24,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 63
+      },
+      "notes": []
+    },
+    {
+      "handle": "@SyrinxRHD",
+      "display_name": "SyrinxRHD",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Germany",
+      "city": null,
+      "links_created": 18,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 64
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Fuechsin95",
+      "display_name": "Fuechsin95",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Germany",
+      "city": null,
+      "links_created": 14,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 65
+      },
+      "notes": []
+    },
+    {
+      "handle": "@sinopokayo",
+      "display_name": "sinopokayo",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Germany",
+      "city": null,
+      "links_created": 10,
+      "links_confidence": "source",
+      "country_max_links": 124,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 66
+      },
+      "notes": []
+    },
+    {
+      "handle": "@sestances",
+      "display_name": "sestances",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Greece",
+      "city": null,
+      "links_created": 11,
+      "links_confidence": "source",
+      "country_max_links": 11,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 67
+      },
+      "notes": []
+    },
+    {
+      "handle": "@lifehaxer",
+      "display_name": "lifehaxer",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "India",
+      "city": null,
+      "links_created": 65,
+      "links_confidence": "source",
+      "country_max_links": 65,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 68
+      },
+      "notes": []
+    },
+    {
+      "handle": "@JOKI1110",
+      "display_name": "JOKI1110",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "India",
+      "city": null,
+      "links_created": 21,
+      "links_confidence": "source",
+      "country_max_links": 65,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 69
+      },
+      "notes": []
+    },
+    {
+      "handle": "@KDdar5han",
+      "display_name": "KDdar5han",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "India",
+      "city": null,
+      "links_created": 18,
+      "links_confidence": "source",
+      "country_max_links": 65,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 70
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Maujpuriya",
+      "display_name": "Maujpuriya",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "India",
+      "city": null,
+      "links_created": 14,
+      "links_confidence": "source",
+      "country_max_links": 65,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 71
+      },
+      "notes": []
+    },
+    {
+      "handle": "@MerXcoolZ",
+      "display_name": "MerXcoolZ",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "India",
+      "city": null,
+      "links_created": 14,
+      "links_confidence": "source",
+      "country_max_links": 65,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 72
+      },
+      "notes": []
+    },
+    {
+      "handle": "@KirushnaEnlight",
+      "display_name": "KirushnaEnlight",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "India",
+      "city": null,
+      "links_created": 12,
+      "links_confidence": "source",
+      "country_max_links": 65,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 73
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Ironsides39852",
+      "display_name": "Ironsides39852",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "India",
+      "city": null,
+      "links_created": 10,
+      "links_confidence": "source",
+      "country_max_links": 65,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 74
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Jepakazol",
+      "display_name": "Jepakazol",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Israel",
+      "city": null,
+      "links_created": 184,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 75
+      },
+      "notes": []
+    },
+    {
+      "handle": "@ravidor",
+      "display_name": "ravidor",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Israel",
+      "city": null,
+      "links_created": 131,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 76
+      },
+      "notes": []
+    },
+    {
+      "handle": "@reformy",
+      "display_name": "reformy",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Israel",
+      "city": null,
+      "links_created": 128,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 77
+      },
+      "notes": []
+    },
+    {
+      "handle": "@AlexCSLion",
+      "display_name": "AlexCSLion",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Israel",
+      "city": null,
+      "links_created": 124,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 78
+      },
+      "notes": []
+    },
+    {
+      "handle": "@gilrun",
+      "display_name": "gilrun",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Israel",
+      "city": null,
+      "links_created": 100,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 79
+      },
+      "notes": []
+    },
+    {
+      "handle": "@king2k",
+      "display_name": "king2k",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Israel",
+      "city": null,
+      "links_created": 62,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 80
+      },
+      "notes": []
+    },
+    {
+      "handle": "@ethan1701",
+      "display_name": "ethan1701",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Israel",
+      "city": null,
+      "links_created": 55,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 81
+      },
+      "notes": []
+    },
+    {
+      "handle": "@rubicon615",
+      "display_name": "rubicon615",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Israel",
+      "city": null,
+      "links_created": 49,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 82
+      },
+      "notes": []
+    },
+    {
+      "handle": "@AdiBrill",
+      "display_name": "AdiBrill",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Israel",
+      "city": null,
+      "links_created": 13,
+      "links_confidence": "source",
+      "country_max_links": 184,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 84
+      },
+      "notes": []
+    },
+    {
+      "handle": "@ifonz",
+      "display_name": "ifonz",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Italy",
+      "city": null,
+      "links_created": 126,
+      "links_confidence": "source",
+      "country_max_links": 126,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 85
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Zenamivir",
+      "display_name": "Zenamivir",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Italy",
+      "city": null,
+      "links_created": 68,
+      "links_confidence": "source",
+      "country_max_links": 126,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 86
+      },
+      "notes": []
+    },
+    {
+      "handle": "@miketrevis",
+      "display_name": "miketrevis",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Italy",
+      "city": null,
+      "links_created": 48,
+      "links_confidence": "source",
+      "country_max_links": 126,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 87
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Bulow",
+      "display_name": "Bulow",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Italy",
+      "city": null,
+      "links_created": 45,
+      "links_confidence": "source",
+      "country_max_links": 126,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 88
+      },
+      "notes": []
+    },
+    {
+      "handle": "@keeper1966",
+      "display_name": "keeper1966",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Italy",
+      "city": null,
+      "links_created": 35,
+      "links_confidence": "source",
+      "country_max_links": 126,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 89
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Gabry147",
+      "display_name": "Gabry147",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Italy",
+      "city": null,
+      "links_created": 16,
+      "links_confidence": "source",
+      "country_max_links": 126,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 90
+      },
+      "notes": []
+    },
+    {
+      "handle": "@infinito8r",
+      "display_name": "infinito8r",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Italy",
+      "city": null,
+      "links_created": 16,
+      "links_confidence": "source",
+      "country_max_links": 126,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 91
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Kaisose",
+      "display_name": "Kaisose",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Italy",
+      "city": null,
+      "links_created": 11,
+      "links_confidence": "source",
+      "country_max_links": 126,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 92
+      },
+      "notes": []
+    },
+    {
+      "handle": "@zapper0",
+      "display_name": "zapper0",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": 108,
+      "links_confidence": "source",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 93
+      },
+      "notes": []
+    },
+    {
+      "handle": "@noranekoinko",
+      "display_name": "noranekoinko",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": 73,
+      "links_confidence": "source",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 94
+      },
+      "notes": []
+    },
+    {
+      "handle": "@WOLFROCK7",
+      "display_name": "WOLFROCK7",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": 51,
+      "links_confidence": "source",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 95
+      },
+      "notes": []
+    },
+    {
+      "handle": "@sakakiparano",
+      "display_name": "sakakiparano",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": 37,
+      "links_confidence": "source",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 96
+      },
+      "notes": []
+    },
+    {
+      "handle": "@gogoz7uni",
+      "display_name": "gogoz7uni",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": 30,
+      "links_confidence": "source",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 97
+      },
+      "notes": []
+    },
+    {
+      "handle": "@unadon12",
+      "display_name": "unadon12",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": 22,
+      "links_confidence": "source",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 98
+      },
+      "notes": []
+    },
+    {
+      "handle": "@meronpanda",
+      "display_name": "meronpanda",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": 16,
+      "links_confidence": "source",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 99
+      },
+      "notes": []
+    },
+    {
+      "handle": "@dummytest",
+      "display_name": "dummytest",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": 10,
+      "links_confidence": "source",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 100
+      },
+      "notes": []
+    },
+    {
+      "handle": "@yantensh",
+      "display_name": "yantensh",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": 10,
+      "links_confidence": "source",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 101
+      },
+      "notes": []
+    },
+    {
+      "handle": "@SakuraaaN",
+      "display_name": "SakuraaaN",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Japan",
+      "city": null,
+      "links_created": null,
+      "links_confidence": "unknown",
+      "country_max_links": 108,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 102
+      },
+      "notes": [
+        "links_created was blank in source - recorded as unknown, not zero"
+      ]
+    },
+    {
+      "handle": "@DoctorWho00",
+      "display_name": "DoctorWho00",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Luxembourg",
+      "city": null,
+      "links_created": 427,
+      "links_confidence": "source",
+      "country_max_links": 427,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 103
+      },
+      "notes": []
+    },
+    {
+      "handle": "@RussellDev",
+      "display_name": "RussellDev",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Mayotte",
+      "city": null,
+      "links_created": 11,
+      "links_confidence": "source",
+      "country_max_links": 11,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 104
+      },
+      "notes": []
+    },
+    {
+      "handle": "@aitj",
+      "display_name": "aitj",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Mexico",
+      "city": null,
+      "links_created": 150,
+      "links_confidence": "source",
+      "country_max_links": 150,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 105
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Six3lMM",
+      "display_name": "Six3lMM",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Mexico",
+      "city": null,
+      "links_created": 132,
+      "links_confidence": "source",
+      "country_max_links": 150,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 106
+      },
+      "notes": []
+    },
+    {
+      "handle": "@ShengDu",
+      "display_name": "ShengDu",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Netherlands",
+      "city": null,
+      "links_created": 50,
+      "links_confidence": "source",
+      "country_max_links": 50,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 107
+      },
+      "notes": []
+    },
+    {
+      "handle": "@RizzaHawkeye12",
+      "display_name": "RizzaHawkeye12",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Peru",
+      "city": null,
+      "links_created": 52,
+      "links_confidence": "source",
+      "country_max_links": 52,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 108
+      },
+      "notes": []
+    },
+    {
+      "handle": "@myshadowPT",
+      "display_name": "myshadowPT",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Portugal",
+      "city": null,
+      "links_created": 43,
+      "links_confidence": "source",
+      "country_max_links": 43,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 109
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Djfenyx",
+      "display_name": "Djfenyx",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Portugal",
+      "city": null,
+      "links_created": 11,
+      "links_confidence": "source",
+      "country_max_links": 43,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 110
+      },
+      "notes": []
+    },
+    {
+      "handle": "@DwF",
+      "display_name": "DwF",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Romania",
+      "city": null,
+      "links_created": null,
+      "links_confidence": "unknown",
+      "country_max_links": 0,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 111
+      },
+      "notes": [
+        "links_created was blank in source - recorded as unknown, not zero"
+      ]
+    },
+    {
+      "handle": "@SergeFernanDes",
+      "display_name": "SergeFernanDes",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Russia",
+      "city": null,
+      "links_created": 333,
+      "links_confidence": "source",
+      "country_max_links": 333,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 112
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Neokondor",
+      "display_name": "Neokondor",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Russia",
+      "city": null,
+      "links_created": 148,
+      "links_confidence": "source",
+      "country_max_links": 333,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 113
+      },
+      "notes": []
+    },
+    {
+      "handle": "@kirvland",
+      "display_name": "kirvland",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Russia",
+      "city": null,
+      "links_created": 100,
+      "links_confidence": "source",
+      "country_max_links": 333,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 114
+      },
+      "notes": []
+    },
+    {
+      "handle": "@ValenPortonovo",
+      "display_name": "ValenPortonovo",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Spain",
+      "city": null,
+      "links_created": 204,
+      "links_confidence": "source",
+      "country_max_links": 204,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 115
+      },
+      "notes": []
+    },
+    {
+      "handle": "@HaLfY",
+      "display_name": "HaLfY",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Spain",
+      "city": null,
+      "links_created": 122,
+      "links_confidence": "source",
+      "country_max_links": 204,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 116
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Eliazhaar",
+      "display_name": "Eliazhaar",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Spain",
+      "city": null,
+      "links_created": 107,
+      "links_confidence": "source",
+      "country_max_links": 204,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 117
+      },
+      "notes": []
+    },
+    {
+      "handle": "@ReinaMayla",
+      "display_name": "ReinaMayla",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Spain",
+      "city": null,
+      "links_created": 94,
+      "links_confidence": "source",
+      "country_max_links": 204,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 118
+      },
+      "notes": []
+    },
+    {
+      "handle": "@ErreKrbo",
+      "display_name": "ErreKrbo",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Spain",
+      "city": null,
+      "links_created": 94,
+      "links_confidence": "source",
+      "country_max_links": 204,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 119
+      },
+      "notes": []
+    },
+    {
+      "handle": "@bunbun1979",
+      "display_name": "bunbun1979",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Spain",
+      "city": null,
+      "links_created": 85,
+      "links_confidence": "source",
+      "country_max_links": 204,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 120
+      },
+      "notes": []
+    },
+    {
+      "handle": "@BTT91",
+      "display_name": "BTT91",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Spain",
+      "city": null,
+      "links_created": 60,
+      "links_confidence": "source",
+      "country_max_links": 204,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 121
+      },
+      "notes": []
+    },
+    {
+      "handle": "@lseee",
+      "display_name": "lseee",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Spain",
+      "city": null,
+      "links_created": 16,
+      "links_confidence": "source",
+      "country_max_links": 204,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 122
+      },
+      "notes": []
+    },
+    {
+      "handle": "@vastis",
+      "display_name": "vastis",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Sweden",
+      "city": null,
+      "links_created": 48,
+      "links_confidence": "source",
+      "country_max_links": 48,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 123
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Brownphy",
+      "display_name": "Brownphy",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Thailand",
+      "city": null,
+      "links_created": 24,
+      "links_confidence": "source",
+      "country_max_links": 24,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 124
+      },
+      "notes": []
+    },
+    {
+      "handle": "@V1tharr",
+      "display_name": "V1tharr",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "Ukraine",
+      "city": null,
+      "links_created": 41,
+      "links_confidence": "source",
+      "country_max_links": 41,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 125
+      },
+      "notes": []
+    },
+    {
+      "handle": "@haslegs",
+      "display_name": "haslegs",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "United Kingdom",
+      "city": null,
+      "links_created": 82,
+      "links_confidence": "source",
+      "country_max_links": 82,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 126
+      },
+      "notes": []
+    },
+    {
+      "handle": "@eigood",
+      "display_name": "eigood",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "United States",
+      "city": null,
+      "links_created": 225,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 127
+      },
+      "notes": []
+    },
+    {
+      "handle": "@EldrenCoralon",
+      "display_name": "EldrenCoralon",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "United States",
+      "city": null,
+      "links_created": 206,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 128
+      },
+      "notes": []
+    },
+    {
+      "handle": "@DigitalDeviance",
+      "display_name": "DigitalDeviance",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "United States",
+      "city": null,
+      "links_created": 154,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 129
+      },
+      "notes": []
+    },
+    {
+      "handle": "@earthtraveler5",
+      "display_name": "earthtraveler5",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "United States",
+      "city": null,
+      "links_created": 125,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 130
+      },
+      "notes": []
+    },
+    {
+      "handle": "@TheGreenTardis",
+      "display_name": "TheGreenTardis",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "United States",
+      "city": null,
+      "links_created": 82,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 131
+      },
+      "notes": []
+    },
+    {
+      "handle": "@MalleusVos",
+      "display_name": "MalleusVos",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "United States",
+      "city": null,
+      "links_created": 79,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 132
+      },
+      "notes": []
+    },
+    {
+      "handle": "@NegansLucille",
+      "display_name": "NegansLucille",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "United States",
+      "city": null,
+      "links_created": 79,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 133
+      },
+      "notes": []
+    },
+    {
+      "handle": "@lIlIIIIIIlIIlII",
+      "display_name": "lIlIIIIIIlIIlII",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "United States",
+      "city": null,
+      "links_created": 75,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 134
+      },
+      "notes": []
+    },
+    {
+      "handle": "@jv090791",
+      "display_name": "jv090791",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "United States",
+      "city": null,
+      "links_created": 61,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 135
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Brit0martis",
+      "display_name": "Brit0martis",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "United States",
+      "city": null,
+      "links_created": 47,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 136
+      },
+      "notes": []
+    },
+    {
+      "handle": "@Azntiger791",
+      "display_name": "Azntiger791",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "United States",
+      "city": null,
+      "links_created": 46,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 137
+      },
+      "notes": []
+    },
+    {
+      "handle": "@HokeyBugle",
+      "display_name": "HokeyBugle",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": "United States",
+      "city": null,
+      "links_created": 23,
+      "links_confidence": "source",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 138
+      },
+      "notes": []
+    },
+    {
+      "handle": "@tristeele",
+      "display_name": "tristeele",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "United States",
+      "city": null,
+      "links_created": null,
+      "links_confidence": "unknown",
+      "country_max_links": 225,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 139
+      },
+      "notes": [
+        "links_created was blank in source - recorded as unknown, not zero"
+      ]
+    },
+    {
+      "handle": "@PsicopataInfame",
+      "display_name": "PsicopataInfame",
+      "faction": "Resistance",
+      "faction_colour": "blue",
+      "country": null,
+      "city": null,
+      "links_created": 16,
+      "links_confidence": "source",
+      "country_max_links": 0,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 140
+      },
+      "notes": [
+        "country was blank in source"
+      ]
+    },
+    {
+      "handle": "@mikusan",
+      "display_name": "mikusan",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": null,
+      "city": null,
+      "links_created": 10,
+      "links_confidence": "source",
+      "country_max_links": 0,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 141
+      },
+      "notes": [
+        "country was blank in source"
+      ]
+    },
+    {
+      "handle": "@dakidali",
+      "display_name": "dakidali",
+      "faction": "Enlightened",
+      "faction_colour": "green",
+      "country": "Portugal",
+      "city": null,
+      "links_created": null,
+      "links_confidence": "unknown",
+      "country_max_links": null,
+      "source": {
+        "file": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+        "line": 142
+      },
+      "notes": [
+        "links_created was blank in source - recorded as unknown, not zero"
+      ]
+    }
+  ]
+}

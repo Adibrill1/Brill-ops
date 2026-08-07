@@ -1,0 +1,142 @@
+{
+  "generated_at": "2026-08-07T05:34:42.412Z",
+  "summary": "The row-level CSV and the organiser's country-summary tab were exported on different dates and do not fully agree. Both are preserved. Brill Ops treats the CSV as the row-level source of truth because it is the only machine-readable artefact, and surfaces the organiser figures alongside it as \"as originally published\".",
+  "computed_from_csv": {
+    "agents": 124,
+    "agents_with_known_links": 120,
+    "agents_with_unknown_links": 4,
+    "countries": 32,
+    "total_links": 9449,
+    "blue_agents": 81,
+    "green_agents": 43,
+    "crossfaction_teams": 12,
+    "blue_teams": 15,
+    "green_teams": 5
+  },
+  "organiser_reported": {
+    "participants": 115,
+    "total_links": 8962,
+    "countries": 31
+  },
+  "country_disagreements": [
+    {
+      "country": "Belgium",
+      "participants": {
+        "organiser_reported": 2,
+        "computed_from_csv": 3
+      },
+      "total_links": {
+        "organiser_reported": 90,
+        "computed_from_csv": 168
+      }
+    },
+    {
+      "country": "Brazil",
+      "total_links": {
+        "organiser_reported": 1534,
+        "computed_from_csv": 1571
+      }
+    },
+    {
+      "country": "Canada",
+      "participants": {
+        "organiser_reported": 2,
+        "computed_from_csv": 3
+      }
+    },
+    {
+      "country": "Germany",
+      "participants": {
+        "organiser_reported": 11,
+        "computed_from_csv": 12
+      },
+      "total_links": {
+        "organiser_reported": 604,
+        "computed_from_csv": 639
+      }
+    },
+    {
+      "country": "Israel",
+      "total_links": {
+        "organiser_reported": 797,
+        "computed_from_csv": 863
+      }
+    },
+    {
+      "country": "Portugal",
+      "participants": {
+        "organiser_reported": 2,
+        "computed_from_csv": 3
+      }
+    },
+    {
+      "country": "Ukraine",
+      "only_in": "csv"
+    },
+    {
+      "country": "United States",
+      "participants": {
+        "organiser_reported": 11,
+        "computed_from_csv": 13
+      },
+      "total_links": {
+        "organiser_reported": 998,
+        "computed_from_csv": 1202
+      }
+    }
+  ],
+  "parse_notes": {
+    "blank_spacer_rows_skipped": 16,
+    "duplicate_handles_merged": 1
+  },
+  "anomalies": [
+    {
+      "line": 15,
+      "type": "blank_links_created",
+      "agent": "@CofBas",
+      "resolution": "links_created stored as null (unknown), NOT as zero"
+    },
+    {
+      "line": 83,
+      "type": "duplicate_agent",
+      "agent": "@CofBas",
+      "resolution": "merged into the row at line 15; the row carrying a numeric links_created wins, the other is kept in duplicate_rows"
+    },
+    {
+      "line": 102,
+      "type": "blank_links_created",
+      "agent": "@SakuraaaN",
+      "resolution": "links_created stored as null (unknown), NOT as zero"
+    },
+    {
+      "line": 111,
+      "type": "blank_links_created",
+      "agent": "@DwF",
+      "resolution": "links_created stored as null (unknown), NOT as zero"
+    },
+    {
+      "line": 139,
+      "type": "blank_links_created",
+      "agent": "@tristeele",
+      "resolution": "links_created stored as null (unknown), NOT as zero"
+    },
+    {
+      "line": 140,
+      "type": "missing_country",
+      "agent": "@PsicopataInfame",
+      "resolution": "country stored as null; agent excluded from country rollups"
+    },
+    {
+      "line": 141,
+      "type": "missing_country",
+      "agent": "@mikusan",
+      "resolution": "country stored as null; agent excluded from country rollups"
+    },
+    {
+      "line": 142,
+      "type": "blank_links_created",
+      "agent": "@dakidali",
+      "resolution": "links_created stored as null (unknown), NOT as zero"
+    }
+  ]
+}
