@@ -1,0 +1,37 @@
+import type { Config } from 'tailwindcss';
+
+/**
+ * Faction colours are design tokens, not ad-hoc hexes, so that "blue means
+ * Resistance / green means Enlightened / amber means Crossfaction" stays
+ * consistent everywhere including charts and badges.
+ */
+const config: Config = {
+  content: ['./src/**/*.{ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        faction: {
+          blue: '#2563eb',
+          'blue-soft': '#dbeafe',
+          green: '#16a34a',
+          'green-soft': '#dcfce7',
+          // Crossfaction gets its own token deliberately - rendering it as a
+          // blue/green gradient everywhere made small UI unreadable.
+          crossfaction: '#d97706',
+          'crossfaction-soft': '#fef3c7',
+        },
+        ink: {
+          DEFAULT: '#0f172a',
+          muted: '#475569',
+          faint: '#94a3b8',
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
