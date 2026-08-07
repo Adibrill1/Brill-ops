@@ -13,6 +13,9 @@ is an `INSERT`, never a migration.
 - **Operation "The Big Bang"** (31 July 2020) is the first campaign in the Archive,
   imported from six-year-old source material that arrived with the project.
 
+Canonical repository: **https://github.com/Adibrill1/Brill-ops** — everything ships from
+`main`. Deployment notes: [`docs/deployment.md`](docs/deployment.md).
+
 ---
 
 ## What the platform does
@@ -217,3 +220,4 @@ rather than in new columns.
 - [ADR 0002 — Source media stays out of Git](docs/architecture/adr/0002-media-stays-out-of-git.md)
 - [ADR 0003 — Google as the only identity provider](docs/architecture/adr/0003-google-only-auth.md)
 - [ADR 0004 — Agents are separate from accounts](docs/architecture/adr/0004-agents-separate-from-accounts.md)
+- [Deployment](docs/deployment.md)
