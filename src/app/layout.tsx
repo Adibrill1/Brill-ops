@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
+import { DemoBanner } from '@/components/DemoBanner';
 import { SiteHeader } from '@/components/SiteHeader';
 import './globals.css';
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <SiteHeader />
+        <DemoBanner />
         <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
 
         <footer className="mt-16 border-t border-slate-200 bg-white">
