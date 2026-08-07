@@ -1,0 +1,50 @@
+# Supabase CLI configuration.
+#
+# Local development:   supabase start && supabase db reset
+# Link to the cloud:   supabase link --project-ref <ref>
+# Apply migrations:    supabase db push
+#
+# `db push` applies supabase/migrations/ only. The archive seed is applied
+# separately with `npm run db:seed` - see scripts/apply-seed.mjs.
+
+project_id = "brill-ops"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[storage]
+enabled = true
+# The 2020 archive contains a 185 MB video, so the default 50 MiB is too small.
+file_size_limit = "500MiB"
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+jwt_expiry = 3600
+enable_signup = true
+
+# Google is the only identity provider - see ADR 0003.
+# Secrets come from the environment; never commit them.
+[auth.external.google]
+enabled = true
+client_id = "env(SUPABASE_AUTH_GOOGLE_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_GOOGLE_SECRET)"
+redirect_uri = "http://localhost:54321/auth/v1/callback"
+
+[auth.email]
+enable_signup = false
+enable_confirmations = false

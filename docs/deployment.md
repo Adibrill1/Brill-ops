@@ -37,6 +37,28 @@ Demo mode switches off as soon as `NEXT_PUBLIC_SUPABASE_URL` holds a real value.
 not a fallback for an unreachable database — a configured-but-broken backend fails loudly
 rather than quietly serving stale files.
 
+## Setting up the database
+
+`supabase db push` applies `supabase/migrations/` but **not** seeds, so the archive
+import is a second command:
+
+```bash
+npx supabase login
+npx supabase link --project-ref <your-project-ref>
+npm run db:setup            # = db:push (migrations) + db:seed (archive import)
+```
+
+`npm run db:seed` needs `SUPABASE_DB_URL` in `.env.local` — the direct Postgres URI from
+**Project Settings → Database → Connection string → URI**. It contains your database
+password, so it is gitignored and used by that one script only. The app itself never
+touches it; page rendering goes through the anon key and RLS.
+
+The script prints what actually landed and checks it against the importer's figures —
+124 agents, 32 teams, 12 crossfaction, 9,449 links, 4 unknown. If those drift, it exits
+non-zero rather than reporting success.
+
+Both seed files are idempotent, so re-running is safe.
+
 ## Order of operations
 
 1. **Vercel** → a live URL, running in demo mode.
