@@ -1,0 +1,18 @@
+* text=auto eol=lf
+
+*.sql   text diff=sql
+*.md    text diff=markdown
+*.json  text
+*.csv   text
+
+# Generated - collapse in PR diffs, but still reviewable on demand.
+supabase/seed/002_the_big_bang_2020.sql linguist-generated=true
+source-data/MANIFEST.json               linguist-generated=true
+source-data/MANIFEST.csv                linguist-generated=true
+
+# ---------------------------------------------------------------------------
+# source-data/ is preserved BYTE-FOR-BYTE. No EOL normalisation, ever.
+# The original CSV uses CRLF; rewriting it to LF would change its SHA-256 and
+# break `npm run verify:source` against source-data/MANIFEST.json.
+# ---------------------------------------------------------------------------
+source-data/** -text

@@ -1,0 +1,3490 @@
+{
+  "generated_at": "2026-08-07T05:32:55.363Z",
+  "generator": "scripts/generate-source-manifest.mjs",
+  "note": "Authoritative inventory of the original Brill Ops handoff package. Large binaries are intentionally not committed to Git; this manifest is their committed proof of existence. See docs/architecture/adr/0002-media-stays-out-of-git.md.",
+  "summary": {
+    "file_count": 342,
+    "os_noise_count": 5,
+    "total_bytes": 917211937,
+    "by_kind": {
+      "image": 325,
+      "video": 16,
+      "dataset": 1
+    },
+    "oversized_for_github": [
+      "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6970.MOV"
+    ]
+  },
+  "files": [
+    {
+      "path": "source-data/.DS_Store",
+      "bytes": 6148,
+      "sha256": "35ed2618a6e7e81cb7c7c9d226c2167bc4aa80827a1b33b4a6fc823940a2e6cc",
+      "kind": "other",
+      "modified": "2026-08-07T05:29:34.511Z",
+      "attribution_hint": null,
+      "is_os_noise": true,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/brand/assets/.DS_Store",
+      "bytes": 6148,
+      "sha256": "67eb451f93712f967b69f2dd403c84b4e74eb64e21ca2c05d8ca341341cf879e",
+      "kind": "other",
+      "modified": "2026-08-07T05:17:14.822Z",
+      "attribution_hint": null,
+      "is_os_noise": true,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/.DS_Store",
+      "bytes": 14340,
+      "sha256": "120ca5a4c20c622a6b29586a8cc471d9fecb0a5ed5230bb487dea9fb8c256b54",
+      "kind": "other",
+      "modified": "2026-08-07T05:15:15.593Z",
+      "attribution_hint": null,
+      "is_os_noise": true,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/AdiBrill.jpg",
+      "bytes": 1721459,
+      "sha256": "af6c80ca347e706e596a669ab24e0e4a36ec651b0bf5513446399186aa4c112c",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:42.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.26.jpeg",
+      "bytes": 75177,
+      "sha256": "d6516e9287375dfdc8188547c865c28d9622950e19fd0e25871a48a869b31bc1",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:26.459Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.28 (1).jpeg",
+      "bytes": 74756,
+      "sha256": "6c58d55dbf08db32d7d03137709d14d4586b3cc7f90d5e559d4f3b5deace183d",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:26.459Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.28.jpeg",
+      "bytes": 74756,
+      "sha256": "6c58d55dbf08db32d7d03137709d14d4586b3cc7f90d5e559d4f3b5deace183d",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:26.459Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.45.jpeg",
+      "bytes": 207287,
+      "sha256": "929dcede714894e23219973812789db100d9843150aab9f6d5e1876b9aeb4582",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:41.083Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.46.jpeg",
+      "bytes": 161436,
+      "sha256": "e24b642ce372b75fc8ea8ed02f942f94bad2eb44e7ac622bcbbca5e92465c021",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:41.468Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.50.jpeg",
+      "bytes": 103288,
+      "sha256": "dce0a23b540f815d35460a9845d4bcdfea1707019e197e6e5600ec44f5315eb8",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:47.418Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.51.jpeg",
+      "bytes": 165535,
+      "sha256": "710554192bda4b06562b0e9116b06c3c114bac518be7998516367b0032f35dc8",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:49.345Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.52.jpeg",
+      "bytes": 166160,
+      "sha256": "9e2161d442fecd22ce1d5a681fbdae9b0dfd0ab4839a0d8138905db7a0d7098d",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:50.781Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.53.jpeg",
+      "bytes": 185407,
+      "sha256": "dab5386f824f9f0da92d11c95a94e39448e5067b467c0e301b8aea884209af7f",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:52.060Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.08.55.jpeg",
+      "bytes": 173190,
+      "sha256": "a8b49240a670a0832ab9cf9da5a68c18e4760167d688754a768218ec368223c5",
+      "kind": "image",
+      "modified": "2026-08-07T05:08:53.514Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.09.jpeg",
+      "bytes": 133540,
+      "sha256": "d2a7b49287f9b8fd16dd949ebfa447fe75e53a3abefe59a81edae48ead14241a",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:05.489Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.11.jpeg",
+      "bytes": 164576,
+      "sha256": "91856f40eda9278ad8ef96611821571fd6e0fb7c157a622f6d5f79b3ce569b27",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:06.924Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.13.jpeg",
+      "bytes": 164587,
+      "sha256": "c1f906eaa7f0ce2c9220f2884db8c4a799fc82a8d241434d126191f8db1de843",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:10.511Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.16.jpeg",
+      "bytes": 68305,
+      "sha256": "a6a2458434fd9572a000165dbed20a369e1655b811d8a66cb1d9367035a93203",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:14.309Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.21.jpeg",
+      "bytes": 249063,
+      "sha256": "29d5347668ce3cc28af44c0098bd7116421c02d697895009e205b647297e30eb",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:15.567Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.23.jpeg",
+      "bytes": 169319,
+      "sha256": "10ddb195a294eb003a158b009c88979db4ccd7c35f861a4640f34f6b2c451a93",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:23.943Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.30.jpeg",
+      "bytes": 162813,
+      "sha256": "b9d6abecb2ea97df2106fa76284944df397aee0c6a7ebf2c080b3a8a8b6711e3",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:25.041Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.34.jpeg",
+      "bytes": 195284,
+      "sha256": "613aca3b614daf1ccc8e4864fb6573fab919c50a79832aa4fd4d6dbce935677d",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:33.992Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.43.jpeg",
+      "bytes": 141053,
+      "sha256": "b256f4986114b99f060d24e02eda2a168971dfdf4160331801bdb698aa972d47",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:38.666Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.48.jpeg",
+      "bytes": 113263,
+      "sha256": "ad82ebea9ce1d93833dfc5260650b61c51be48a1c7337086c4071cfbe76e49f0",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:45.754Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.51.jpeg",
+      "bytes": 155762,
+      "sha256": "23775fe44887a06a7af088763c4df6d24cd9f7aa1c9eb4fe729463fdf0524164",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:46.395Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.54.jpeg",
+      "bytes": 227183,
+      "sha256": "5ef0babd3fd38f598cbb3f72647149235d64358cbe0370222622ddb1e164d89b",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:52.805Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.56.jpeg",
+      "bytes": 183484,
+      "sha256": "106c308ddf4bb41feee7a7a42b357ca5ad85b07878a365190d9369db3bb24823",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:55.057Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.09.58.jpeg",
+      "bytes": 89908,
+      "sha256": "4345d54368d375fd072441db9908a9109a4268dc639e8efc1300dbb89f9d7c4e",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:55.438Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.01.jpeg",
+      "bytes": 192303,
+      "sha256": "e9e785f8423a6617211840ea09cde684c8c632ebf51be4d84cfce17bf0a72868",
+      "kind": "image",
+      "modified": "2026-08-07T05:09:57.235Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.06.jpeg",
+      "bytes": 152508,
+      "sha256": "565e356208d03eda0d30b287bb1814a686a8353553b2bedeb9b3d48bba5e1218",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:05.068Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.10.jpeg",
+      "bytes": 136567,
+      "sha256": "46c18b94eb0c84d5c400ed5ef35222b150a1abc13a975c7754d2b70157ce26df",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:05.436Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.17.jpeg",
+      "bytes": 156611,
+      "sha256": "528d092ed62f6bb04163166d35e93e1f171bd75399aa666fdd5a90a4f7f813d1",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:15.705Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.18.jpeg",
+      "bytes": 453765,
+      "sha256": "d8055fd6751bbb258d1d71a909ca49b0325f6561e77b8d831ca6593341f77181",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:16.478Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.20.jpeg",
+      "bytes": 383882,
+      "sha256": "d358aec18fea908b08bcfdacca7560314da467de6fe332e30c3533de460c14be",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:18.216Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.22.jpeg",
+      "bytes": 296908,
+      "sha256": "dbd4ca131d24e9a6590be3d1f4b4dd88a0633e996f08649a6f7995370c74eef0",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:19.861Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.25.jpeg",
+      "bytes": 162340,
+      "sha256": "2f35b4ff94bdb6373cf7b88a9c490600985ab6965ddd7451ea1806fbc8c6bbad",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:25.311Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.28.jpeg",
+      "bytes": 109783,
+      "sha256": "72857d488a1d9acc2be87c5a534c6259b1c0253a18c3a12c01435102249ee08c",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:26.588Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.30.jpeg",
+      "bytes": 182591,
+      "sha256": "8756500348d3b4174ee597caf0b464899b641b017f59bad9e10a76a2f429b1b4",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:26.762Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.10.33.jpeg",
+      "bytes": 146395,
+      "sha256": "2cef20c692305f8e8fa634d183ac30e56738cb00bd291d79c745644d4f6bbf71",
+      "kind": "image",
+      "modified": "2026-08-07T05:10:27.054Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.12.05.jpeg",
+      "bytes": 222819,
+      "sha256": "3a4c37f9368054e92b0ecfe8ae6e2e74110baed21b3a6ebfe07727e8d0095a1e",
+      "kind": "image",
+      "modified": "2026-08-07T05:12:05.199Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.12.10.jpeg",
+      "bytes": 175021,
+      "sha256": "aa739641881b161d78738c4441dc063401e44e55a5609e0eb3bb3f42bea55cf5",
+      "kind": "image",
+      "modified": "2026-08-07T05:12:08.941Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.12.16.jpeg",
+      "bytes": 225910,
+      "sha256": "5681ad16e679808aa36248e3bb96a57577365df77ea7062060ac664efc116c4b",
+      "kind": "image",
+      "modified": "2026-08-07T05:12:15.413Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.12.34.jpeg",
+      "bytes": 225779,
+      "sha256": "0dba9548fa13f26133f22341c450888dc163f4b72e786bf4320aae2a7251f5a5",
+      "kind": "image",
+      "modified": "2026-08-07T05:12:29.483Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Photos/photo_2026-08-07 08.12.39.jpeg",
+      "bytes": 199602,
+      "sha256": "62b8f760e13cc082eda80c8dabd4d6810b5c8389b16cee59961e1fa7b16d1e14",
+      "kind": "image",
+      "modified": "2026-08-07T05:12:38.981Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/.DS_Store",
+      "bytes": 14340,
+      "sha256": "55332bb93f1751430f3f1b9aa498a2f25a5a7bac5ebd3cba643b9e116329bb53",
+      "kind": "other",
+      "modified": "2020-08-06T10:40:26.000Z",
+      "attribution_hint": null,
+      "is_os_noise": true,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/@DoctorWho00 - Marc Tavares.jpeg",
+      "bytes": 1595346,
+      "sha256": "248c635e62efbe1762a39fa2ada62527a16a278add707f23cb5ae918c99efb66",
+      "kind": "image",
+      "modified": "2020-08-03T04:58:36.000Z",
+      "attribution_hint": "Marc Tavares",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/@DoctorWho00- Marc Tavares.mp4",
+      "bytes": 118483,
+      "sha256": "fdf27dc25f8560506d2a4768739a575fb0ea3ab979666118ce262457da75d757",
+      "kind": "video",
+      "modified": "2020-08-03T04:56:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/10BFC685-8027-4D96-95DB-341476D039B9 - Tristin Hightower.jpeg",
+      "bytes": 137315,
+      "sha256": "337a366027a39038a80ad77bba9fb69d8666ffa165cded8ba296c15182b43493",
+      "kind": "image",
+      "modified": "2020-08-06T00:01:20.000Z",
+      "attribution_hint": "Tristin Hightower",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/2020-07-31-frame-229.png",
+      "bytes": 5524442,
+      "sha256": "2fc142d5451816db0767b11aa00ea3864c1847a733a7c1c0ff0ce487e78a3cbd",
+      "kind": "image",
+      "modified": "2020-07-31T18:20:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/2020-07-31-frame-503.png",
+      "bytes": 4887650,
+      "sha256": "58f4a5cebe6957803b3f2e4b5b8697172b0bd11ada2fc91c70bbcf16f70272f3",
+      "kind": "image",
+      "modified": "2020-07-31T21:33:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/2020-07-31-frame-507.png",
+      "bytes": 4884369,
+      "sha256": "7beb91551b080d980db9b50d55b79ebbf6cb81cbd41198d331fe4a62e566b723",
+      "kind": "image",
+      "modified": "2020-07-31T21:36:36.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/2020-07-31-frame-508.png",
+      "bytes": 5655430,
+      "sha256": "ff2fd325846ff66409d2b63d72903ca725cccc13caec600be528e2a052664d18",
+      "kind": "image",
+      "modified": "2020-07-31T21:37:16.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/2020-07-31-frame-509.png",
+      "bytes": 4882245,
+      "sha256": "f0bf608c47ea093f3370705eefaf538b9a776fbf0979ee8bd23350e1e6e6c9d6",
+      "kind": "image",
+      "modified": "2020-07-31T21:37:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/2020-08-01-frame-579.png",
+      "bytes": 4736554,
+      "sha256": "37fbc5797989181d82e77be8986f445644574d94c6c44233670f0059d29cf7e2",
+      "kind": "image",
+      "modified": "2020-08-01T06:27:36.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/20200731_194454 - Syrinx RHD.jpg",
+      "bytes": 580339,
+      "sha256": "79f371ae8afc72653656c5fe110adcee5336fd13571d9c9ac6938e5376abba90",
+      "kind": "image",
+      "modified": "2020-08-06T00:01:28.000Z",
+      "attribution_hint": "Syrinx RHD",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/20200731_195252 - Adam Heath.jpg",
+      "bytes": 4972835,
+      "sha256": "98b651d276d8787fe95a206d1db8026e4cbbec882a6eed1326ad01852f64b228",
+      "kind": "image",
+      "modified": "2020-08-03T04:39:59.000Z",
+      "attribution_hint": "Adam Heath",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/441D234B-10BB-4BF3-9347-EB00BA8BABE8 - Gregor Erbach.png",
+      "bytes": 2100357,
+      "sha256": "e4217c785602fa455595336600203fea9807442030c58f5f5aec48a1336478d1",
+      "kind": "image",
+      "modified": "2020-08-06T00:03:42.000Z",
+      "attribution_hint": "Gregor Erbach",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/67A348DF-5604-4F93-82AA-DC97A95A7E5E - Kiwiwoe Knz.png",
+      "bytes": 8666616,
+      "sha256": "f4685a52ca5bbf977a1d44a79633bc8c53286fc708bae415c4418ecd1a9a722b",
+      "kind": "image",
+      "modified": "2020-08-06T00:03:30.000Z",
+      "attribution_hint": "Kiwiwoe Knz",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/938A17E5-71F1-4428-A439-E648756AED7C - Olalla Infantes.png",
+      "bytes": 1787932,
+      "sha256": "e3484320e5baae05f9804fa7b1b0b8afa8be1a606cf698f6d469774e1d68dfce",
+      "kind": "image",
+      "modified": "2020-08-05T23:51:19.000Z",
+      "attribution_hint": "Olalla Infantes",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/9DD8F52E-5567-449B-A6F9-3D2EDB2B277D - Sheng Du.png",
+      "bytes": 707293,
+      "sha256": "79a54a3994b56d954f0abb2d7dcba0fa9d46b2798f93c6e69ae100a6adcce35f",
+      "kind": "image",
+      "modified": "2020-08-06T00:00:29.000Z",
+      "attribution_hint": "Sheng Du",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/AItJ- Abraham Tapia Pacheco.png",
+      "bytes": 553240,
+      "sha256": "9c6c2f9b633cc4eaf283f76974f98395dd6516d386b729e31aef4d3aceea00a3",
+      "kind": "image",
+      "modified": "2020-08-03T04:42:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/FF3424A4-596F-40C0-8D19-022793D38BB6 - Daniele C (1).jpeg",
+      "bytes": 2563786,
+      "sha256": "0921a16dc70e5ed6ee92e27156cdf17266d958a5fecb56f95742b875f24bf59e",
+      "kind": "image",
+      "modified": "2020-08-05T23:53:55.000Z",
+      "attribution_hint": "Daniele C",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/FF3424A4-596F-40C0-8D19-022793D38BB6 - Daniele C.jpeg",
+      "bytes": 2563786,
+      "sha256": "0921a16dc70e5ed6ee92e27156cdf17266d958a5fecb56f95742b875f24bf59e",
+      "kind": "image",
+      "modified": "2020-08-05T22:34:03.000Z",
+      "attribution_hint": "Daniele C",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/image_2020-07-31_20-56-47 - E. Yuji.png",
+      "bytes": 1730997,
+      "sha256": "527daf2dfe8ef0acb5646673a8c25b599773a9f16169eb4fb96d6dd6dc7c4075",
+      "kind": "image",
+      "modified": "2020-08-03T04:54:26.000Z",
+      "attribution_hint": "E. Yuji",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_20200731_195226 - Jeyakirushna Thavasuprabhatham.jpg",
+      "bytes": 1285851,
+      "sha256": "2bfd446d8607b40137fe9d9646dc6df4dbb9d73f8987ea62f760ff248ff7eacd",
+      "kind": "image",
+      "modified": "2020-08-05T23:57:35.000Z",
+      "attribution_hint": "Jeyakirushna Thavasuprabhatham",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_6863.JPG",
+      "bytes": 170715,
+      "sha256": "23d77560bf421cab41559c35fd058eb52e98b34e3abade4b3123ca90a792c42c",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_6867.JPG",
+      "bytes": 427699,
+      "sha256": "e62d3d0b7c6abf1f22cc0360d92451187b7732df8aa75056e776cb92e6ee7b37",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_6911.HEIC.jpg",
+      "bytes": 3108632,
+      "sha256": "c70c96ef04c340c387f455ce2de1d36c03f775f492512eb506262616d7abce39",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:46.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_6962.JPG",
+      "bytes": 431710,
+      "sha256": "65b6cc0866abbbc5a5492cd08fcde940428ab459458a5e4e24d6b5ba65c98931",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:46.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_6964.HEIC.jpg",
+      "bytes": 1691385,
+      "sha256": "b4708db4659694edee7e67b3f02c1ad70dc6996bddf1c111135fc5e693a52612",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_6976.HEIC.jpg",
+      "bytes": 1952324,
+      "sha256": "14c4cb8d1c1b88881d2a86e4d8eb2ab59f958e0a50b2a1f7924b6aaaf6439529",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7002.JPG",
+      "bytes": 1892037,
+      "sha256": "a7d2ae4c3dcc7e7405542ff9252a0c6631cdcd07b670defab35afafb53dac06d",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7003.JPG",
+      "bytes": 349367,
+      "sha256": "fd0f8094933afb33e26c1e49bd9b528831f87b5e861dbfaa6611f952a4c5d703",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7004.HEIC.jpg",
+      "bytes": 1323507,
+      "sha256": "edd897b0855a4cecfae9acb0e61e183ca498f0cea038b1f7cae5c20375a8e8c3",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7006.HEIC.jpg",
+      "bytes": 1808856,
+      "sha256": "9915bb1c16b4844649a498d99becb3f8854077b44182de96f9ef117900fc36c1",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:49.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7008.HEIC.jpg",
+      "bytes": 1296249,
+      "sha256": "de29fa86b5dc75e92d7b9d5c73bac542b1d5f607dddc8488aa00113753185ac9",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7009.JPG",
+      "bytes": 405514,
+      "sha256": "44a1d4f601b9ff41cde7d39f68cd823fcdfa8dc9871b8d61104048478838261d",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7012.HEIC.jpg",
+      "bytes": 2390561,
+      "sha256": "e77dbe47fa5f50fbee2b7d605a0e5ad41c88bbd023bddb5fa35d85b1adef5a7c",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:51.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7013.HEIC.jpg",
+      "bytes": 2335080,
+      "sha256": "6c4d6ee711b7382da57bc70fc9284134818c0cdc0a288faffc546af5bb2fbc04",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7014.HEIC.jpg",
+      "bytes": 2479962,
+      "sha256": "cbfb40d38dafc27a0b0d375e8cfff151fe66b0f13601b49e783f3d20c77c89fe",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7015.HEIC.jpg",
+      "bytes": 280991,
+      "sha256": "40a33fc489b051c4f7975d603a25376cea6596684c487ce4eee45393edaae6f1",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7016.HEIC.jpg",
+      "bytes": 1022938,
+      "sha256": "432b30942366a79f9db9f9a60108dca660d40b0ba640e5bfbcba59c25928d89b",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7017.HEIC.jpg",
+      "bytes": 2383495,
+      "sha256": "3a38d8625254260238b4e56fa3f18ef385306a87e838a9a4dec4602172d2b5cc",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7018.HEIC.jpg",
+      "bytes": 2054483,
+      "sha256": "65c734df5ff4d2e91c716254928429ad3ba979a485174ebb3a38dca43c56f837",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7019.HEIC.jpg",
+      "bytes": 2208668,
+      "sha256": "beef28c01769d3d249a88a36f1792cdd1e24c8b36dbb79776ec9b5058ad0c2ef",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7020.HEIC.jpg",
+      "bytes": 2272133,
+      "sha256": "3a1200adfa448e68c3bafa7573a35e89885888f5a196abe2082444d83acce05e",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7021.HEIC.jpg",
+      "bytes": 2171666,
+      "sha256": "4cecb6f0ada03afb34c98c86f8b08cbfb01fbc2e0dc5358f388bf7f7f038cc38",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:58.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7026.HEIC.jpg",
+      "bytes": 2004011,
+      "sha256": "d44136600bff6500c4bf295141d2c6ac2f5aa050a0920473721dcc211a6ce305",
+      "kind": "image",
+      "modified": "2020-08-06T10:39:59.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7028.HEIC.jpg",
+      "bytes": 1981818,
+      "sha256": "617f496cca2f785cedc204b56fcc0cc9b8fcbb5666198f7dee5543a76c07b1de",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:00.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7029.JPG",
+      "bytes": 309139,
+      "sha256": "e61cbfc15d03e2ed08bdade34e39ddcbce67518ebdfcc69b086cfd3e6296c92d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:00.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7030.JPG",
+      "bytes": 405514,
+      "sha256": "44a1d4f601b9ff41cde7d39f68cd823fcdfa8dc9871b8d61104048478838261d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:00.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7031.JPG",
+      "bytes": 405514,
+      "sha256": "44a1d4f601b9ff41cde7d39f68cd823fcdfa8dc9871b8d61104048478838261d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:00.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7033.JPG",
+      "bytes": 288029,
+      "sha256": "ea5efac1bc312d0ba0ec4aa435d5486299543180c86196e156afc8536b776d51",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:00.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7034.JPG",
+      "bytes": 291814,
+      "sha256": "1cca3ca926a2f80fe82b42cc65096f86c8e5b15c58e739370dd4ae1980cb92b0",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:00.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7035.JPG",
+      "bytes": 288029,
+      "sha256": "ea5efac1bc312d0ba0ec4aa435d5486299543180c86196e156afc8536b776d51",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:00.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7059.HEIC.jpg",
+      "bytes": 1643117,
+      "sha256": "1152514243446ca105d9ed2a44bdc236b3fd5cfa62fe193641e276022880a52d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:01.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7060.HEIC.jpg",
+      "bytes": 1512727,
+      "sha256": "bea3ff7c7a2c29050bca6ae9111e3d37557732402f2610f61c3b2b3eb4c92afc",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:02.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7061.HEIC.jpg",
+      "bytes": 1349128,
+      "sha256": "551f87ba5431a043461ceda25418ace29054925249ca26d33d626b44230194bf",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:03.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7078.HEIC.jpg",
+      "bytes": 856549,
+      "sha256": "b19431514d338072fd67c66456f58ea2d7e6f44b4da2dc24bb0632a5cf753895",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:03.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7079.HEIC.jpg",
+      "bytes": 1715742,
+      "sha256": "fd829a6739972b88e5b639d8a93acc0301607dd33bb0010455b0a4b7925fe3b1",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:04.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7080.HEIC.jpg",
+      "bytes": 1893592,
+      "sha256": "c597120c8416aface32bde653e8969a66c55bf7b6523cd6e49a29337b54e91be",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:05.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7081.HEIC.jpg",
+      "bytes": 1943605,
+      "sha256": "b0c126c963e7eb0d49daf47d6183447b17dd875446bc2656176d24b59502000a",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:05.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7082.HEIC.jpg",
+      "bytes": 2069716,
+      "sha256": "1feb176c918d4762228267956abf2778759263d916c2cab4e0f1719c4a0b3e95",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:06.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7083.HEIC.jpg",
+      "bytes": 2107989,
+      "sha256": "1a37cf030d9ccecfbf2091e50989e39c3d4dfaeaa0b0264effff26520389e96e",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:07.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7084.HEIC.jpg",
+      "bytes": 2149754,
+      "sha256": "109b90c73fce6e7af77d210be482cec1315544d84d8d6a6091473409a0dcfb61",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:08.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7085.HEIC.jpg",
+      "bytes": 2118623,
+      "sha256": "dd96d7e32061000703fa798c122e05ebdab72a59afb2f5111296f3aa4cdc2ca3",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:09.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7086.HEIC.jpg",
+      "bytes": 2140326,
+      "sha256": "7c2b5c60a25dae2dc6e3690d04ec35a0fda3527c7d48745c28b0429885dcdc01",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:10.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7087.HEIC.jpg",
+      "bytes": 2408269,
+      "sha256": "11728d3a3feeab60ef791a7f430fe1886ce09f1030e12523d6f6a67c32a6e03e",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:11.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7090.HEIC.jpg",
+      "bytes": 2536323,
+      "sha256": "01e0fdb830f62978c3cef755c4d23f883ffd8afb9a94a0f9f4f0844e179b8126",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:12.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7091.HEIC.jpg",
+      "bytes": 2257095,
+      "sha256": "9435190a562641d0a1cf2c3aa198107f71d29456e1c03eb345d5899154cb1109",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:13.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7094.HEIC.jpg",
+      "bytes": 2603210,
+      "sha256": "5bb82b89c1af4c1f2c74aa9a6d77a245d3e02d0dc8674ea3ae210c66b4a75a0f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:14.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7096.HEIC.jpg",
+      "bytes": 2293631,
+      "sha256": "55685afa735870c0ae99bbb0e092591265cbe30c6b2365f81779c3e29dd8eb80",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:15.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7097.HEIC.jpg",
+      "bytes": 2173758,
+      "sha256": "da8f900d0213502b13f388b8740b798c762aa2d3d24768559e30c58c339219a0",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:16.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7098.HEIC.jpg",
+      "bytes": 2002373,
+      "sha256": "2467f3eb701d853329814704186c106ae3990e4f989cd2a13af2cc763c0e47af",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:17.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7099.HEIC.jpg",
+      "bytes": 2017144,
+      "sha256": "5d7d5effed021ff583742ef6c2297435d27018cdef56b2c8828631bca79ac0e2",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:17.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7100.HEIC.jpg",
+      "bytes": 2537088,
+      "sha256": "db56601ac8469216aa3dba8d5e0e185ad396dfd9bd07fb2ae8c6540860e02a88",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:18.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7101.HEIC.jpg",
+      "bytes": 2415575,
+      "sha256": "4364aef48b5280087d4db109d6fc00634a5cefb437b6e89b1eb538cf66bd8500",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:19.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7102.HEIC.jpg",
+      "bytes": 2785385,
+      "sha256": "cb6176570e9c05f1ca0ea02028eb9039aaecde819697be757c732efd895fb9d5",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:20.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7103.HEIC.jpg",
+      "bytes": 3183913,
+      "sha256": "affb9d0281e0803a7bad935c0ec20b367da474f5655024ad353bf475eecc9100",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:21.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7104.HEIC.jpg",
+      "bytes": 3324225,
+      "sha256": "485859397544a2f9b0a6cc7ec41ffd43fd53237e34ed8d53c460567511663b77",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:22.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7105.HEIC.jpg",
+      "bytes": 2091028,
+      "sha256": "4f9438ae33be796cceb7ec4449327378c68a723a5abc966b5903153603cf0e8b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:23.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7106.HEIC.jpg",
+      "bytes": 2450210,
+      "sha256": "5f646445bef9cedfc473582f74295948663163a9f1eaed6049a23f7ed1873be2",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:24.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7107.HEIC.jpg",
+      "bytes": 2449521,
+      "sha256": "34a1ce9b777fbdbf3ca36db8779baaca00ed67bc6bef1e85e570112fabaa0278",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:25.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7108.HEIC.jpg",
+      "bytes": 2022580,
+      "sha256": "190e7a361ca294b81ad4a7dddbef7000c042545be2f422ccd52c5ce93348875f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:26.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7109.HEIC.jpg",
+      "bytes": 6084804,
+      "sha256": "f1f18503976cd7eb14ff019d87ce6eaff68dedea9fb0b428d3b3afc2da6319e7",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:28.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7110.HEIC.jpg",
+      "bytes": 2458212,
+      "sha256": "6b74f1054ac94d219367abeacf8f707b6763d8e4fdbec929e9a2c05edf425464",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:28.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7111.HEIC.jpg",
+      "bytes": 2328498,
+      "sha256": "957593e42dc39fd31fcd2a4638ab0e68c67666e6d69e1a90cd1c45baa43c4c13",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:29.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7113.HEIC.jpg",
+      "bytes": 1671967,
+      "sha256": "a3585139bc0b94add89dfd9a7b977d9d722b5a7ff479801dcce944b310890c56",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:30.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7114.HEIC.jpg",
+      "bytes": 1539561,
+      "sha256": "7ea6a047646682f78c40ba8fc870a27a5ce83f84afc1fb280ab25708f1df9e9a",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:31.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7115.HEIC.jpg",
+      "bytes": 2233863,
+      "sha256": "b0c43f0ac120de601d9ef168e7cc8bdf19d881e449e531796a601d4dd0db68a5",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:32.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7116.HEIC.jpg",
+      "bytes": 1412514,
+      "sha256": "622a6a844c4272a873c2820b77de63eaa9b483a8b5346390dcf5951148d79acf",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:32.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7117.HEIC.jpg",
+      "bytes": 1791939,
+      "sha256": "482feec04fb6e5bf586db82d75b11a55645b8a6c652158930c678e1881fc4dab",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:33.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7118.HEIC.jpg",
+      "bytes": 1826374,
+      "sha256": "9a8b074c4f124ae00bb1f0bfe79c27ef8d482e841b440bb05732e39491ee8b89",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:34.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7120.HEIC.jpg",
+      "bytes": 2195274,
+      "sha256": "7a1b434b123e16638fd2d99f8236d7b9d8d63e29729ffd34e270699b67395483",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:35.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7121.HEIC.jpg",
+      "bytes": 2293906,
+      "sha256": "ca501b840a1d689d48303719d362ead7dfbb6a9f8a13f37ed252beda6544738a",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:36.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7122.HEIC.jpg",
+      "bytes": 2041264,
+      "sha256": "d8c2c4cf995a015458c50cbd3f3e8a5efc733048d3e6834028b338a0977fd313",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:36.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7123.HEIC.jpg",
+      "bytes": 782744,
+      "sha256": "4f197da62fb7c67c58ba286086cc226f1cb22bbb53448fa88cdd2ff04388646f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:37.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7125.JPG",
+      "bytes": 173298,
+      "sha256": "d451e559ee8a8d003f888aa5b5481abad50b8d5c910589e554136192c7e36e28",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:37.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7126.JPG",
+      "bytes": 104847,
+      "sha256": "f4df39ed1340ae2f51eb4907fc452cdecada543f738f45e1372c6ec2ff3753b1",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:37.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7128.JPG",
+      "bytes": 205708,
+      "sha256": "6fa835f4209266dd9dfeea60aeea004cd49a808ab799d68fd8a768b38e4bd122",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:37.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7129.JPG",
+      "bytes": 137901,
+      "sha256": "dc98d9485208eb522c2881ec6e1918f78163d56cb89c2c3066d60e5bd6531d51",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:37.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7132.JPG",
+      "bytes": 314434,
+      "sha256": "df060875fe21c6cdec5003e7dc79873f588ddac40d51675b6a4116b8259cd2a4",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7133.JPG",
+      "bytes": 431710,
+      "sha256": "65b6cc0866abbbc5a5492cd08fcde940428ab459458a5e4e24d6b5ba65c98931",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7134.JPG",
+      "bytes": 529059,
+      "sha256": "9229ad942e06a372732e87b107ff5390d4b910178309a2c8d1a67a2787ec9431",
+      "kind": "image",
+      "modified": "2020-08-06T13:43:03.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7135.JPG",
+      "bytes": 378648,
+      "sha256": "30d243dc92b66ded3ee30df9f0d52fffb262769436eb65d8d5dbe0f5821f6b26",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7136.JPG",
+      "bytes": 150733,
+      "sha256": "88fd7a939571d31fc4148e2a734b6c8016febc1913644b28ff5a740d68eabded",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7137.JPG",
+      "bytes": 154774,
+      "sha256": "2ef1ac886976c6cd2c91ca6497e6bb672245f3c5158c012ab99017ada75d6cd7",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7139.JPG",
+      "bytes": 121688,
+      "sha256": "9980012c3b007785b87f714d1b93c0c721a6a6938f2db203d7960fa2a05b7962",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7140.JPG",
+      "bytes": 237958,
+      "sha256": "9062f7e7e039e731372b1ab98608860546c743932df173a1ef73b8f1d520630a",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7141.JPG",
+      "bytes": 194016,
+      "sha256": "81c1d553a55d16f884d79a3d013f5bd38b36e4178ee000549d23aa202534c242",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7142.JPG",
+      "bytes": 202838,
+      "sha256": "04fe9f2e882409072034bc9a7e5459b68f80e1b894868ff520e9dab72d5323c4",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:39.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7143.JPG",
+      "bytes": 175959,
+      "sha256": "738b61f895d09700d77ee4be2a03ee590bac31f081e9923dd20fdeb4a23bf71b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:39.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7144.JPG",
+      "bytes": 138988,
+      "sha256": "48ed5806f28ef403aebe9b15e08d58301bab9535f5a77d9fdd53a256be20d856",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:39.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7146.JPG",
+      "bytes": 149350,
+      "sha256": "67741930ea0dc404c6d0d590d3d7a71a025e12e435f2a3b23c51bc765591b721",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:39.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7147.JPG",
+      "bytes": 227569,
+      "sha256": "78ead60a09b55d1996012ff88ca13b5770cb8fbe0d11dbd49cb4d455320a1bb8",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:39.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7148.JPG",
+      "bytes": 199540,
+      "sha256": "cdd8a2529e35867f8f0e8de5b48de3493c0940b8504845fea313220ab53d9c80",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:39.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7150.JPG",
+      "bytes": 192461,
+      "sha256": "2281a18e5ab93f62cdbed49c407f9b6e078fad8bbaab8196acc5bca83238941d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:39.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7151.JPG",
+      "bytes": 155792,
+      "sha256": "61398811bacd8a51e7373a018f5ab6ee895e75b3c78040722d21fb65e60cef4d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:39.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7153.JPG",
+      "bytes": 271660,
+      "sha256": "2d341237be0d8c1bc062dc2eb723b86bdda50ce7cced210c5386f232e2b9f840",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:40.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7154.JPG",
+      "bytes": 177254,
+      "sha256": "77f8a0981f88f5920be4a7d00fc4d29bf21c4615be7e89f08d81ce8012e697e4",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:40.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7155.JPG",
+      "bytes": 279436,
+      "sha256": "c8487fbf1845c52496eb94f1ca9ac4043a7b05bef53742da49a6774e9040ca9a",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:40.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7156.JPG",
+      "bytes": 212994,
+      "sha256": "cf4397c783d8d95d54c5fe0a1c8719311de50f4252f83523f5d5f2b3c8576525",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:40.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7158.JPG",
+      "bytes": 146852,
+      "sha256": "423b284fab213cf9a480c764bb2c74dc4abf688b039480d844040a65c36fd437",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:40.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7159.JPG",
+      "bytes": 133645,
+      "sha256": "c7159366a4c6c61bf82ba4c860a962318e8d5907acb48a8a9148279c6cd14268",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:40.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7160.JPG",
+      "bytes": 183216,
+      "sha256": "8a8b49c1b1e5d570205a3b90617a927f1260a3e9d4066b214b4f55b800e14ac7",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:40.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7163.JPG",
+      "bytes": 143598,
+      "sha256": "80fa87c7da5c1b4e6288af7982b23c5ed404f9c57c95107fc76b70fb96dfab5f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:40.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7164.JPG",
+      "bytes": 99777,
+      "sha256": "32424ce89ec4c2d2654e094166886d1b9e794509c9534188b16ed4f7c11b7066",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:41.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7165.JPG",
+      "bytes": 346865,
+      "sha256": "27278e6450b6527d3864a195d9e96305b7190efd5b8677462d495c394bbf8517",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:41.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7167.JPG",
+      "bytes": 164112,
+      "sha256": "813077d896c7edbb77ae173f057177b65416732d5e2ab29e095369e9d030386c",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:41.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7168.JPG",
+      "bytes": 173351,
+      "sha256": "ecdf5e8b997292a5e596523caf6d5966e89a8893bac2f3ee437d3a2b38428d18",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:41.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7169.JPG",
+      "bytes": 175190,
+      "sha256": "2f4e61d7086dba92df8836fe10dae956a98b66fab3e96a931c01225d01785360",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:41.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7170.JPG",
+      "bytes": 266649,
+      "sha256": "f2cd9774f63ba6eb6b33720a809c0028e4535cf2a23e7638b10a16f48422e459",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:41.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7171.JPG",
+      "bytes": 205003,
+      "sha256": "a73bd458d9aaa8169ca3794a3147aecb6000213b8b9a3c04dff724f84c6ef77f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:41.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7172.JPG",
+      "bytes": 227748,
+      "sha256": "25ee8403a94f2b5061483714d0c040bd8f95f0ebeab5bf3dd719a0616e6f75a4",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:41.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7173.JPG",
+      "bytes": 120992,
+      "sha256": "7562346d6d14a011573e64aae89dcf582993d855ee1344e8ee4f09c6cded2d43",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:41.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7174.JPG",
+      "bytes": 110671,
+      "sha256": "c1fc45e5055ccb323e9189faf1606297939161b9fc2d413d17bb9b3a893c6d5d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:42.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7175.JPG",
+      "bytes": 109178,
+      "sha256": "d5a9d472586da30dcf2623148f22bb3f6bd19ba345d8b061359ab064a46c8670",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:42.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7176.JPG",
+      "bytes": 168687,
+      "sha256": "88f8ffc881982fec08222d604ccf8b5ca70ded6eb323363d77969858f2639602",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:42.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7177.JPG",
+      "bytes": 209600,
+      "sha256": "8e4dd31361efc72a5089f15102eb3747c17e1867bb3f432574cb9d1e4bd06c80",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:42.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7178.JPG",
+      "bytes": 90833,
+      "sha256": "e4e9e21957b71490be4148f0c761437ff4deb0fd85a14409fea0d50ad50f8a26",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:42.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7179.JPG",
+      "bytes": 138739,
+      "sha256": "d9d2558f07a58606fc79c102f792e344fa1b938aa507b713671770ab490e90b5",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:42.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7180.JPG",
+      "bytes": 101937,
+      "sha256": "d758a1c55c3426819401af9954e7f7e41e673461d35715f329f1b1626a19b99d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:42.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7181.JPG",
+      "bytes": 178434,
+      "sha256": "8733ea92bf68f0481a7bba853dd0732f68c79c10e7d4aab4c2cbff2984758c31",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:43.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7182.JPG",
+      "bytes": 177325,
+      "sha256": "8009825e938894b9791ea8df10e6633661b929a6e5b2caa4b46ddb5864f4298c",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:43.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7183.JPG",
+      "bytes": 152031,
+      "sha256": "b15d5751e8d20a476b0baaf4f53b180c16105a38b0b2f4deb30e9a08125c34b1",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:43.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7184.JPG",
+      "bytes": 171158,
+      "sha256": "249dbd7c42c594e9667bf7f4a192393151b16f8cff0638988453901462772318",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:43.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7185.JPG",
+      "bytes": 187177,
+      "sha256": "ce6abd4033e784e277fc13a538ce9184ccc8a76eb118f4b51c363f48d3da7bd7",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:43.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7186.JPG",
+      "bytes": 145430,
+      "sha256": "b5042d11a7871d644b6c6be7084e695f242147374efe81f579de162ab2645c09",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:43.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7187.JPG",
+      "bytes": 193882,
+      "sha256": "e774635e9340a61c8b9e859d2da186269626b2a82411c1916dcff36bae7182e1",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:43.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7188.JPG",
+      "bytes": 199611,
+      "sha256": "c037c2e98b9d51f87ce4a65801a32a28a54233c9abb1ef2008984617f8788231",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:43.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7189.JPG",
+      "bytes": 147311,
+      "sha256": "643e38cf1665fc208cd9d17885e035389dd866134e4b07fc7354faf6307b0de0",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7190.JPG",
+      "bytes": 137852,
+      "sha256": "d135a5018378f5eeda419009310b760c261dd443b4a868e709a5b42581de01c4",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7191.JPG",
+      "bytes": 228885,
+      "sha256": "a8fbd9f0d8edcb439d816dcd9a4d53d7942723742e5d24d283c497274e715f50",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7192.JPG",
+      "bytes": 256297,
+      "sha256": "5c71b2a395d41e3eda3c44bd73a1fc6b58ee35153a725f677a6bfacdb9f7f8df",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7193.JPG",
+      "bytes": 152341,
+      "sha256": "0bed77ccc3f79984d31d984472971deea6fd9dc59c8b6340529aa27556481a3f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7194.JPG",
+      "bytes": 146884,
+      "sha256": "bef2005f75e13cab8693dd99fafae7939de2a4574a1ed19c553fc0f86495121b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7195.JPG",
+      "bytes": 133333,
+      "sha256": "efa44f2cc9634d1a0c9ab0c69c509a63d71d9431ccf0a2b7cad465f06278a0ec",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7196.JPG",
+      "bytes": 150209,
+      "sha256": "505a54d463042fba58c74ce1f111c4b9c89dfaafad8b23ffe7c2a579fad42b15",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7197.JPG",
+      "bytes": 204068,
+      "sha256": "2aaa63c629e3b852de206913a1f502e2c5fccc16ac6ada53466ab7d26c460c15",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7198.JPG",
+      "bytes": 176031,
+      "sha256": "57a413de011d811865479e4b59eb21aad76f6ae22444b4251b5685e264de1e3b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7199.JPG",
+      "bytes": 242048,
+      "sha256": "0887a9566a5b5dfd68436916608e6fd954c4d72ed9b80e5b923d35d33a41f718",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7200.JPG",
+      "bytes": 172092,
+      "sha256": "70787521a8a2473d0d7e6d32c76e539bbd9108700ca4bbf45d9b7efe70ce1b17",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7201.JPG",
+      "bytes": 245923,
+      "sha256": "d4ab076b09816885e5ee455decd3d9c42c958d402d0a4d1af9843b69612f5dc9",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7202.JPG",
+      "bytes": 168278,
+      "sha256": "30c63a4db5076a63029f201eaae9f7925b81701f1ad0a9a3dfb392f1041b93c4",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7203.JPG",
+      "bytes": 176270,
+      "sha256": "93c0017918533b9f2cb90ce8f9a6f76722ecf0a39ca2293c5c1db6681409c23d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7205.JPG",
+      "bytes": 153229,
+      "sha256": "dc7bb8a3dfec06c549e67cefa032fb4cf45eff55ef584c828d8dd5151c09713c",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7206.JPG",
+      "bytes": 258225,
+      "sha256": "861b34f0e818240f93940d4dd00192f61d79c02a7190bbadde9db51497969c32",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:45.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7208.JPG",
+      "bytes": 222323,
+      "sha256": "7f07e526930c280b821620dc49f9294a7ce42af7cf3f1052ef7892320b8e3a1c",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:46.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7209.JPG",
+      "bytes": 189549,
+      "sha256": "fb72c1fcce40ada2fde6d3d020c7e97c146ae9633aabb7e68c4e2eae3172c3b0",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:46.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7210.JPG",
+      "bytes": 186010,
+      "sha256": "6624af3bd25d237ecb207f25bef4cd061a4e7b47a68b5a86bb0cc5e1462deec5",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:46.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7211.JPG",
+      "bytes": 387957,
+      "sha256": "b0a7a92de9a03dfcd16edc2b44c0d515b9ace5c7e3f6c42790b2db3825c14589",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:46.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7212.JPG",
+      "bytes": 154048,
+      "sha256": "87eab30182a9bd4827ae6ad83b01507775c610987573d1ba3416afccd29422f6",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:46.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7213.JPG",
+      "bytes": 296290,
+      "sha256": "5db18f801f6acabf0fcf5e6563688c3e68552a50600ead3786b0bb4968d76ab6",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:46.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7214.JPG",
+      "bytes": 217996,
+      "sha256": "5b95e05c2c2d60e08808d28cc0ed1cd334e10a77f7dbfa24ae91cf7009a01d67",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:46.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7215.JPG",
+      "bytes": 178387,
+      "sha256": "9180cd03b8dfe959b30e35202414ff8fda9ddc29902747853384fe9e2f9b5bb8",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7216.JPG",
+      "bytes": 126179,
+      "sha256": "5eea091c9d572f1329e11066bd77603baac50dd223e396d503ecfdcf7e939bc9",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7217.JPG",
+      "bytes": 146723,
+      "sha256": "048c8b7aaa1d9da9a68735366f659ad8a190bc8b730f3a06c5b3bf98f422c55b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7218.JPG",
+      "bytes": 151477,
+      "sha256": "b49fd278de033af6b29b71aea945da68277fce7c44129d36f012f4ecde11002c",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7219.JPG",
+      "bytes": 97474,
+      "sha256": "0dd3257bea29751f650c6533d2c1b57875f1823395fae4ebb895df0638135be9",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7221.JPG",
+      "bytes": 223680,
+      "sha256": "22f319db6cbe247f1506f1ce1ec2913a609498f2108932c380ffa867844574e4",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7222.JPG",
+      "bytes": 155479,
+      "sha256": "8b2cc9dabec36172f100c3d67cefa17ad46e55a2441875692e111d33b390e9de",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7223.JPG",
+      "bytes": 188380,
+      "sha256": "e6d1b5af66d1c184ec8a9e1f8d6939a93e8a0ce4857dcbf70744f3063c59199d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7224.JPG",
+      "bytes": 200476,
+      "sha256": "2a37b3d9d2e7f4fa7674b84d62480ed5155009ab338be09c967b814b351065b6",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7225.JPG",
+      "bytes": 188208,
+      "sha256": "c2eee13048292abcc426b3055fa6f3ffd48c6dc91db15ffd031a04cdbb27f2c8",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7226.JPG",
+      "bytes": 183655,
+      "sha256": "92dab6cca1eab71c09b0aa30551f334b64bcc465fc051a40700ed183172ffca0",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7227.JPG",
+      "bytes": 168937,
+      "sha256": "a1792a4890e0c98ae5b154cfd29975f860f81e968445a1952abe32a563ce515f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7228.JPG",
+      "bytes": 99042,
+      "sha256": "7f8b12ef118ca50b96698c4f511fad3341a355c518115fdc4fe30c6d50cf5895",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7229.JPG",
+      "bytes": 127902,
+      "sha256": "20b33ebb99f7add738be55ab2e84319c0ae7189e65f000d830365da0b86220d9",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7230.JPG",
+      "bytes": 85680,
+      "sha256": "706966a43b4470404ee899117cd268695d189eca3a7b1d2c00f1098d4f7e88d5",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7231.JPG",
+      "bytes": 72178,
+      "sha256": "76abf311418b16439f9459d2baeceb25391ce613e940eb41e33549aa07a979dc",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7232.JPG",
+      "bytes": 357366,
+      "sha256": "00b11149f718dbf44da48430970cd34d8adb7cfffb0fcb808ca0c075cb166d3b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7233.JPG",
+      "bytes": 161947,
+      "sha256": "578b3cecc0268acb1ed7a9998359d4660ad2b5f6b79188b6e71d6a93b7d7dcc3",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:49.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7234.JPG",
+      "bytes": 139869,
+      "sha256": "616f0a0565d9719dd22c7d62adbfea487726596d45189e6eed74f0fe1f7f6f72",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:49.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7235.JPG",
+      "bytes": 110833,
+      "sha256": "7253176a5ea3c3e52070587cbe442bbfe1fa4b889e21de46cfaec7c1b4b7fe09",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:49.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7236.JPG",
+      "bytes": 229876,
+      "sha256": "38a6fd393f8e9cd7b1a0a8cdd5f6063df819b22adbe001afe48c39c8bbb0328b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:49.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7237.JPG",
+      "bytes": 132001,
+      "sha256": "4ff3fbf76fe2ba49d5098c7d75fb67f1a66e99f64ff9e98e548d8137849936a9",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:49.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7238.JPG",
+      "bytes": 221196,
+      "sha256": "febadec678bb6781e7d5271d4a9b3deeb55de6a2282d650c73dee326b1961ef4",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:49.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7239.JPG",
+      "bytes": 364851,
+      "sha256": "7c7316f162abbc87c33c758ca15b3597b322073afea99122d53088afbb5d462e",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:49.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7240.JPG",
+      "bytes": 193451,
+      "sha256": "4d65402fa6fcf56a2c9e67f7d01e4ebf4c4d42e6fa525eaf3bddac123b05ecd2",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:49.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7241.JPG",
+      "bytes": 98569,
+      "sha256": "0603030652c2c8b4905fd069968313170332618b7edf254c194a4b3476f057b8",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7242.JPG",
+      "bytes": 291814,
+      "sha256": "1cca3ca926a2f80fe82b42cc65096f86c8e5b15c58e739370dd4ae1980cb92b0",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7243.JPG",
+      "bytes": 131327,
+      "sha256": "37d465b6ee91505373747b8e1fb40beb5baf467ea44e7012785897be793bd7f0",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7244.JPG",
+      "bytes": 166794,
+      "sha256": "1816bc5f96cd41040f963f8f2d13aff57722577c6be7a16f87f68f4ed5f1c61b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7245.JPG",
+      "bytes": 286660,
+      "sha256": "a76ff29ece99151beba1ba7990212f41ae227e12e16c65c8d89db8a28e7e897d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7246.JPG",
+      "bytes": 288029,
+      "sha256": "ea5efac1bc312d0ba0ec4aa435d5486299543180c86196e156afc8536b776d51",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7247.JPG",
+      "bytes": 301218,
+      "sha256": "83ab86eca5354d3da18e255c2456f42e739f1867303d0696f2ba898922995fbf",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7248.JPG",
+      "bytes": 215589,
+      "sha256": "b908f28d422d36e157aaf5b2f44344873b3cd652d3e4da6ae113c19e6d6d7315",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7249.JPG",
+      "bytes": 287730,
+      "sha256": "3a10f36a4273cfbcd7d9de8ef5dcc9bb0a30d99667e8154d00b0cd7a6b75fdde",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:50.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7250.JPG",
+      "bytes": 148007,
+      "sha256": "ca9493318028e21c4c37f9bcdef7b9e357a3a89c9bf59fe697f4ec50c24a41d2",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:51.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7251.JPG",
+      "bytes": 165680,
+      "sha256": "ab2ca662d7b672900df45fde3689374bd1f9afa972c5eadaccf6dd9becadd94f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:51.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7252.JPG",
+      "bytes": 117027,
+      "sha256": "b8734f4563599d60a9916e74a943686784028b3e284dfe5a6560b5b43812b0aa",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:51.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7253.JPG",
+      "bytes": 216830,
+      "sha256": "502d4ccda40641dffbe0bc9b1b9bbd0bc617c313170ccb3ff2337184c7d63ab6",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:51.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7254.JPG",
+      "bytes": 187165,
+      "sha256": "35f653bea061767f84fc3621e44d5e94167a60ec0fe4c12298850f7040e5ec08",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:51.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7255.JPG",
+      "bytes": 429830,
+      "sha256": "367b282af7293c958f8aaf6429bda0e6c4577ada49f72faaacedc68ed8050284",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:51.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7256.JPG",
+      "bytes": 184055,
+      "sha256": "9fadb0204ff4408ddae3687083554f2144e37d2f89a22a24e31566dcd5ca8c6a",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:51.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7257.JPG",
+      "bytes": 144571,
+      "sha256": "c2bde3fb7d0cb11bca53a0ab6c30df97cd6d575a846506ab535a68531178dc10",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:51.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7258.JPG",
+      "bytes": 232376,
+      "sha256": "d76fb5ef0718a0e4b43d75a120791ae7cb48c798ed0dd16ba4a7c7de9f0fa4b3",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7259.JPG",
+      "bytes": 207325,
+      "sha256": "a772879c0247d4ef16351b3422138e6db90d1f74162f4f60063f8a1abab7a24a",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7260.JPG",
+      "bytes": 149068,
+      "sha256": "af0a58fc4f540b6020dbd18cc2d209b1196334520035897fe035a443e10d2438",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7261.JPG",
+      "bytes": 174830,
+      "sha256": "16fde560c2cf1c1905e8c7cf983f3c2b144d8f8c30afcd98a880d9c7302fb01c",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7262.JPG",
+      "bytes": 143309,
+      "sha256": "fccbd743d0f8e6c83b8776b9e9e64ce6e7106bdc53b5bfaace950bf71dfce0e8",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7263.JPG",
+      "bytes": 152056,
+      "sha256": "da529dda05f0fb44e6f8f09202da1e9c044ffbac41970761debeb3b456eba68b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7264.JPG",
+      "bytes": 198633,
+      "sha256": "c47046aebc3e7e59a1bfbcace3cc1aaad37bf21a56ca11cd01b3700f5b12dfd9",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7265.JPG",
+      "bytes": 119439,
+      "sha256": "7e4eb0aa5e66a735f274f81fb523393107b787b2e527b2bdbf95a910400617a6",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:52.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7266.JPG",
+      "bytes": 318255,
+      "sha256": "900857f42b08ef67f2190af6cd4dacb2e1deb043c1db4e131a0d8786facef96f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7267.JPG",
+      "bytes": 236052,
+      "sha256": "3173c7f377159ff13fdfc8220c621d7efde2ba01ed4c02e30323952202cf6be5",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7268.JPG",
+      "bytes": 76500,
+      "sha256": "703292c42df0e0aa4c59189bb84811ebb8ee2ec627d770ef9aaac1a88dc548a1",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7269.JPG",
+      "bytes": 169543,
+      "sha256": "82aeda99baee206e0a0aaa48c28d011f83ffc1040aeaee90a0723b07db8ae530",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7270.JPG",
+      "bytes": 150714,
+      "sha256": "e4a3c8548f900fc77d49ee92eadb2b4359cc5df30d6194cfb1fc19963db90922",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7271.JPG",
+      "bytes": 156071,
+      "sha256": "2cac7201c20c3a184e2ed9eddb4ef1a6e582678d38f96173e231fbc2425ebe4b",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7272.JPG",
+      "bytes": 143309,
+      "sha256": "fccbd743d0f8e6c83b8776b9e9e64ce6e7106bdc53b5bfaace950bf71dfce0e8",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7273.JPG",
+      "bytes": 211227,
+      "sha256": "5da4043e7c557e710fbaa2d7e0ca788a96c7e5bc4931f1536382c289ca63b365",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7274.JPG",
+      "bytes": 117328,
+      "sha256": "02046091787046097eba235c2489b37ef15adfc53cf3ee8bfc8369010efd4f98",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:53.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7275.JPG",
+      "bytes": 140812,
+      "sha256": "89ee54cce234ec282825e1cfe14e952acf261e87971a1a77424c5d04ac08087d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7276.JPG",
+      "bytes": 214549,
+      "sha256": "68f3234c1774a4c439164c61b7e5639986b3564ebab75f551aecfde890924009",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7277.JPG",
+      "bytes": 209241,
+      "sha256": "f9602f834d1b000628eeb1016a59e548388122c75a9f33c28838ed7ae717ac9e",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7278.JPG",
+      "bytes": 221726,
+      "sha256": "f46516404783435e7dc783035d48c89440cc27df4e0e023bbeaf1056acedadd3",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7279.JPG",
+      "bytes": 229360,
+      "sha256": "5b52b1f4a3ba405128e1689196f08ecdad28784f8864b3d4862149688d580178",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7280.JPG",
+      "bytes": 273655,
+      "sha256": "4e01cfc7281610a385e2596b8699b7de39c027d2047a995bfae36331c42b43c9",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7281.JPG",
+      "bytes": 344625,
+      "sha256": "c51c5777da6a76aae9bcf85a241029dcec771118d6856de4ef720e098233bcef",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7282.JPG",
+      "bytes": 132134,
+      "sha256": "b992c24f968f559df19a70019731d668ed2a2864c51e377d98e3b08b31b861d4",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:54.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7283.JPG",
+      "bytes": 205363,
+      "sha256": "66ea548e5a4414b3e8cdb58fb03192786081cc1a459e297141e9b45101235a05",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7284.JPG",
+      "bytes": 82962,
+      "sha256": "0f9432272c8d3bb3d82dbe9f75a85b91d5ea0ef61c47d517fe9fa27a489cd313",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7285.JPG",
+      "bytes": 92054,
+      "sha256": "4737a61e72d19c76640c65ceb65b5498337e314117e623a304284d9698f40e80",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7286.JPG",
+      "bytes": 89096,
+      "sha256": "d6e2cdea8a615c87989f5a2d9cacfbbb22f534b715d054176b8a6137f18530f9",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7287.JPG",
+      "bytes": 114382,
+      "sha256": "243193d544dcfe1b1df50a206f4db64a10559a9155f20c7ad16b294c5fc5fef6",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7288.JPG",
+      "bytes": 264822,
+      "sha256": "c4c10d37e2b7abc711674cb249eed441625f6782c0f7316ff99114c9fd327c5f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7289.JPG",
+      "bytes": 255835,
+      "sha256": "575d75a99e75eb513bfb391c05b7fcf537b99ace703506eb83a1d146bc8f9b8e",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7290.JPG",
+      "bytes": 206662,
+      "sha256": "95d382f49be30f234a24990f362ed95c687c10c6959c2ee77f784738f66f4a55",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7291.JPG",
+      "bytes": 249131,
+      "sha256": "604414fcacc9c976bc8c2505e6ab60f23ce979317dc8deeb2e63fec98c1d46c3",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7292.JPG",
+      "bytes": 154310,
+      "sha256": "c3d1e62d1d6f025149968df7cf048435c2f481af8b8a2aba0d219bba0e2987bc",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7293.JPG",
+      "bytes": 293046,
+      "sha256": "e27e4c9466e8ef71a3d3f1966fce09258ae36df807187d2308be8a0500e432e1",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7294.JPG",
+      "bytes": 284238,
+      "sha256": "7e90f5775ba25ed32a301b44626221f00f38ec89ff2c458d93fe52c56d509d56",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7295.JPG",
+      "bytes": 258157,
+      "sha256": "15746b96a64c9dee252b66afff20d5069160de05be7039fe054d8d0b1ccdbf9f",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7296.JPG",
+      "bytes": 265997,
+      "sha256": "38072a8179b3e0e271696def9f8eb547148006f4aa225012104ca4e599bcad6d",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7297.JPG",
+      "bytes": 223105,
+      "sha256": "a4628f795fef9168c7f800815932169fe020763a6cfaf2403d6f160421551eed",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7298.JPG",
+      "bytes": 256348,
+      "sha256": "a45805ad6384792ffc946f53a4367e2c5e5519210f8fdfd36d6e04987558d949",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7299.JPG",
+      "bytes": 125451,
+      "sha256": "eb772520bf14610002dd0746e1201533169f996bdd96daab9e28720f35f969fb",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7300.JPG",
+      "bytes": 174623,
+      "sha256": "68b0af8fde474f1b5aad17cbfdf5e855a131046676be1abcd91af6d9aa22cbf1",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7301.JPG",
+      "bytes": 251046,
+      "sha256": "e1dab392a5ab1c5b50f7fdbdf25822fb059147f19ed46683f0cff64c7a8820d0",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7302.JPG",
+      "bytes": 126087,
+      "sha256": "2d123379df76f8a4f676c5ef74dd61416cf98596eeac0f6d17fe0a2f8a5dd01e",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7303.JPG",
+      "bytes": 96144,
+      "sha256": "3e6019f82008471dc789dc5550f86bdc4636b030149ea9a75221f8043b46d5e8",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7304.JPG",
+      "bytes": 189720,
+      "sha256": "fcb71f6ba1571f6dc2e2e02343748a933020c8fcf9d2745169efd06b2d280f33",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7305.JPG",
+      "bytes": 244091,
+      "sha256": "683059fbb9648af473d3576db85f5b5bfa1f450b8d76b23502a7b0fa149037c9",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7306.JPG",
+      "bytes": 240409,
+      "sha256": "2f615361465ce6aed7000d4d7176947da27e6b69307cc979477f8bcd89188d85",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/IMG_7307.JPG",
+      "bytes": 371319,
+      "sha256": "67bcca0fdaa03ea24df370e20d95da34d344617685bf0ed893f097a7de378809",
+      "kind": "image",
+      "modified": "2020-08-06T10:40:58.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/khq9wz - Veronica Fayos Carretero.jpg",
+      "bytes": 217679,
+      "sha256": "3cc55aa394a87748fc8d45658f018c5f326b0894f0831806736123bb868612c4",
+      "kind": "image",
+      "modified": "2020-08-05T23:57:38.000Z",
+      "attribution_hint": "Veronica Fayos Carretero",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screen Shot 2020-08-06 at 13.36.54.png",
+      "bytes": 8128806,
+      "sha256": "7c6e33bbbaecb1a95dc5c12ad2e0131f6699fe10df8a9b24fac8dc3ffb28a1ab",
+      "kind": "image",
+      "modified": "2020-08-06T10:36:55.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screen Shot 2020-08-06 at 13.37.33.png",
+      "bytes": 6550202,
+      "sha256": "433679f66e6538d8b97caf66c4512d215b981432b7d007164ee6686c1d0e6ecc",
+      "kind": "image",
+      "modified": "2020-08-06T10:37:34.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screen Shot 2020-08-06 at 13.38.14.png",
+      "bytes": 7355364,
+      "sha256": "547532eadd4e9a6f7954653d53064d323f334214428758afee1712d7f6a12d96",
+      "kind": "image",
+      "modified": "2020-08-06T10:38:15.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screenshot_140 - Julio del Rey Fernández.jpg",
+      "bytes": 95766,
+      "sha256": "805c1afc14ce5a472e816eeada26764a247c8f8a1f48b0e71346d8711f75db8c",
+      "kind": "image",
+      "modified": "2020-08-06T00:03:24.000Z",
+      "attribution_hint": "Julio del Rey Fernández",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screenshot_2020-07-31-19-19-56-268_com.nianticproject.ingress - Giuseppe.jpg",
+      "bytes": 720365,
+      "sha256": "eb383fb40ffe3fb53e10f892d2cdc873d93468287e6964e1c673d2ac2b83403a",
+      "kind": "image",
+      "modified": "2020-08-06T00:03:41.000Z",
+      "attribution_hint": "Giuseppe",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screenshot_20200731_170802_com.cradle.iitc_mobile - Alexander Helmeke.jpg",
+      "bytes": 804977,
+      "sha256": "17c728dc5f9ca9a7dfd1f43d6ca6090652b7c98cadc41d28d781dd4155dee4bd",
+      "kind": "image",
+      "modified": "2020-08-06T00:00:46.000Z",
+      "attribution_hint": "Alexander Helmeke",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screenshot_20200731_222917_org.exarhteam.iitc_mobile - Ute Heikaemper.jpg",
+      "bytes": 1377198,
+      "sha256": "3f3972a0316101aa656c5b4270800691c9b17bd1dbae14b7febc1a588834ad29",
+      "kind": "image",
+      "modified": "2020-08-05T23:53:06.000Z",
+      "attribution_hint": "Ute Heikaemper",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screenshot_20200731-192853_2 - Francheska Morales.png",
+      "bytes": 596625,
+      "sha256": "db89fa4f415aa7041bc6a17a5db241f14017b892b175172964127ba61bc056dc",
+      "kind": "image",
+      "modified": "2020-08-05T23:58:53.000Z",
+      "attribution_hint": "Francheska Morales",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screenshot_20200731-205821_Ingress - Michele Trevisanello.jpg",
+      "bytes": 1801803,
+      "sha256": "b409cda01a6eab5c3d9b24565042001e8c5ef33ee56f9931f3e1bf072e7ad206",
+      "kind": "image",
+      "modified": "2020-08-05T23:56:45.000Z",
+      "attribution_hint": "Michele Trevisanello",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screenshot_20200801-002601 - Tic portonovo.jpg",
+      "bytes": 585936,
+      "sha256": "302def8262094a032b7e847be80942ef6af0b0fdcb4f2412e99aef980b8cdb6c",
+      "kind": "image",
+      "modified": "2020-08-06T00:02:18.000Z",
+      "attribution_hint": "Tic portonovo",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screenshot_20200801-021522_IITC Mobile - Jenn Atk (1).jpg",
+      "bytes": 630135,
+      "sha256": "881da584781769f4656bbca1098e45ba4050324d8ce2904241d041a3b1bb2d0b",
+      "kind": "image",
+      "modified": "2020-08-06T00:03:29.000Z",
+      "attribution_hint": "Jenn Atk",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/Screenshot_20200801-021522_IITC Mobile - Jenn Atk.jpg",
+      "bytes": 630135,
+      "sha256": "881da584781769f4656bbca1098e45ba4050324d8ce2904241d041a3b1bb2d0b",
+      "kind": "image",
+      "modified": "2020-08-06T00:03:11.000Z",
+      "attribution_hint": "Jenn Atk",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/WhatsApp Image 2020-07-31 at 9.02.39 PM - Darshan raj (1).jpeg",
+      "bytes": 109093,
+      "sha256": "2c21534ff7c65c3d29c61d023f1a4c7cd4abb296315bc8185803bc6a9637ac32",
+      "kind": "image",
+      "modified": "2020-08-06T00:03:45.000Z",
+      "attribution_hint": "Darshan raj",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Stars/WhatsApp Image 2020-07-31 at 9.02.39 PM - Darshan raj.jpeg",
+      "bytes": 109093,
+      "sha256": "2c21534ff7c65c3d29c61d023f1a4c7cd4abb296315bc8185803bc6a9637ac32",
+      "kind": "image",
+      "modified": "2020-08-06T00:03:39.000Z",
+      "attribution_hint": "Darshan raj",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/.DS_Store",
+      "bytes": 6148,
+      "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+      "kind": "other",
+      "modified": "2020-08-05T23:47:20.000Z",
+      "attribution_hint": null,
+      "is_os_noise": true,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/countries.jpg",
+      "bytes": 344053,
+      "sha256": "7ccaf53234b1f4cb9e7a244f85ff64274fd4d7cc01b05550bbc3f2195cd77986",
+      "kind": "image",
+      "modified": "2020-08-02T07:09:08.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/countries01.jpg",
+      "bytes": 99526,
+      "sha256": "a1265047359be6fa6b6a88277a9eea8f3da3990e27f29204e6b494bbd8297bf3",
+      "kind": "image",
+      "modified": "2020-08-02T04:44:31.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/countries1.jpg",
+      "bytes": 263298,
+      "sha256": "f51f7cca795b1a4d0a90daac3dcc2e1ee607ccedb3da7d584ee82319394e3d95",
+      "kind": "image",
+      "modified": "2020-08-04T19:16:37.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/scores.jpg",
+      "bytes": 1887559,
+      "sha256": "caeb59c5c26119a102c792034a9a6533791391f56a4c5ea46c72f3510f840199",
+      "kind": "image",
+      "modified": "2020-08-02T07:09:58.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/scores1.jpg",
+      "bytes": 1110647,
+      "sha256": "ccb09dc9a182d8fd627e92679baca607ba5ebc3d739287e8f1edc370755ca24c",
+      "kind": "image",
+      "modified": "2020-08-04T19:15:38.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/Screen Shot 2020-08-06 at 2.39.48.png",
+      "bytes": 7148532,
+      "sha256": "a1b286ab3aadd12ab5acaa7ed3d40580d313e87b4b9441e2a95d42a5d0855b58",
+      "kind": "image",
+      "modified": "2020-08-05T23:39:48.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/Screen Shot 2020-08-06 at 2.39.55.png",
+      "bytes": 7567687,
+      "sha256": "75066e9fa9bf47b53cbf9a57a540b77fdf33f35e1c235afebf85a7a596add03f",
+      "kind": "image",
+      "modified": "2020-08-05T23:39:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/Screen Shot 2020-08-06 at 2.40.10.png",
+      "bytes": 7404296,
+      "sha256": "ee2814dd7f18a0702a84280feed407cddb4d7cbb348bc3f3b68825efadf0ad34",
+      "kind": "image",
+      "modified": "2020-08-05T23:40:10.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/TheBigBang - All agents.csv",
+      "bytes": 6926,
+      "sha256": "bb430b19a86f2665e3a12afc383cfd53333d8001d87384a83ce9e8ca4354c108",
+      "kind": "dataset",
+      "modified": "2026-08-07T05:06:18.621Z",
+      "attribution_hint": "All agents",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Txt/thebigbangcores.jpg",
+      "bytes": 948162,
+      "sha256": "46aa5242ab6155069e579f2faeeca13879e04de135b7b15d47031ab1b5c8eeb3",
+      "kind": "image",
+      "modified": "2020-08-03T15:19:33.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/1min Story.mp4",
+      "bytes": 45309370,
+      "sha256": "8bcbadda1d4842f5fc889042d70e1b2e5d92c4c42efe6a4ad3a7ee97374f9a7f",
+      "kind": "video",
+      "modified": "2020-08-19T18:28:59.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/20200731_212322 - Marcelo Motoyama.mp4",
+      "bytes": 10194965,
+      "sha256": "09da35049b03fc0a3dd82240b80591026ee988a3c2369c415a124f488dfc2f7a",
+      "kind": "video",
+      "modified": "2020-08-01T15:13:29.000Z",
+      "attribution_hint": "Marcelo Motoyama",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/20200731_235415 - Ethan Shalev.mp4",
+      "bytes": 34336346,
+      "sha256": "cac5e0b550b3279facf1822a4171c54387e49d582ee36a2f6e7e0fdb0cc37f1b",
+      "kind": "video",
+      "modified": "2020-08-05T22:40:56.000Z",
+      "attribution_hint": "Ethan Shalev",
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/adam.mp4",
+      "bytes": 18232833,
+      "sha256": "8f5e6c919c063f9717d38dd6c9deb620a219322cd9c61021f07ede5a71c45b46",
+      "kind": "video",
+      "modified": "2020-08-01T12:30:57.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/Agents.MP4",
+      "bytes": 49091940,
+      "sha256": "694b1ca6213edfebc51d484584861d3a6070f0a449445175b290396b9e302c15",
+      "kind": "video",
+      "modified": "2020-08-01T10:44:47.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/gif star.mp4",
+      "bytes": 54914615,
+      "sha256": "dad22e5a948adc63039f5fd4c174338d25bded67a4b7a32eae4bb942b2fbd129",
+      "kind": "video",
+      "modified": "2020-08-05T11:44:11.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6826.MOV",
+      "bytes": 20656389,
+      "sha256": "e79f32c8e4232bf192a7f395cb9610e0600f2e2423a232acc962a2b6b83b55e1",
+      "kind": "video",
+      "modified": "2020-08-01T10:45:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6949.MP4",
+      "bytes": 4711772,
+      "sha256": "3d76795f3853f497e470044cb3de4aa3c85d0f997d83bf354a9013191c428db2",
+      "kind": "video",
+      "modified": "2020-08-01T10:45:00.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6967.MP4",
+      "bytes": 70461798,
+      "sha256": "4695667b23792961e776f17bcc490aa605d81bbfb8f1e7db1959c8e253b6c299",
+      "kind": "video",
+      "modified": "2020-08-01T10:45:02.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6970.MOV",
+      "bytes": 193424244,
+      "sha256": "8ddd8e7acdf7bdb56a61fc92341c2052a9d4e35f4b6261e748c47a61ebeb7cbe",
+      "kind": "video",
+      "modified": "2020-08-01T10:45:21.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": true
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6971.MOV",
+      "bytes": 10398527,
+      "sha256": "44fd7cebc02e06cf911fff9a0cb3f394cbd13039a821fc7239652a5e53e0862c",
+      "kind": "video",
+      "modified": "2020-08-01T10:45:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6973.MOV",
+      "bytes": 16661575,
+      "sha256": "6e9234f973409ec6bc63893f2b41ee7702da8f1e701fdb1db31312ead0d49730",
+      "kind": "video",
+      "modified": "2020-08-01T10:45:56.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6978.MOV",
+      "bytes": 14583982,
+      "sha256": "fb0ea6dddde493db590bf7f6a0e29d4fb46abdf32d16362536507a5155f09061",
+      "kind": "video",
+      "modified": "2020-08-06T10:39:43.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/TheBigBang.mp4",
+      "bytes": 45030903,
+      "sha256": "21f8bff08f4d04a05c9aaff9a349bfaa3f236648c338bb64e07488302067a1b4",
+      "kind": "video",
+      "modified": "2020-08-08T17:19:44.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    },
+    {
+      "path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/thebigbangISRAEL.mp4",
+      "bytes": 39033186,
+      "sha256": "f893d47be14a1f5e5a6f99edb600861165135468d967e60a11dfeace86f0bd23",
+      "kind": "video",
+      "modified": "2020-08-01T11:18:09.000Z",
+      "attribution_hint": null,
+      "is_os_noise": false,
+      "exceeds_github_blob_limit": false
+    }
+  ]
+}

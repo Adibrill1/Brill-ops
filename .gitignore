@@ -1,0 +1,64 @@
+# ---- dependencies / build -----------------------------------------------
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# ---- environment ---------------------------------------------------------
+.env
+.env.local
+.env*.local
+!.env.example
+
+# ---- supabase ------------------------------------------------------------
+supabase/.branches/
+supabase/.temp/
+.supabase/
+
+# ---- os / editor ---------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# =========================================================================
+# ORIGINAL SOURCE MEDIA - intentionally NOT committed. See
+# docs/architecture/adr/0002-media-stays-out-of-git.md
+#
+# The handoff package is ~875 MB and includes a 185 MB video, which exceeds
+# GitHub's 100 MB blob limit outright. The files remain on disk in
+# source-data/ and are catalogued with SHA-256 checksums in
+# source-data/MANIFEST.json, which IS committed.
+#
+#   npm run verify:source   # confirms every one of the 342 files is intact
+#
+# DO NOT delete anything under source-data/. It is the archive's origin.
+# =========================================================================
+source-data/**/*.jpg
+source-data/**/*.jpeg
+source-data/**/*.png
+source-data/**/*.gif
+source-data/**/*.webp
+source-data/**/*.heic
+source-data/**/*.HEIC
+source-data/**/*.JPG
+source-data/**/*.JPEG
+source-data/**/*.PNG
+source-data/**/*.mp4
+source-data/**/*.MP4
+source-data/**/*.mov
+source-data/**/*.MOV
+source-data/**/*.m4v
+source-data/**/*.avi
+
+# ...but always keep the datasets, manifests and documentation.
+!source-data/**/*.csv
+!source-data/**/*.tsv
+!source-data/**/*.md
+!source-data/MANIFEST.json
+!source-data/MANIFEST.csv
