@@ -225,7 +225,15 @@ async function main() {
 
     await verify(client);
 
-    console.log('\nDone. Redeploy Vercel (or it will pick this up on the next request).');
+    // Supabase's REST API caches the schema in memory. Because this script talks
+    // to Postgres directly, the API does not learn about new tables on its own and
+    // keeps returning PGRST205 until told. Sent every run, not just when
+    // migrations apply, because a stale cache can outlive the migration that
+    // caused it. Harmless when already fresh.
+    await client.query(`notify pgrst, 'reload schema'`);
+    console.log('\nAsked the Supabase API to reload its schema cache.');
+
+    console.log('Done. The live site should pick this up within a few seconds.');
   } catch (err) {
     console.error(`\nSetup failed: ${err.message}\n`);
     process.exitCode = 1;

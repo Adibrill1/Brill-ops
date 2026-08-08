@@ -26,7 +26,7 @@ export default function GlobalError({
     console.error('Brill Ops error boundary:', error);
   }, [error]);
 
-  const schemaMissing = error.message.includes('schema has not been applied');
+  const schemaMissing = error.message.includes('the API cannot see');
 
   return (
     <div className="mx-auto max-w-xl py-16">
@@ -35,14 +35,15 @@ export default function GlobalError({
           <AlertTriangle className="mt-0.5 h-6 w-6 shrink-0 text-amber-600" aria-hidden />
           <div className="min-w-0">
             <h1 className="text-lg font-semibold text-amber-900">
-              {schemaMissing ? 'The database has no schema yet' : 'Something went wrong'}
+              {schemaMissing ? 'The API cannot see the database schema' : 'Something went wrong'}
             </h1>
 
             {schemaMissing ? (
               <div className="mt-2 space-y-3 text-sm leading-relaxed text-amber-900">
                 <p>
-                  Brill Ops is connected to Supabase, but the tables have not been created.
-                  Nothing is broken and no data is lost — the setup is simply unfinished.
+                  Brill Ops is connected to Supabase, but its REST API cannot find the
+                  tables. Usually this means the schema cache is stale after migrations
+                  were applied directly to Postgres. No data is lost.
                 </p>
                 <p>From the project folder:</p>
                 <pre className="overflow-x-auto rounded-lg bg-amber-900/10 px-3 py-2 font-mono text-xs">

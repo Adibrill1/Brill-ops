@@ -66,6 +66,28 @@ The script:
 The Supabase CLI is still supported for local development via `supabase/config.toml`
 (`supabase start && supabase db reset`), but it is not needed to set up the hosted project.
 
+## If the site shows empty data over a seeded database
+
+Supabase's REST API caches the schema in memory. `npm run db:setup` talks to Postgres
+directly, so the API does not learn about new tables on its own and keeps answering
+PGRST205 ("Could not find the table in the schema cache"). The pages then render as if
+there were simply no data.
+
+`npm run db:setup` now ends with `notify pgrst, 'reload schema'` on every run, so this
+should not recur. Re-running the command is the fix, and it is idempotent.
+
+The app no longer hides this: query errors throw with the relation name, and the error
+page names the command.
+
+## The vercel.app subdomain is global
+
+`brill-ops.vercel.app` belongs to a different account entirely — an unrelated product
+called ChannelIQ. Vercel assigned this project `brill-ops-three.vercel.app` because the
+shorter names were already taken worldwide.
+
+Only the URL shown in your own Vercel dashboard is this project. If you want a name that
+cannot be confused, add a custom domain.
+
 ## Order of operations
 
 1. **Vercel** → a live URL, running in demo mode.
