@@ -28,6 +28,44 @@ import type {
  */
 
 // ---------------------------------------------------------------------------
+// Error handling
+// ---------------------------------------------------------------------------
+
+/**
+ * Unwrap a Supabase result, throwing on error instead of returning empty data.
+ *
+ * This exists because the opposite was a real bug. Destructuring only `data` and
+ * ignoring `error` means a missing table, a bad key or a broken RLS policy all
+ * render as "no campaigns yet" - a confident, wrong answer. For a project whose
+ * whole posture is that data never misrepresents itself, silently swallowing a
+ * database failure is the worst possible default.
+ *
+ * The schema-missing case gets its own message because it is the one people will
+ * actually hit, on a fresh Supabase project before migrations have run.
+ */
+function unwrap<T>(
+  result: { data: T; error: { message: string; code?: string; hint?: string | null } | null },
+  context: string,
+): T {
+  const { data, error } = result;
+  if (!error) return data;
+
+  // 42P01 = undefined_table (Postgres), PGRST205 = unknown relation (PostgREST).
+  if (error.code === '42P01' || error.code === 'PGRST205') {
+    throw new Error(
+      `Brill Ops: the database is reachable but the schema has not been applied yet ` +
+        `(${context}). Run "npm run db:setup" to apply supabase/migrations and the ` +
+        `archive seed. Original error: ${error.message}`,
+    );
+  }
+
+  throw new Error(
+    `Brill Ops: query failed (${context}): ${error.message}` +
+      (error.hint ? ` - ${error.hint}` : ''),
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Campaigns
 // ---------------------------------------------------------------------------
 
@@ -41,11 +79,11 @@ export async function getActiveCampaign(): Promise<Campaign | null> {
   // awaiting real dates, so the homepage shows the Archive instead.
   if (demo.isDemoMode()) return null;
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('campaigns')
     .select('*')
     .eq('status', 'active')
-    .maybeSingle();
+    .maybeSingle(), 'campaigns');
   return data as Campaign | null;
 }
 
@@ -55,29 +93,29 @@ export async function getCampaignBySlug(slug: string): Promise<Campaign | null> 
     return c.slug === slug ? c : null;
   }
   const supabase = await createClient();
-  const { data } = await supabase.from('campaigns').select('*').eq('slug', slug).maybeSingle();
+  const data = unwrap(await supabase.from('campaigns').select('*').eq('slug', slug).maybeSingle(), 'campaigns');
   return data as Campaign | null;
 }
 
 export async function getArchivedCampaigns(): Promise<CampaignStats[]> {
   if (demo.isDemoMode()) return [demo.demoCampaignStats()];
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('campaign_stats')
     .select('*')
     .eq('status', 'archived')
-    .order('end_date', { ascending: false });
+    .order('end_date', { ascending: false }), 'campaign_stats');
   return (data ?? []) as CampaignStats[];
 }
 
 export async function getCampaignStats(campaignId: string): Promise<CampaignStats | null> {
   if (demo.isDemoMode()) return demo.demoCampaignStats();
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('campaign_stats')
     .select('*')
     .eq('campaign_id', campaignId)
-    .maybeSingle();
+    .maybeSingle(), 'campaign_stats');
   return data as CampaignStats | null;
 }
 
@@ -91,21 +129,21 @@ export async function getCampaignStats(campaignId: string): Promise<CampaignStat
 export async function getFactionStats(campaignId: string): Promise<FactionStats[]> {
   if (demo.isDemoMode()) return demo.demoFactionStats();
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('campaign_faction_stats')
     .select('*')
-    .eq('campaign_id', campaignId);
+    .eq('campaign_id', campaignId), 'campaign_faction_stats');
   return (data ?? []) as FactionStats[];
 }
 
 export async function getCountryStats(campaignId: string): Promise<CountryStats[]> {
   if (demo.isDemoMode()) return demo.demoCountryStats();
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('campaign_country_stats')
     .select('*')
     .eq('campaign_id', campaignId)
-    .order('total_links', { ascending: false, nullsFirst: false });
+    .order('total_links', { ascending: false, nullsFirst: false }), 'campaign_country_stats');
   return (data ?? []) as CountryStats[];
 }
 
@@ -156,7 +194,7 @@ export async function getTeams(
       query = query.order('links_created', { ascending: false, nullsFirst: false });
   }
 
-  const { data } = await query;
+  const data = unwrap(await query, 'teams_view');
   const teams = (data ?? []) as TeamWithStatus[];
 
   return filters.status && filters.status !== 'all'
@@ -167,17 +205,17 @@ export async function getTeams(
 export async function getTeam(teamId: string): Promise<TeamWithStatus | null> {
   if (demo.isDemoMode()) return demo.demoTeam(teamId);
   const supabase = await createClient();
-  const { data } = await supabase.from('teams_view').select('*').eq('id', teamId).maybeSingle();
+  const data = unwrap(await supabase.from('teams_view').select('*').eq('id', teamId).maybeSingle(), 'teams_view');
   return data as TeamWithStatus | null;
 }
 
 export async function getTeamMembers(teamId: string): Promise<AgentLifetimeStats[]> {
   if (demo.isDemoMode()) return demo.demoTeamMembers(teamId);
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('team_membership')
     .select('agent_id, agents!inner(id, handle, display_name, avatar_url, faction, country, city)')
-    .eq('team_id', teamId);
+    .eq('team_id', teamId), 'team_membership');
 
   return ((data ?? []) as unknown as Array<{ agents: AgentLifetimeStats }>).map((r) => r.agents);
 }
@@ -228,7 +266,7 @@ export async function getAgentDirectory(
       query = query.order('handle', { ascending: true });
   }
 
-  const { data } = await query.limit(filters.limit ?? 500);
+  const data = unwrap(await query.limit(filters.limit ?? 500), 'agent_lifetime_stats');
   return (data ?? []) as AgentLifetimeStats[];
 }
 
@@ -236,11 +274,11 @@ export async function getAgentByHandle(handle: string): Promise<AgentLifetimeSta
   if (demo.isDemoMode()) return demo.demoAgentByHandle(handle);
   const supabase = await createClient();
   const withAt = handle.startsWith('@') ? handle : `@${handle}`;
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('agent_lifetime_stats')
     .select('*')
     .eq('handle', withAt)
-    .maybeSingle();
+    .maybeSingle(), 'agent_lifetime_stats');
   return data as AgentLifetimeStats | null;
 }
 
@@ -251,11 +289,11 @@ export async function getAgentParticipation(agentId: string): Promise<
   if (demo.isDemoMode()) return demo.demoAgentParticipation(agentId) as never;
 
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('agent_campaign_stats')
     .select('*, campaign:campaigns!inner(slug, name, status, end_date)')
     .eq('agent_id', agentId)
-    .order('campaign(end_date)', { ascending: false });
+    .order('campaign(end_date)', { ascending: false }), 'agent_campaign_stats');
   return (data ?? []) as never;
 }
 
@@ -266,12 +304,12 @@ export async function getCampaignLeaderboard(
   if (demo.isDemoMode()) return demo.demoLeaderboard(limit);
 
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('agent_campaign_stats')
     .select('*')
     .eq('campaign_id', campaignId)
     .order('links_created', { ascending: false, nullsFirst: false })
-    .limit(limit);
+    .limit(limit), 'agent_campaign_stats');
   return (data ?? []) as AgentCampaignStats[];
 }
 
@@ -285,11 +323,11 @@ export async function getTeamMedia(teamId: string): Promise<MediaItem[]> {
   if (demo.isDemoMode()) return [];
 
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('media')
     .select('*')
     .eq('team_id', teamId)
-    .order('role', { ascending: true });
+    .order('role', { ascending: true }), 'media');
   return (data ?? []) as MediaItem[];
 }
 
@@ -297,12 +335,12 @@ export async function getCampaignMedia(campaignId: string, limit = 60): Promise<
   if (demo.isDemoMode()) return demo.demoCampaignMedia(limit);
 
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('media')
     .select('*')
     .eq('campaign_id', campaignId)
     .order('captured_at', { ascending: true })
-    .limit(limit);
+    .limit(limit), 'media');
   return (data ?? []) as MediaItem[];
 }
 
@@ -314,12 +352,12 @@ export async function getCampaignMedia(campaignId: string, limit = 60): Promise<
 export async function getArchiveSnapshot(campaignId: string): Promise<ArchiveSnapshot | null> {
   if (demo.isDemoMode()) return demo.demoArchiveSnapshot();
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('campaign_archive_snapshots')
     .select('*')
     .eq('campaign_id', campaignId)
     .eq('is_current', true)
-    .maybeSingle();
+    .maybeSingle(), 'campaign_archive_snapshots');
   return data as ArchiveSnapshot | null;
 }
 
@@ -331,10 +369,10 @@ export async function getArchiveSnapshot(campaignId: string): Promise<ArchiveSna
 export async function getImportAnomalies(campaignId: string): Promise<ImportAnomaly[]> {
   if (demo.isDemoMode()) return demo.demoAnomalies();
   const supabase = await createClient();
-  const { data } = await supabase
+  const data = unwrap(await supabase
     .from('import_anomalies')
     .select('*, import_batches!inner(campaign_id)')
     .eq('import_batches.campaign_id', campaignId)
-    .order('severity', { ascending: false });
+    .order('severity', { ascending: false }), 'import_anomalies');
   return (data ?? []) as ImportAnomaly[];
 }

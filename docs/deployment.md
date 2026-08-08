@@ -39,25 +39,32 @@ rather than quietly serving stale files.
 
 ## Setting up the database
 
-`supabase db push` applies `supabase/migrations/` but **not** seeds, so the archive
-import is a second command:
+One command, no Supabase CLI:
 
 ```bash
-npx supabase login
-npx supabase link --project-ref <your-project-ref>
-npm run db:setup            # = db:push (migrations) + db:seed (archive import)
+npm run db:setup
 ```
 
-`npm run db:seed` needs `SUPABASE_DB_URL` in `.env.local` — the direct Postgres URI from
-**Project Settings → Database → Connection string → URI**. It contains your database
-password, so it is gitignored and used by that one script only. The app itself never
-touches it; page rendering goes through the anon key and RLS.
+It needs `SUPABASE_DB_URL` in `.env.local` — the Postgres URI from the Supabase
+dashboard (**Connect** → **Session pooler**, with `[YOUR-PASSWORD]` replaced). That value
+carries the database password, so it is gitignored, is read by this one script, and never
+reaches the app, the browser or the repo. Page rendering goes through the anon key and RLS.
 
-The script prints what actually landed and checks it against the importer's figures —
-124 agents, 32 teams, 12 crossfaction, 9,449 links, 4 unknown. If those drift, it exits
-non-zero rather than reporting success.
+Use the **Session pooler** URI rather than **Direct connection**: direct connections are
+IPv6-only on newer Supabase projects and will fail with `ENETUNREACH` on most home
+networks. The script detects that specific failure and says so.
 
-Both seed files are idempotent, so re-running is safe.
+The script:
+
+- creates a `_brill_ops_migrations` ledger, so re-running skips what is already applied
+- stores each migration's SHA-256, and warns if an applied migration has since been edited
+- runs each migration in its own transaction — a failure leaves nothing half-applied
+- applies both seed files, which are idempotent
+- **verifies the result against the importer's figures** (124 agents, 32 teams, 12
+  crossfaction, 9,449 links, 4 unknown, 342 media) and exits non-zero if any drift
+
+The Supabase CLI is still supported for local development via `supabase/config.toml`
+(`supabase start && supabase db reset`), but it is not needed to set up the hosted project.
 
 ## Order of operations
 
