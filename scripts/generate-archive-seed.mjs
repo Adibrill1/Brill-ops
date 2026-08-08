@@ -204,13 +204,19 @@ const main = async () => {
       })
       .join(',\n'),
   );
-  w(';');
+  // DO NOTHING rather than DO UPDATE: once a file has been pushed to Storage,
+  // is_uploaded/storage_path must survive a re-import.
+  w('on conflict (campaign_id, source_path) do nothing;');
   w();
 
   // --- anomalies --------------------------------------------------------------
   w(`-- Import anomalies (${recon.anomalies.length}) -------------------------------------------------`);
   w('-- Nothing ambiguous was discarded. Each unresolved oddity is recorded here and');
   w('-- is rendered as a footnote on the archived campaign page.');
+  w('-- Derived entirely from the import, never edited by hand, so the batch is');
+  w('-- cleared and rewritten. This is what makes re-running the seed a no-op.');
+  w(`delete from import_anomalies where import_batch_id = '00000000-0000-4000-a000-000000000001';`);
+  w();
   w(`insert into import_anomalies (import_batch_id, anomaly_type, severity, subject,`);
   w(`                              source_file, source_line, raw_value, resolution)`);
   w('values');
