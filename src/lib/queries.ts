@@ -50,12 +50,17 @@ function unwrap<T>(
   const { data, error } = result;
   if (!error) return data;
 
-  // 42P01 = undefined_table (Postgres), PGRST205 = unknown relation (PostgREST).
+  // PGRST205: PostgREST cannot find the relation. Usually NOT a missing schema —
+  // it is a stale API schema cache, because migrations applied over a direct
+  // Postgres connection never reach the REST layer. 42P01 is the genuine
+  // undefined-table case. Both are fixed by the same command, so they share a
+  // message, but the wording names the likelier cause first.
   if (error.code === '42P01' || error.code === 'PGRST205') {
     throw new Error(
-      `Brill Ops: the database is reachable but the schema has not been applied yet ` +
-        `(${context}). Run "npm run db:setup" to apply supabase/migrations and the ` +
-        `archive seed. Original error: ${error.message}`,
+      `Brill Ops: the API cannot see "${context}". Either the Supabase schema cache ` +
+        `is stale after a direct migration, or the schema was never applied. ` +
+        `Run "npm run db:setup" — it applies migrations, seeds, and reloads the ` +
+        `API cache. Original error: ${error.message}`,
     );
   }
 

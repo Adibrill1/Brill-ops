@@ -75,6 +75,11 @@ alter table storage.objects enable row level security;
 
 create or replace function storage.foldername(name text) returns text[]
   language sql immutable as $$ select string_to_array(name, '/') $$;
+
+-- Supabase grants these by default; replicate so the anon checks below are
+-- testing our policies rather than a missing grant.
+grant usage on schema public to anon, authenticated;
+alter default privileges in schema public grant select on tables to anon, authenticated;
 `;
 
 async function readSqlFiles(dir) {
@@ -250,6 +255,58 @@ async function main() {
   if (factionLinks !== EXPECTED.total_links) {
     bad.push(`faction links sum to ${factionLinks}, expected ${EXPECTED.total_links}`);
   }
+
+  // ---------------------------------------------------------------------------
+  // Read the public surface as `anon`, the role the website actually uses.
+  // Compiling is not the same as being readable: RLS, grants and view ownership
+  // all sit between a correct schema and a visible page.
+  // ---------------------------------------------------------------------------
+  console.log('\nAs the anonymous role:');
+  await client.query('set role anon');
+  for (const rel of [
+    'campaigns', 'agents', 'teams_view', 'campaign_stats',
+    'campaign_faction_stats', 'campaign_country_stats',
+    'agent_lifetime_stats', 'import_anomalies',
+  ]) {
+    try {
+      const n = (await client.query(`select count(*)::int as n from ${rel}`)).rows[0].n;
+      console.log(`  ok   ${rel.padEnd(24)} ${n} rows readable`);
+      // Exactly one campaign is public: The Big Bang (archived). Stars for Peace
+      // is a draft and must stay invisible until it goes live — including through
+      // the views, which is precisely what security_invoker fixes.
+      if (rel === 'campaign_stats' && n !== 1) {
+        bad.push(`anon sees ${n} campaigns via campaign_stats, expected 1 (the draft must stay hidden)`);
+      }
+      if (rel === 'campaigns' && n !== 1) {
+        bad.push(`anon sees ${n} rows in campaigns, expected 1`);
+      }
+      if (rel === 'teams_view' && n !== EXPECTED.teams) {
+        bad.push(`anon sees ${n} teams via teams_view, expected ${EXPECTED.teams}`);
+      }
+    } catch (err) {
+      console.log(`  BAD  ${rel.padEnd(24)} ${err.message}`);
+      bad.push(`anon cannot read ${rel}: ${err.message}`);
+    }
+  }
+
+  // edit_token is a capability secret: holding it lets someone edit a submission
+  // with no account. It must not be reachable by anon, through the view or the
+  // base table.
+  try {
+    await client.query('select edit_token from teams_view limit 1');
+    bad.push('SECURITY: teams_view still exposes edit_token');
+    console.log('  BAD  teams_view exposes edit_token');
+  } catch {
+    console.log('  ok   teams_view does not expose edit_token');
+  }
+  try {
+    await client.query('select edit_token from teams limit 1');
+    bad.push('SECURITY: anon can read teams.edit_token');
+    console.log('  BAD  anon can read teams.edit_token');
+  } catch {
+    console.log('  ok   anon cannot read teams.edit_token');
+  }
+  await client.query('reset role');
 
   await client.end();
 
