@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 import { createServerClient, type CookieMethodsServer } from '@supabase/ssr';
+import { supabaseCredentials } from './env';
 
 /**
  * Server Supabase client for Server Components and Route Handlers.
@@ -7,13 +8,18 @@ import { createServerClient, type CookieMethodsServer } from '@supabase/ssr';
  * Still the anon key, still bound by RLS — the session travels in cookies. We
  * never use the service role key for page rendering; if a page can only be built
  * by bypassing RLS, the policy is wrong, not the page.
+ *
+ * Credentials come from supabaseCredentials(), which fails with a named error if
+ * the anon key is missing rather than letting the client library throw an opaque
+ * "supabaseKey is required." on every request. See src/lib/supabase/env.ts.
  */
 export async function createClient() {
+  const { url, anonKey } = supabaseCredentials();
   const cookieStore = await cookies();
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    url,
+    anonKey,
     {
       cookies: {
         getAll: () => cookieStore.getAll(),
