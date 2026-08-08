@@ -21,7 +21,8 @@
     "seed:generate": "node scripts/generate-archive-seed.mjs",
     "import:all": "npm run manifest && npm run import:big-bang && npm run seed:generate",
     "db:setup": "node scripts/db-setup.mjs",
-    "db:validate": "node scripts/validate-sql.mjs"
+    "db:validate": "node scripts/validate-sql.mjs",
+    "test": "node --test --experimental-strip-types \"tests/*.test.mjs\""
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

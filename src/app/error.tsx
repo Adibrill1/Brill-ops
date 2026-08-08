@@ -27,6 +27,7 @@ export default function GlobalError({
   }, [error]);
 
   const schemaMissing = error.message.includes('the API cannot see');
+  const keyMissing = error.message.includes('NEXT_PUBLIC_SUPABASE_ANON_KEY');
 
   return (
     <div className="mx-auto max-w-xl py-16">
@@ -35,10 +36,27 @@ export default function GlobalError({
           <AlertTriangle className="mt-0.5 h-6 w-6 shrink-0 text-amber-600" aria-hidden />
           <div className="min-w-0">
             <h1 className="text-lg font-semibold text-amber-900">
-              {schemaMissing ? 'The API cannot see the database schema' : 'Something went wrong'}
+              {schemaMissing
+                ? 'The API cannot see the database schema'
+                : keyMissing
+                  ? 'The Supabase anon key is not configured'
+                  : 'Something went wrong'}
             </h1>
 
-            {schemaMissing ? (
+            {keyMissing ? (
+              <div className="mt-2 space-y-3 text-sm leading-relaxed text-amber-900">
+                <p>
+                  A Supabase URL is configured, but <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code>{' '}
+                  is missing. The site is in live mode with no key, so every request to the
+                  database fails before it starts.
+                </p>
+                <p>
+                  Set <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> in this environment
+                  (Vercel → Settings → Environment Variables) and redeploy. The anon key is
+                  safe to expose in the browser; RLS is what protects the data.
+                </p>
+              </div>
+            ) : schemaMissing ? (
               <div className="mt-2 space-y-3 text-sm leading-relaxed text-amber-900">
                 <p>
                   Brill Ops is connected to Supabase, but its REST API cannot find the

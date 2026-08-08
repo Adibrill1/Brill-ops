@@ -15,6 +15,11 @@ import { createServerClient, type CookieMethodsServer } from '@supabase/ssr';
 function hasSupabaseProject(): boolean {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  // Both are required: a URL with no key is a misconfiguration, not a backend.
+  // Constructing a client without the key throws "supabaseKey is required." and
+  // would turn every request into an edge 500. The page renderer enforces the
+  // same rule with a named error via supabaseCredentials(); see the note on
+  // production digest 443172729 in src/lib/supabase/env.ts.
   if (!url || !key) return false;
   return !url.includes('placeholder') && !url.includes('your-project');
 }
