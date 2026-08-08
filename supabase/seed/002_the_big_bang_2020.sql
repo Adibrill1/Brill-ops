@@ -836,11 +836,15 @@ values
   ('00000000-0000-4000-b000-000000000001', 'event_video'::media_role, 'source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6978.MOV', 'fb0ea6dddde493db590bf7f6a0e29d4fb46abdf32d16362536507a5155f09061', 14583982, null, '2020-08-06T10:39:43.000Z', 'estimated', false, 'archive-media', 'source', '00000000-0000-4000-a000-000000000001'),
   ('00000000-0000-4000-b000-000000000001', 'event_video'::media_role, 'source-data/historical-campaigns/2020-07-the-big-bang/Videos/TheBigBang.mp4', '21f8bff08f4d04a05c9aaff9a349bfaa3f236648c338bb64e07488302067a1b4', 45030903, null, '2020-08-08T17:19:44.000Z', 'estimated', false, 'archive-media', 'source', '00000000-0000-4000-a000-000000000001'),
   ('00000000-0000-4000-b000-000000000001', 'event_video'::media_role, 'source-data/historical-campaigns/2020-07-the-big-bang/Videos/thebigbangISRAEL.mp4', 'f893d47be14a1f5e5a6f99edb600861165135468d967e60a11dfeace86f0bd23', 39033186, null, '2020-08-01T11:18:09.000Z', 'estimated', false, 'archive-media', 'source', '00000000-0000-4000-a000-000000000001')
-;
+on conflict (campaign_id, source_path) do nothing;
 
 -- Import anomalies (8) -------------------------------------------------
 -- Nothing ambiguous was discarded. Each unresolved oddity is recorded here and
 -- is rendered as a footnote on the archived campaign page.
+-- Derived entirely from the import, never edited by hand, so the batch is
+-- cleared and rewritten. This is what makes re-running the seed a no-op.
+delete from import_anomalies where import_batch_id = '00000000-0000-4000-a000-000000000001';
+
 insert into import_anomalies (import_batch_id, anomaly_type, severity, subject,
                               source_file, source_line, raw_value, resolution)
 values

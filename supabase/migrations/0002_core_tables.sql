@@ -182,30 +182,6 @@ create index teams_links_idx     on teams (campaign_id, links_created desc nulls
 create index teams_updated_idx   on teams (campaign_id, updated_at desc);
 
 -- -----------------------------------------------------------------------------
--- team_status - COMPUTED, never stored
--- -----------------------------------------------------------------------------
--- The handoff specifies status as a function of dates and media, so it is a
--- generated value. Storing it would let it drift.
--- -----------------------------------------------------------------------------
-create or replace function team_status_of(t teams)
-returns team_status
-language sql
-stable
-as $$
-  select case
-    when t.construction_end_date is not null and t.construction_end_date <= current_date
-      then 'completed'::team_status
-    when exists (
-      select 1 from media m
-      where m.team_id = t.id and m.role = 'construction_end'
-    ) then 'completed'::team_status
-    when t.construction_start_date is not null and t.construction_start_date <= current_date
-      then 'in_progress'::team_status
-    else 'planning'::team_status
-  end;
-$$;
-
--- -----------------------------------------------------------------------------
 -- team_membership - agents on a team (the handoff's "Participation")
 -- -----------------------------------------------------------------------------
 create table team_membership (
@@ -301,13 +277,47 @@ create table media (
   ),
   constraint media_has_a_location check (
     (storage_path is not null) or (external_url is not null) or (source_path is not null)
-  )
+  ),
+
+  -- Natural key for IMPORTED media, so re-running an import is a no-op rather
+  -- than a duplicate. Postgres treats NULLs as distinct, so user-uploaded media
+  -- (source_path is null) is unaffected and can repeat freely.
+  unique (campaign_id, source_path)
 );
 
 create index media_campaign_idx on media (campaign_id, role);
 create index media_team_idx     on media (team_id, role);
 create index media_agent_idx    on media (agent_id);
 create index media_pending_idx  on media (is_uploaded) where is_uploaded = false;
+
+-- NOTE ON ORDERING: team_status_of() must be defined AFTER `media`, because it
+-- reads from it. Postgres validates the body of a `language sql` function at
+-- CREATE time, so defining it earlier fails with "relation media does not exist".
+
+-- -----------------------------------------------------------------------------
+-- team_status - COMPUTED, never stored
+-- -----------------------------------------------------------------------------
+-- The handoff specifies status as a function of dates and media, so it is a
+-- generated value. Storing it would let it drift.
+-- -----------------------------------------------------------------------------
+create or replace function team_status_of(t teams)
+returns team_status
+language sql
+stable
+as $$
+  select case
+    when t.construction_end_date is not null and t.construction_end_date <= current_date
+      then 'completed'::team_status
+    when exists (
+      select 1 from media m
+      where m.team_id = t.id and m.role = 'construction_end'
+    ) then 'completed'::team_status
+    when t.construction_start_date is not null and t.construction_start_date <= current_date
+      then 'in_progress'::team_status
+    else 'planning'::team_status
+  end;
+$$;
+
 
 -- -----------------------------------------------------------------------------
 -- campaign_archive_snapshots
