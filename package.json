@@ -20,9 +20,7 @@
     "import:big-bang": "node scripts/import-big-bang.mjs",
     "seed:generate": "node scripts/generate-archive-seed.mjs",
     "import:all": "npm run manifest && npm run import:big-bang && npm run seed:generate",
-    "db:push": "supabase db push",
-    "db:seed": "node scripts/apply-seed.mjs",
-    "db:setup": "npm run db:push && npm run db:seed"
+    "db:setup": "node scripts/db-setup.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
