@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import { createServerClient, type CookieMethodsServer } from '@supabase/ssr';
 import { supabaseCredentials } from './env';
+import { createDiagnosticFetch } from './diagnostics';
 
 /**
  * Server Supabase client for Server Components and Route Handlers.
@@ -21,6 +22,10 @@ export async function createClient() {
     url,
     anonKey,
     {
+      // Transparent fetch wrapper: on a transport failure it logs the sanitized
+      // nested cause (DNS / TLS / refused / bad host) before supabase-js
+      // flattens it to "fetch failed". See src/lib/supabase/diagnostics.ts.
+      global: { fetch: createDiagnosticFetch() },
       cookies: {
         getAll: () => cookieStore.getAll(),
         setAll: ((toSet) => {
