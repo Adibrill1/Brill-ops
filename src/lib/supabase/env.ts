@@ -24,6 +24,8 @@
  * hid the possibility in the first place.
  */
 
+import { describeUrlProblem } from './diagnostics';
+
 export interface SupabaseCredentials {
   url: string;
   anonKey: string;
@@ -55,6 +57,18 @@ export function supabaseCredentials(): SupabaseCredentials {
         'Supabase fails before it starts. Set NEXT_PUBLIC_SUPABASE_ANON_KEY in this ' +
         'environment (Vercel → Settings → Environment Variables) and redeploy. The ' +
         'anon key is safe to expose in the browser; RLS is what protects the data.',
+    );
+  }
+
+  // Failure case 1: a malformed URL (whitespace, missing scheme, http, a stray
+  // newline from a paste) fails at fetch as an opaque "fetch failed". Catch it
+  // here with a message that names the exact problem. The URL host is not a
+  // secret, so it is safe to surface.
+  const urlProblem = describeUrlProblem(url);
+  if (urlProblem) {
+    throw new Error(
+      `Brill Ops: ${urlProblem}. It must be the project's REST URL, e.g. ` +
+        'https://<project-ref>.supabase.co with no path, quotes or trailing whitespace.',
     );
   }
 

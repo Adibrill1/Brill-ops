@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { classifyPostgrestError, logDiagnostic } from '@/lib/supabase/diagnostics';
 import * as demo from '@/lib/demo';
 import type {
   AgentCampaignStats,
@@ -49,6 +50,12 @@ function unwrap<T>(
 ): T {
   const { data, error } = result;
   if (!error) return data;
+
+  // Log a sanitized, classified line for every query error. A transport failure
+  // (case 2/3) is already logged in full by the diagnostic fetch wrapper; here
+  // it is tagged so a genuine PostgREST query error (case 5) is distinguishable
+  // from "fetch failed". The context is a relation name, never a secret.
+  logDiagnostic({ ...classifyPostgrestError(error), path: context });
 
   // PGRST205: PostgREST cannot find the relation. Usually NOT a missing schema —
   // it is a stale API schema cache, because migrations applied over a direct
