@@ -22,7 +22,8 @@
     "import:all": "npm run manifest && npm run import:big-bang && npm run seed:generate",
     "db:setup": "node scripts/db-setup.mjs",
     "db:validate": "node scripts/validate-sql.mjs",
-    "test": "node --test --experimental-strip-types \"tests/*.test.mjs\""
+    "test": "node --test --experimental-strip-types \"tests/*.test.mjs\"",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
@@ -33,6 +34,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@types/node": "^22.9.0",
     "@types/pg": "^8.20.4",
     "@types/react": "^18.3.12",
