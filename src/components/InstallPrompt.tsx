@@ -53,7 +53,7 @@ export function InstallPrompt() {
       <button
         type="button"
         onClick={install}
-        className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-ink shadow-sm transition hover:bg-slate-50"
+        className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-ink shadow-sm transition hover:bg-slate-50 active:translate-y-px"
       >
         <Smartphone className="h-4 w-4" aria-hidden />
         Add Brill Ops to your Home Screen
@@ -79,7 +79,7 @@ export function InstallPrompt() {
                 type="button"
                 onClick={() => setShowIosSteps(false)}
                 aria-label="Close"
-                className="text-ink-faint hover:text-ink"
+                className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg text-ink-faint hover:bg-slate-100 hover:text-ink active:bg-slate-200"
               >
                 <X className="h-4 w-4" />
               </button>

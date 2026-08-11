@@ -43,9 +43,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Imported historical figures are labelled where they were inferred or estimated.
             </p>
             <p className="mt-3">
-              <Link href="/archive" className="underline hover:text-ink">Archive</Link>
+              <Link href="/archive" className="inline-flex min-h-11 items-center rounded px-1 underline hover:text-ink">Archive</Link>
               <span className="mx-2 text-ink-faint">·</span>
-              <Link href="/agents" className="underline hover:text-ink">Agent directory</Link>
+              <Link href="/agents" className="inline-flex min-h-11 items-center rounded px-1 underline hover:text-ink">Agent directory</Link>
             </p>
           </div>
         </footer>

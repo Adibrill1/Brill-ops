@@ -1,4 +1,5 @@
-import { createClient } from '@/lib/supabase/server';
+import { cache } from 'react';
+import { createPublicClient } from '@/lib/supabase/public';
 import { classifyPostgrestError, logDiagnostic } from '@/lib/supabase/diagnostics';
 import * as demo from '@/lib/demo';
 import type {
@@ -90,7 +91,7 @@ export async function getActiveCampaign(): Promise<Campaign | null> {
   // No campaign is active in demo mode: Stars for Peace is still a draft
   // awaiting real dates, so the homepage shows the Archive instead.
   if (demo.isDemoMode()) return null;
-  const supabase = await createClient();
+  const supabase = createPublicClient(60);
   const data = unwrap(await supabase
     .from('campaigns')
     .select('*')
@@ -99,19 +100,19 @@ export async function getActiveCampaign(): Promise<Campaign | null> {
   return data as Campaign | null;
 }
 
-export async function getCampaignBySlug(slug: string): Promise<Campaign | null> {
+export const getCampaignBySlug = cache(async (slug: string): Promise<Campaign | null> => {
   if (demo.isDemoMode()) {
     const c = demo.demoCampaign();
     return c.slug === slug ? c : null;
   }
-  const supabase = await createClient();
+  const supabase = createPublicClient(3600);
   const data = unwrap(await supabase.from('campaigns').select('*').eq('slug', slug).maybeSingle(), 'campaigns');
   return data as Campaign | null;
-}
+});
 
 export async function getArchivedCampaigns(): Promise<CampaignStats[]> {
   if (demo.isDemoMode()) return [demo.demoCampaignStats()];
-  const supabase = await createClient();
+  const supabase = createPublicClient(300);
   const data = unwrap(await supabase
     .from('campaign_stats')
     .select('*')
@@ -122,7 +123,7 @@ export async function getArchivedCampaigns(): Promise<CampaignStats[]> {
 
 export async function getCampaignStats(campaignId: string): Promise<CampaignStats | null> {
   if (demo.isDemoMode()) return demo.demoCampaignStats();
-  const supabase = await createClient();
+  const supabase = createPublicClient(60);
   const data = unwrap(await supabase
     .from('campaign_stats')
     .select('*')
@@ -140,7 +141,7 @@ export async function getCampaignStats(campaignId: string): Promise<CampaignStat
  */
 export async function getFactionStats(campaignId: string): Promise<FactionStats[]> {
   if (demo.isDemoMode()) return demo.demoFactionStats();
-  const supabase = await createClient();
+  const supabase = createPublicClient(60);
   const data = unwrap(await supabase
     .from('campaign_faction_stats')
     .select('*')
@@ -150,7 +151,7 @@ export async function getFactionStats(campaignId: string): Promise<FactionStats[
 
 export async function getCountryStats(campaignId: string): Promise<CountryStats[]> {
   if (demo.isDemoMode()) return demo.demoCountryStats();
-  const supabase = await createClient();
+  const supabase = createPublicClient(60);
   const data = unwrap(await supabase
     .from('campaign_country_stats')
     .select('*')
@@ -184,7 +185,7 @@ export async function getTeams(
 ): Promise<TeamWithStatus[]> {
   if (demo.isDemoMode()) return demo.demoTeams(filters);
 
-  const supabase = await createClient();
+  const supabase = createPublicClient(60);
   let query = supabase.from('teams_view').select('*').eq('campaign_id', campaignId);
 
   if (filters.faction && filters.faction !== 'all') query = query.eq('faction', filters.faction);
@@ -216,14 +217,14 @@ export async function getTeams(
 
 export async function getTeam(teamId: string): Promise<TeamWithStatus | null> {
   if (demo.isDemoMode()) return demo.demoTeam(teamId);
-  const supabase = await createClient();
+  const supabase = createPublicClient(300);
   const data = unwrap(await supabase.from('teams_view').select('*').eq('id', teamId).maybeSingle(), 'teams_view');
   return data as TeamWithStatus | null;
 }
 
 export async function getTeamMembers(teamId: string): Promise<AgentLifetimeStats[]> {
   if (demo.isDemoMode()) return demo.demoTeamMembers(teamId);
-  const supabase = await createClient();
+  const supabase = createPublicClient(300);
   const data = unwrap(await supabase
     .from('team_membership')
     .select('agent_id, agents!inner(id, handle, display_name, avatar_url, faction, country, city)')
@@ -243,15 +244,26 @@ export interface AgentDirectoryFilters {
   campaign?: string;
   sort?: 'name' | 'contribution' | 'campaigns';
   limit?: number;
+  offset?: number;
 }
 
 export async function getAgentDirectory(
   filters: AgentDirectoryFilters = {},
-): Promise<AgentLifetimeStats[]> {
-  if (demo.isDemoMode()) return demo.demoAgentDirectory(filters);
+): Promise<{ agents: AgentLifetimeStats[]; total: number }> {
+  if (demo.isDemoMode()) {
+    const all = demo.demoAgentDirectory({
+      search: filters.search,
+      country: filters.country,
+      faction: filters.faction,
+      sort: filters.sort,
+    });
+    const offset = filters.offset ?? 0;
+    const limit = filters.limit ?? 48;
+    return { agents: all.slice(offset, offset + limit), total: all.length };
+  }
 
-  const supabase = await createClient();
-  let query = supabase.from('agent_lifetime_stats').select('*');
+  const supabase = createPublicClient(300);
+  let query = supabase.from('agent_lifetime_stats').select('*', { count: 'exact' });
 
   if (filters.search) {
     const term = `%${filters.search}%`;
@@ -278,13 +290,16 @@ export async function getAgentDirectory(
       query = query.order('handle', { ascending: true });
   }
 
-  const data = unwrap(await query.limit(filters.limit ?? 500), 'agent_lifetime_stats');
-  return (data ?? []) as AgentLifetimeStats[];
+  const offset = filters.offset ?? 0;
+  const limit = filters.limit ?? 48;
+  const result = await query.range(offset, offset + limit - 1);
+  const data = unwrap(result, 'agent_lifetime_stats');
+  return { agents: (data ?? []) as AgentLifetimeStats[], total: result.count ?? 0 };
 }
 
 export async function getAgentByHandle(handle: string): Promise<AgentLifetimeStats | null> {
   if (demo.isDemoMode()) return demo.demoAgentByHandle(handle);
-  const supabase = await createClient();
+  const supabase = createPublicClient(300);
   const withAt = handle.startsWith('@') ? handle : `@${handle}`;
   const data = unwrap(await supabase
     .from('agent_lifetime_stats')
@@ -300,11 +315,30 @@ export async function getAgentParticipation(agentId: string): Promise<
 > {
   if (demo.isDemoMode()) return demo.demoAgentParticipation(agentId) as never;
 
-  const supabase = await createClient();
+  const supabase = createPublicClient(300);
   const data = unwrap(await supabase
     .from('agent_campaign_stats')
     .select('*, campaign:campaigns!inner(slug, name, status, end_date)')
     .eq('agent_id', agentId)
+    .order('campaign(end_date)', { ascending: false }), 'agent_campaign_stats');
+  return (data ?? []) as never;
+}
+
+/** Same public history lookup keyed by handle, allowing profile queries to run in parallel. */
+export async function getAgentParticipationByHandle(handle: string): Promise<
+  Array<AgentCampaignStats & { campaign: Pick<Campaign, 'slug' | 'name' | 'status' | 'end_date'> }>
+> {
+  if (demo.isDemoMode()) {
+    const agent = demo.demoAgentByHandle(handle);
+    return agent ? demo.demoAgentParticipation(agent.agent_id) as never : [];
+  }
+
+  const supabase = createPublicClient(300);
+  const withAt = handle.startsWith('@') ? handle : `@${handle}`;
+  const data = unwrap(await supabase
+    .from('agent_campaign_stats')
+    .select('*, campaign:campaigns!inner(slug, name, status, end_date)')
+    .eq('handle', withAt)
     .order('campaign(end_date)', { ascending: false }), 'agent_campaign_stats');
   return (data ?? []) as never;
 }
@@ -315,7 +349,7 @@ export async function getCampaignLeaderboard(
 ): Promise<AgentCampaignStats[]> {
   if (demo.isDemoMode()) return demo.demoLeaderboard(limit);
 
-  const supabase = await createClient();
+  const supabase = createPublicClient(60);
   const data = unwrap(await supabase
     .from('agent_campaign_stats')
     .select('*')
@@ -334,7 +368,7 @@ export async function getTeamMedia(teamId: string): Promise<MediaItem[]> {
   // carry real names while the CSV carries handles, and no mapping exists.
   if (demo.isDemoMode()) return [];
 
-  const supabase = await createClient();
+  const supabase = createPublicClient(300);
   const data = unwrap(await supabase
     .from('media')
     .select('*')
@@ -346,7 +380,7 @@ export async function getTeamMedia(teamId: string): Promise<MediaItem[]> {
 export async function getCampaignMedia(campaignId: string, limit = 60): Promise<MediaItem[]> {
   if (demo.isDemoMode()) return demo.demoCampaignMedia(limit);
 
-  const supabase = await createClient();
+  const supabase = createPublicClient(300);
   const data = unwrap(await supabase
     .from('media')
     .select('*')
@@ -363,7 +397,7 @@ export async function getCampaignMedia(campaignId: string, limit = 60): Promise<
 /** The frozen "as published" numbers for an archived campaign. */
 export async function getArchiveSnapshot(campaignId: string): Promise<ArchiveSnapshot | null> {
   if (demo.isDemoMode()) return demo.demoArchiveSnapshot();
-  const supabase = await createClient();
+  const supabase = createPublicClient(3600);
   const data = unwrap(await supabase
     .from('campaign_archive_snapshots')
     .select('*')
@@ -380,7 +414,7 @@ export async function getArchiveSnapshot(campaignId: string): Promise<ArchiveSna
  */
 export async function getImportAnomalies(campaignId: string): Promise<ImportAnomaly[]> {
   if (demo.isDemoMode()) return demo.demoAnomalies();
-  const supabase = await createClient();
+  const supabase = createPublicClient(3600);
   const data = unwrap(await supabase
     .from('import_anomalies')
     .select('*, import_batches!inner(campaign_id)')

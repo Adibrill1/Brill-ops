@@ -1,7 +1,9 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { AlertTriangle, FileWarning } from 'lucide-react';
 import { FactionChip } from '@/components/FactionChip';
+import { CountryName } from '@/components/CountryName';
 import { StatCard } from '@/components/StatCard';
 import { TeamCard } from '@/components/TeamCard';
 import { ALL_FACTIONS } from '@/lib/factions';
@@ -90,7 +92,7 @@ export default async function ArchivedCampaignPage({
           <StatCard label={`Total ${metric}`}
                     value={stats?.total_links_created ?? null}
                     unknownCount={stats?.agents_with_unknown_links} />
-          <StatCard label="Top country"     value={stats?.top_country ?? '—'} />
+          <StatCard label="Top country" value={<CountryName country={stats?.top_country} />} />
           <StatCard label="Top contributor" value={stats?.top_contributor ?? '—'} />
           <StatCard label="Avg per team"    value={stats?.avg_links_per_team ?? null} confidence="computed" />
           <StatCard label="Media items"     value={stats?.media_count ?? 0} />
@@ -148,16 +150,23 @@ export default async function ArchivedCampaignPage({
           <h2 className="mb-3 text-lg font-semibold text-ink">Top contributors</h2>
           <ol className="divide-y divide-slate-100 overflow-hidden rounded-xl border border-slate-200 bg-white">
             {leaderboard.map((a, i) => (
-              <li key={a.agent_id} className="flex items-center gap-3 px-4 py-2.5">
-                <span className="w-6 text-sm font-semibold tabular-nums text-ink-faint">{i + 1}</span>
-                <a href={`/agent/${a.handle.replace('@', '')}`} className="flex-1 truncate text-sm font-medium text-ink hover:underline">
+              <li key={a.agent_id} className={podiumRowClass(i)}>
+                <Link
+                  href={`/agent/${a.handle.replace('@', '')}`}
+                  className="flex min-h-12 w-full cursor-pointer items-center gap-3 px-4 py-2.5 transition hover:bg-slate-50/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-faction-blue active:bg-slate-100"
+                >
+                <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold tabular-nums ${podiumRankClass(i)}`}>
+                  <span className="sr-only">Rank </span>{i + 1}
+                </span>
+                <span className="flex-1 truncate text-sm font-medium text-ink">
                   {a.handle}
-                </a>
+                </span>
                 {a.faction && <FactionChip faction={a.faction} />}
-                <span className="text-sm tabular-nums text-ink-muted">{a.country ?? '—'}</span>
+                <CountryName country={a.country} className="text-sm text-ink-muted" />
                 <span className="w-16 text-right text-sm font-semibold tabular-nums text-ink">
                   {formatCount(a.links_created)}
                 </span>
+                </Link>
               </li>
             ))}
           </ol>
@@ -179,9 +188,9 @@ export default async function ArchivedCampaignPage({
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {countries.map((c) => (
-                  <tr key={c.country}>
-                    <td className="px-4 py-2 font-medium text-ink">{c.country}</td>
+                {countries.map((c, i) => (
+                  <tr key={c.country} className={podiumRowClass(i)}>
+                    <td className="px-4 py-2 font-medium text-ink"><CountryName country={c.country} /></td>
                     <td className="px-4 py-2 text-right tabular-nums text-ink-muted">
                       {formatCount(c.participants)}
                       {c.participants_with_unknown_links > 0 && (
@@ -264,4 +273,18 @@ export default async function ArchivedCampaignPage({
       )}
     </div>
   );
+}
+
+function podiumRowClass(index: number): string {
+  if (index === 0) return 'bg-amber-50/80';
+  if (index === 1) return 'bg-slate-100/80';
+  if (index === 2) return 'bg-orange-50/70';
+  return '';
+}
+
+function podiumRankClass(index: number): string {
+  if (index === 0) return 'bg-amber-200 text-amber-950 ring-1 ring-amber-300';
+  if (index === 1) return 'bg-slate-200 text-slate-800 ring-1 ring-slate-300';
+  if (index === 2) return 'bg-orange-200 text-orange-950 ring-1 ring-orange-300';
+  return 'text-ink-faint';
 }

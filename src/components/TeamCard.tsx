@@ -3,6 +3,7 @@ import { MapPin, Users, Zap } from 'lucide-react';
 import { FACTION_CLASSES } from '@/lib/factions';
 import { formatCount } from '@/lib/format';
 import { ConfidenceBadge } from './ConfidenceBadge';
+import { CountryName } from './CountryName';
 import { FactionChip } from './FactionChip';
 import type { TeamStatus, TeamWithStatus } from '@/types/database';
 
@@ -20,7 +21,7 @@ export function TeamCard({ team }: { team: TeamWithStatus }) {
   return (
     <Link
       href={`/team/${team.id}`}
-      className={`group relative flex aspect-square flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 transition hover:shadow-md hover:ring-2 ${accent.ring}`}
+      className={`group relative flex aspect-square cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md hover:ring-2 focus-visible:outline-none focus-visible:ring-2 active:translate-y-0 ${accent.ring}`}
     >
       <span className={`absolute inset-x-0 top-0 h-1 ${accent.bar}`} aria-hidden />
 
@@ -38,7 +39,8 @@ export function TeamCard({ team }: { team: TeamWithStatus }) {
         {(team.city || team.country) && (
           <p className="mt-0.5 flex items-center gap-1 truncate text-xs text-ink-muted">
             <MapPin className="h-3 w-3 shrink-0" aria-hidden />
-            {[team.city, team.country].filter(Boolean).join(', ')}
+            {team.city}{team.city && team.country ? ', ' : ''}
+            {team.country && <CountryName country={team.country} />}
           </p>
         )}
       </div>

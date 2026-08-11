@@ -1,6 +1,7 @@
 import { formatCount } from '@/lib/format';
 import { ConfidenceBadge } from './ConfidenceBadge';
 import type { DataConfidence } from '@/types/database';
+import type { ReactNode } from 'react';
 
 /**
  * A single live statistic.
@@ -18,7 +19,7 @@ export function StatCard({
   basis,
 }: {
   label: string;
-  value: number | string | null;
+  value: number | string | ReactNode | null;
   suffix?: string;
   unknownCount?: number;
   confidence?: DataConfidence;

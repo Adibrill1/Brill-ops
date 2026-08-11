@@ -3,10 +3,11 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { MapPin } from 'lucide-react';
 import { FactionChip } from '@/components/FactionChip';
+import { CountryName } from '@/components/CountryName';
 import { StatCard } from '@/components/StatCard';
 import { agentFactionLabel } from '@/lib/factions';
 import { formatCount } from '@/lib/format';
-import { getAgentByHandle, getAgentParticipation } from '@/lib/queries';
+import { getAgentByHandle, getAgentParticipationByHandle } from '@/lib/queries';
 
 export const revalidate = 300;
 
@@ -28,10 +29,11 @@ export async function generateMetadata({
  */
 export default async function AgentPage({ params }: { params: Promise<{ handle: string }> }) {
   const { handle } = await params;
-  const agent = await getAgentByHandle(handle);
+  const [agent, participation] = await Promise.all([
+    getAgentByHandle(handle),
+    getAgentParticipationByHandle(handle),
+  ]);
   if (!agent) notFound();
-
-  const participation = await getAgentParticipation(agent.agent_id);
 
   return (
     <div className="space-y-8">
@@ -45,7 +47,8 @@ export default async function AgentPage({ params }: { params: Promise<{ handle: 
             {agent.faction && <FactionChip faction={agent.faction} />}
             <span className="flex items-center gap-1">
               <MapPin className="h-3.5 w-3.5" aria-hidden />
-              {[agent.city, agent.country].filter(Boolean).join(', ') || 'Location not recorded'}
+              {agent.city}{agent.city && agent.country ? ', ' : ''}
+              {agent.country ? <CountryName country={agent.country} /> : (!agent.city && 'Location not recorded')}
             </span>
           </p>
           {!agent.is_claimed && (
@@ -87,21 +90,21 @@ export default async function AgentPage({ params }: { params: Promise<{ handle: 
         ) : (
           <ul className="divide-y divide-slate-100 overflow-hidden rounded-xl border border-slate-200 bg-white">
             {participation.map((p) => (
-              <li key={p.campaign_id} className="flex flex-wrap items-center gap-3 px-4 py-3">
+              <li key={p.campaign_id}>
                 <Link
                   href={
                     p.campaign.status === 'archived'
                       ? `/archive/${p.campaign.slug}`
                       : '/'
                   }
-                  className="flex-1 text-sm font-medium text-ink hover:underline"
+                  className="flex min-h-12 w-full cursor-pointer flex-wrap items-center gap-3 px-4 py-3 text-sm transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-faction-blue active:bg-slate-100"
                 >
-                  {p.campaign.name}
+                  <span className="flex-1 font-medium text-ink">{p.campaign.name}</span>
+                  {p.is_crossfaction_participant && <FactionChip faction="crossfaction" />}
+                  <span className="text-sm tabular-nums text-ink-muted">
+                    {formatCount(p.links_created)} links
+                  </span>
                 </Link>
-                {p.is_crossfaction_participant && <FactionChip faction="crossfaction" />}
-                <span className="text-sm tabular-nums text-ink-muted">
-                  {formatCount(p.links_created)} links
-                </span>
               </li>
             ))}
           </ul>
