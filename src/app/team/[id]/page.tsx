@@ -42,7 +42,7 @@ export default async function TeamPage({ params }: { params: Promise<{ id: strin
                 <span className="flex items-center gap-1">
                   <MapPin className="h-3.5 w-3.5" aria-hidden />
                   {team.city}{team.city && team.country ? ', ' : ''}
-                  {team.country && <CountryName country={team.country} />}
+                  {team.country && <CountryName country={team.country} code={team.country_code} />}
                 </span>
               )}
             </p>

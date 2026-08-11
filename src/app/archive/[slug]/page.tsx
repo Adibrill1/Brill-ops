@@ -93,7 +93,7 @@ export default async function ArchivedCampaignPage({
           <StatCard label={`Total ${metric}`}
                     value={stats?.total_links_created ?? null}
                     unknownCount={stats?.agents_with_unknown_links} />
-          <StatCard label="Top country" value={<CountryName country={stats?.top_country} />} />
+          <StatCard label="Top country" value={<CountryName country={stats?.top_country} code={stats?.top_country_code} />} />
           <StatCard label="Top contributor" value={stats?.top_contributor ?? '—'} />
           <StatCard label="Avg per team"    value={stats?.avg_links_per_team ?? null} confidence="computed" />
           <StatCard label="Media items"     value={stats?.media_count ?? 0} />
@@ -163,7 +163,7 @@ export default async function ArchivedCampaignPage({
                   {a.handle}
                 </span>
                 {a.faction && <FactionChip faction={a.faction} />}
-                <CountryName country={a.country} className="text-sm text-ink-muted" />
+                <CountryName country={a.country} code={a.country_code} className="text-sm text-ink-muted" />
                 <span className="w-16 text-right text-sm font-semibold tabular-nums text-ink">
                   {formatCount(a.links_created)}
                 </span>
@@ -191,7 +191,7 @@ export default async function ArchivedCampaignPage({
               <tbody className="divide-y divide-slate-100">
                 {countries.map((c, i) => (
                   <tr key={c.country} className={podiumRowClass(i)}>
-                    <td className="px-4 py-2 font-medium text-ink"><CountryName country={c.country} /></td>
+                    <td className="px-4 py-2 font-medium text-ink"><CountryName country={c.country} code={c.country_code} /></td>
                     <td className="px-4 py-2 text-right tabular-nums text-ink-muted">
                       {formatCount(c.participants)}
                       {c.participants_with_unknown_links > 0 && (

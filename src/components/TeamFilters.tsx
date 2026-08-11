@@ -34,7 +34,11 @@ const FACTIONS: Array<{ value: 'all' | FactionColour; label: string }> = [
   { value: 'green', label: 'Green · Enlightened' },
 ];
 
-export function TeamFilters({ countries }: { countries: string[] }) {
+export function TeamFilters({
+  countries,
+}: {
+  countries: Array<{ country: string; country_code?: string | null }>;
+}) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -72,8 +76,10 @@ export function TeamFilters({ countries }: { countries: string[] }) {
         aria-label="Filter by country"
       >
         <option value="">All countries</option>
-        {countries.map((c) => (
-          <option key={c} value={c}>{flagEmoji(countryCodeForName(c)) ?? ''} {c}</option>
+        {countries.map(({ country, country_code }) => (
+          <option key={country} value={country}>
+            {flagEmoji(country_code ?? countryCodeForName(country)) ?? ''} {country}
+          </option>
         ))}
       </select>
 

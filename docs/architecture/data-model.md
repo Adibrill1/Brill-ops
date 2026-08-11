@@ -54,6 +54,12 @@ only way to represent it would have been to invent teams, and the invention woul
 become indistinguishable from fact. Keeping participation independent of teams also means
 the 32 inferred teams can be deleted and rebuilt without touching a single agent record.
 
+**`country_iso_codes`** — the canonical mapping from stored country names to ISO 3166-1
+alpha-2 codes. Historical names remain verbatim in their source tables; public views append
+`country_code` through `country_iso_code(text)`. Unknown names return `NULL`, so the UI omits
+the flag instead of guessing. The table is publicly readable under RLS and contains no
+private data.
+
 **`media`** — polymorphic across campaign / team / agent, with a `role`
 (`construction_start`, `construction_end`, `star_screenshot`, `event_video`, …). Carries
 `source_path` + `source_sha256` pointing into `source-data/MANIFEST.json`, and

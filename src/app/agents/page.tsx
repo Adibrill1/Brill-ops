@@ -100,7 +100,7 @@ export default async function AgentsPage({
                   <span className="block truncate text-sm font-medium text-ink">{a.handle}</span>
                   <span className="flex items-center truncate text-xs text-ink-faint">
                     {a.city}{a.city && a.country ? ', ' : ''}
-                    {a.country ? <CountryName country={a.country} /> : (!a.city && 'Location not recorded')}
+                    {a.country ? <CountryName country={a.country} code={a.country_code} /> : (!a.city && 'Location not recorded')}
                   </span>
                 </span>
                 <span className="flex shrink-0 flex-col items-end gap-1">
