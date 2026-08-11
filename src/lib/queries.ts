@@ -377,14 +377,15 @@ export async function getTeamMedia(teamId: string): Promise<MediaItem[]> {
   return (data ?? []) as MediaItem[];
 }
 
-export async function getCampaignMedia(campaignId: string, limit = 60): Promise<MediaItem[]> {
+export async function getCampaignMedia(campaignId: string, limit = 400): Promise<MediaItem[]> {
   if (demo.isDemoMode()) return demo.demoCampaignMedia(limit);
 
-  const supabase = createPublicClient(300);
+  const supabase = createPublicClient(3600);
   const data = unwrap(await supabase
     .from('media')
-    .select('*')
+    .select('id, campaign_id, team_id, agent_id, role, storage_bucket, storage_path, external_url, source_path, source_sha256, is_uploaded, mime_type, bytes, width, height, caption, attributed_to, captured_at, captured_at_confidence')
     .eq('campaign_id', campaignId)
+    .eq('is_uploaded', true)
     .order('captured_at', { ascending: true })
     .limit(limit), 'media');
   return (data ?? []) as MediaItem[];

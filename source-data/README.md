@@ -27,7 +27,7 @@ missing or altered.
 | Path | Files | Size | Notes |
 | --- | ---: | ---: | --- |
 | `historical-campaigns/2020-07-the-big-bang/` | 342 | 875 MB | Operation "The Big Bang", 31 July 2020 |
-| ├ `Stars/` | 276 | 244 MB | Per-agent link-star screenshots |
+| ├ `Stars/` | 276 | 244 MB | Link-star submissions plus a mixed phone-camera sequence; see the curation record |
 | ├ `Videos/` | 15 | 599 MB | Includes `IMG_6970.MOV` at 185 MB |
 | ├ `Photos/` | 40 | 6.8 MB | mtimes are from a 2026 re-export — not capture dates |
 | ├ `Txt/` | 10 | 26 MB | **`TheBigBang - All agents.csv`** plus 9 spreadsheet screenshots |
@@ -41,5 +41,7 @@ else about the 2020 statistics had to be read out of screenshots — see
 
 ## ⚠ Backup warning
 
-Until every row in the `media` table has `is_uploaded = true`, **this folder is the only
-copy of 875 MB of community history.** Back it up.
+The reviewed public archive contains 272 unique campaign assets. Another 64 unrelated
+camera-roll files and 6 exact duplicates remain catalogued but intentionally unpublished;
+see `data/archive-imports/the-big-bang-2020/media-curation.json` for every decision.
+**Keep an independent backup of all 342 originals**, including the unpublished files.

@@ -87,6 +87,7 @@ const MEDIA = mediaJson.media as Array<{
   role: string;
   kind: string;
   bytes: number;
+  sha256: string;
   attributed_to: string | null;
   captured_at: string;
 }>;
@@ -455,7 +456,12 @@ export function demoCampaignMedia(limit = 60): MediaItem[] {
     storage_path: null,
     external_url: null,
     source_path: m.source_path,
+    source_sha256: m.sha256,
     is_uploaded: false,
+    mime_type: null,
+    bytes: m.bytes,
+    width: null,
+    height: null,
     caption: null,
     attributed_to: m.attributed_to,
     captured_at: m.captured_at,
