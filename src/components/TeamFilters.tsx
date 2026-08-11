@@ -43,7 +43,8 @@ export function TeamFilters({ countries }: { countries: string[] }) {
     const next = new URLSearchParams(params.toString());
     if (!value || value === 'all') next.delete(key);
     else next.set(key, value);
-    router.replace(`${pathname}?${next.toString()}`, { scroll: false });
+    const query = next.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
   };
 
   const selectClass =
@@ -51,26 +52,7 @@ export function TeamFilters({ countries }: { countries: string[] }) {
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      {/* Faction. Note 'Crossfaction' sits alongside Blue and Green as a
-          first-class option, not as an afterthought or a checkbox. */}
-      <div className="flex flex-wrap gap-1 rounded-xl border border-slate-200 bg-white p-1 shadow-sm" role="group" aria-label="Filter teams by faction">
-        {FACTIONS.map(({ value, label }) => {
-          const active = (params.get('faction') ?? 'all') === value;
-          return (
-            <button
-              key={value}
-              type="button"
-              aria-pressed={active}
-              onClick={() => set('faction', value)}
-              className={`min-h-11 cursor-pointer rounded-lg px-3 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-faction-blue focus-visible:ring-offset-1 active:translate-y-px ${
-                active ? 'bg-ink text-white shadow-sm' : 'text-ink-muted hover:bg-slate-100 hover:text-ink'
-              }`}
-            >
-              {label}
-            </button>
-          );
-        })}
-      </div>
+      <FactionFilter />
 
       <select
         className={selectClass}
@@ -105,6 +87,42 @@ export function TeamFilters({ countries }: { countries: string[] }) {
           <option key={s.value} value={s.value}>{s.label}</option>
         ))}
       </select>
+    </div>
+  );
+}
+
+/** Standalone faction control for pages that do not expose the other team filters. */
+export function FactionFilter() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useSearchParams();
+
+  const select = (value: string) => {
+    const next = new URLSearchParams(params.toString());
+    if (value === 'all') next.delete('faction');
+    else next.set('faction', value);
+    const query = next.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  };
+
+  return (
+    <div className="flex flex-wrap gap-1 rounded-xl border border-slate-200 bg-white p-1 shadow-sm" role="group" aria-label="Filter teams by faction">
+      {FACTIONS.map(({ value, label }) => {
+        const active = (params.get('faction') ?? 'all') === value;
+        return (
+          <button
+            key={value}
+            type="button"
+            aria-pressed={active}
+            onClick={() => select(value)}
+            className={`min-h-11 min-w-11 cursor-pointer rounded-lg px-3 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-faction-blue focus-visible:ring-offset-1 active:translate-y-px ${
+              active ? 'bg-ink text-white shadow-sm' : 'text-ink-muted hover:bg-slate-100 hover:text-ink'
+            }`}
+          >
+            {label}
+          </button>
+        );
+      })}
     </div>
   );
 }
