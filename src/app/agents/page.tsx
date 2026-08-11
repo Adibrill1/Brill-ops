@@ -9,6 +9,18 @@ import { getAgentDirectory } from '@/lib/queries';
 export const metadata: Metadata = { title: 'Agent directory' };
 export const revalidate = 300;
 
+const FACTION_OPTIONS = [
+  { value: '', label: 'All factions' },
+  { value: 'blue', label: 'Blue · Resistance' },
+  { value: 'green', label: 'Green · Enlightened' },
+] as const;
+
+const SORT_OPTIONS = [
+  { value: 'name', label: 'A–Z' },
+  { value: 'contribution', label: 'By contribution' },
+  { value: 'campaigns', label: 'By campaigns joined' },
+] as const;
+
 /**
  * Every participant across every campaign, searchable by name, country and city.
  *
@@ -23,11 +35,15 @@ export default async function AgentsPage({
   const params = await searchParams;
   const page = Math.max(1, Number.parseInt(params.page ?? '1', 10) || 1);
   const pageSize = 48;
+  const faction = params.faction === 'blue' || params.faction === 'green' ? params.faction : '';
+  const sort = SORT_OPTIONS.some((option) => option.value === params.sort)
+    ? params.sort as 'name' | 'contribution' | 'campaigns'
+    : 'name';
   const { agents, total } = await getAgentDirectory({
     search: params.q,
     country: params.country,
-    faction: params.faction,
-    sort: (params.sort as 'name') ?? 'name',
+    faction,
+    sort,
     limit: pageSize,
     offset: (page - 1) * pageSize,
   });
@@ -42,44 +58,48 @@ export default async function AgentsPage({
         </p>
       </header>
 
-      <form className="flex flex-wrap gap-2" action="/agents">
-        <div className="relative flex-1 min-w-[220px]">
+      <div className="space-y-3">
+        <form className="flex flex-wrap gap-2" action="/agents">
+          {faction && <input type="hidden" name="faction" value={faction} />}
+          {sort !== 'name' && <input type="hidden" name="sort" value={sort} />}
+          {params.country && <input type="hidden" name="country" value={params.country} />}
+          <div className="relative min-w-[220px] flex-1">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-faint" aria-hidden />
           <input
             type="search"
             name="q"
             defaultValue={params.q ?? ''}
             placeholder="Search by agent name, country or city…"
-            className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm shadow-sm focus:border-faction-blue focus:outline-none focus:ring-1 focus:ring-faction-blue"
+            className="min-h-11 w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm shadow-sm focus:border-faction-blue focus:outline-none focus:ring-1 focus:ring-faction-blue"
+          />
+          </div>
+          <button
+            type="submit"
+            className="min-h-11 cursor-pointer rounded-lg bg-ink px-4 py-2 text-sm font-medium text-white transition hover:bg-ink/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-faction-blue focus-visible:ring-offset-1 active:translate-y-px"
+          >
+            Search
+          </button>
+        </form>
+
+        <div className="grid gap-3 lg:grid-cols-2">
+          <AgentOptionGroup
+            label="Filter by faction"
+            param="faction"
+            current={faction}
+            defaultValue=""
+            options={FACTION_OPTIONS}
+            params={params}
+          />
+          <AgentOptionGroup
+            label="Sort agents"
+            param="sort"
+            current={sort}
+            defaultValue="name"
+            options={SORT_OPTIONS}
+            params={params}
           />
         </div>
-        <select
-          name="faction"
-          defaultValue={params.faction ?? ''}
-          className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm"
-          aria-label="Filter by faction"
-        >
-          <option value="">All factions</option>
-          <option value="blue">Blue · Resistance</option>
-          <option value="green">Green · Enlightened</option>
-        </select>
-        <select
-          name="sort"
-          defaultValue={params.sort ?? 'name'}
-          className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm"
-          aria-label="Sort agents"
-        >
-          <option value="name">A–Z</option>
-          <option value="contribution">By contribution</option>
-          <option value="campaigns">By campaigns joined</option>
-        </select>
-        <button
-          type="submit"
-          className="min-h-11 cursor-pointer rounded-lg bg-ink px-4 py-2 text-sm font-medium text-white transition hover:bg-ink/90 active:translate-y-px"
-        >
-          Search
-        </button>
-      </form>
+      </div>
 
       {agents.length === 0 ? (
         <p className="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-center text-sm text-ink-muted">
@@ -124,6 +144,67 @@ export default async function AgentsPage({
       )}
     </div>
   );
+}
+
+function AgentOptionGroup({
+  label,
+  param,
+  current,
+  defaultValue,
+  options,
+  params,
+}: {
+  label: string;
+  param: 'faction' | 'sort';
+  current: string;
+  defaultValue: string;
+  options: ReadonlyArray<{ value: string; label: string }>;
+  params: Record<string, string | undefined>;
+}) {
+  return (
+    <div>
+      <p className="mb-1.5 text-xs font-medium text-ink-muted">{label}</p>
+      <div
+        className="flex flex-wrap gap-1 rounded-xl border border-slate-200 bg-white p-1 shadow-sm"
+        role="group"
+        aria-label={label}
+      >
+        {options.map((option) => {
+          const active = current === option.value;
+          return (
+            <Link
+              key={option.value}
+              href={agentOptionHref(params, param, option.value, defaultValue)}
+              aria-current={active ? 'page' : undefined}
+              className={`inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-faction-blue focus-visible:ring-offset-1 active:translate-y-px ${
+                active
+                  ? 'bg-ink text-white shadow-sm'
+                  : 'bg-slate-50 text-ink-muted hover:bg-slate-100 hover:text-ink'
+              }`}
+            >
+              {option.label}
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function agentOptionHref(
+  params: Record<string, string | undefined>,
+  key: 'faction' | 'sort',
+  value: string,
+  defaultValue: string,
+): string {
+  const next = new URLSearchParams();
+  Object.entries(params).forEach(([param, current]) => {
+    if (current && param !== 'page') next.set(param, current);
+  });
+  if (value === defaultValue) next.delete(key);
+  else next.set(key, value);
+  const query = next.toString();
+  return query ? `/agents?${query}` : '/agents';
 }
 
 function PageLink({

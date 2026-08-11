@@ -54,6 +54,51 @@ test('agent directory is paginated and country flags stay decorative', async ({ 
   await expect(page.getByText('Page 2 of 3')).toBeVisible();
 });
 
+test('agent faction and sort choices are visible button controls on mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await expectHealthyPage(page, '/agents', 'Agent directory');
+
+  await expect(page.locator('main select')).toHaveCount(0);
+  const faction = page.getByRole('group', { name: 'Filter by faction' });
+  const sort = page.getByRole('group', { name: 'Sort agents' });
+  await expect(faction.getByRole('link')).toHaveCount(3);
+  await expect(sort.getByRole('link')).toHaveCount(3);
+  await expect(faction.getByRole('link', { name: 'All factions' })).toHaveAttribute(
+    'aria-current',
+    'page',
+  );
+  await expect(sort.getByRole('link', { name: 'A–Z' })).toHaveAttribute('aria-current', 'page');
+
+  const targets = await page
+    .locator('[role="group"] a')
+    .evaluateAll((links) => links.map((link) => {
+      const box = link.getBoundingClientRect();
+      return { width: box.width, height: box.height };
+    }));
+  for (const target of targets) {
+    expect(target.width).toBeGreaterThanOrEqual(44);
+    expect(target.height).toBeGreaterThanOrEqual(44);
+  }
+
+  await faction.getByRole('link', { name: 'Blue · Resistance' }).click();
+  await expect(page).toHaveURL(/\/agents\?faction=blue$/);
+  await expect(
+    page.getByRole('group', { name: 'Filter by faction' }).getByRole('link', {
+      name: 'Blue · Resistance',
+    }),
+  ).toHaveAttribute('aria-current', 'page');
+
+  await page.getByRole('group', { name: 'Sort agents' }).getByRole('link', {
+    name: 'By contribution',
+  }).click();
+  await expect(page).toHaveURL(/\/agents\?faction=blue&sort=contribution$/);
+
+  const hasViewportOverflow = await page.evaluate(
+    () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
+  );
+  expect(hasViewportOverflow).toBe(false);
+});
+
 test('archive ranking and mobile faction filter preserve meaning and layout', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 800 });
   await expectHealthyPage(page, archivePath, 'The Big Bang');
