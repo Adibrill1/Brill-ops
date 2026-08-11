@@ -51,5 +51,7 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|icons|sw.js|manifest.webmanifest).*)'],
+  // Public pages use a cookie-free anon client and can be cached. Refresh a
+  // session only where authentication is actually involved.
+  matcher: ['/submit/:path*', '/auth/:path*'],
 };

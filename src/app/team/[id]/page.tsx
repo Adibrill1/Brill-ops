@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MapPin } from 'lucide-react';
 import { ConfidenceBadge } from '@/components/ConfidenceBadge';
+import { CountryName } from '@/components/CountryName';
 import { FactionChip } from '@/components/FactionChip';
 import { StatCard } from '@/components/StatCard';
 import { formatCount, formatDate } from '@/lib/format';
@@ -40,7 +41,8 @@ export default async function TeamPage({ params }: { params: Promise<{ id: strin
               {(team.city || team.country) && (
                 <span className="flex items-center gap-1">
                   <MapPin className="h-3.5 w-3.5" aria-hidden />
-                  {[team.city, team.country].filter(Boolean).join(', ')}
+                  {team.city}{team.city && team.country ? ', ' : ''}
+                  {team.country && <CountryName country={team.country} />}
                 </span>
               )}
             </p>
@@ -105,7 +107,7 @@ export default async function TeamPage({ params }: { params: Promise<{ id: strin
               <li key={m.agent_id ?? m.handle}>
                 <Link
                   href={`/agent/${m.handle.replace('@', '')}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm text-ink transition hover:shadow-sm"
+                  className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 text-sm text-ink transition hover:bg-slate-50 hover:shadow-sm active:translate-y-px"
                 >
                   {m.handle}
                   {m.faction && <FactionChip faction={m.faction} />}

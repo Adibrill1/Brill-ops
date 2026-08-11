@@ -30,7 +30,7 @@ export default async function SubmitPage() {
         </p>
         <Link
           href="/archive"
-          className="inline-flex items-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-white"
+          className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-medium text-white transition hover:bg-ink/90 active:translate-y-px"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden /> Go to the Archive
         </Link>

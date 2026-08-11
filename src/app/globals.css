@@ -14,6 +14,17 @@ body {
   @apply bg-slate-50 text-ink antialiased;
 }
 
+a[href],
+button:not(:disabled),
+summary {
+  cursor: pointer;
+}
+
+:where(a[href], button, select, input, summary):focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
 /* Respect the notch when installed as a PWA. */
 @supports (padding: max(0px)) {
   body {

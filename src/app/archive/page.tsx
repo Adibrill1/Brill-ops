@@ -37,7 +37,7 @@ export default async function ArchivePage() {
             <Link
               key={c.campaign_id}
               href={`/archive/${c.slug}`}
-              className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:shadow-md"
+              className="group cursor-pointer rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-faction-blue active:translate-y-0"
             >
               <div className="flex items-start justify-between gap-3">
                 <h2 className="text-lg font-semibold text-ink group-hover:underline">{c.name}</h2>

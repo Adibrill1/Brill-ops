@@ -90,7 +90,7 @@ export default function GlobalError({
             <button
               type="button"
               onClick={reset}
-              className="mt-5 inline-flex items-center gap-2 rounded-lg bg-amber-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-amber-800"
+              className="mt-5 inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-lg bg-amber-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-amber-800 active:translate-y-px"
             >
               <RefreshCw className="h-4 w-4" aria-hidden /> Try again
             </button>

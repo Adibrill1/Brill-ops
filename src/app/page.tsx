@@ -78,7 +78,7 @@ export default async function HomePage({
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href="/submit"
-            className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-ink transition hover:bg-slate-100"
+            className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-ink transition hover:bg-slate-100 active:translate-y-px"
           >
             Join this campaign <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
@@ -201,7 +201,7 @@ async function NoActiveCampaign() {
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href="/archive"
-            className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-ink transition hover:bg-slate-100"
+            className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-medium text-ink transition hover:bg-slate-100 active:translate-y-px"
           >
             Browse the Archive <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
@@ -217,7 +217,7 @@ async function NoActiveCampaign() {
               <Link
                 key={c.campaign_id}
                 href={`/archive/${c.slug}`}
-                className="rounded-xl border border-slate-200 bg-white p-5 transition hover:shadow-md"
+                className="cursor-pointer rounded-xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-faction-blue active:translate-y-0"
               >
                 <h3 className="text-base font-semibold text-ink">{c.name}</h3>
                 <p className="mt-1 text-xs text-ink-muted">
