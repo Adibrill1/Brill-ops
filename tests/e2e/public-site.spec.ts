@@ -1,6 +1,13 @@
 import { expect, test, type Page } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
 
 const archivePath = '/archive/the-big-bang-2020';
+
+const accessibilityRoutes = [
+  { path: '/', heading: 'Brill Ops' },
+  { path: '/agents', heading: 'Agent directory' },
+  { path: archivePath, heading: 'The Big Bang' },
+] as const;
 
 async function expectHealthyPage(page: Page, path: string, heading: string | RegExp) {
   const response = await page.goto(path);
@@ -8,6 +15,21 @@ async function expectHealthyPage(page: Page, path: string, heading: string | Reg
   expect(response?.ok(), `${path} should return a successful response`).toBe(true);
   await expect(page.getByRole('heading', { level: 1, name: heading })).toBeVisible();
   await expect(page.getByText('Something went wrong')).toHaveCount(0);
+}
+
+for (const route of accessibilityRoutes) {
+  test(`${route.path} has no automatically detectable WCAG A/AA violations`, async ({ page }) => {
+    await expectHealthyPage(page, route.path, route.heading);
+
+    const results = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
+      .analyze();
+    const summary = results.violations
+      .map((violation) => `${violation.id}: ${violation.nodes.length} node(s) — ${violation.help}`)
+      .join('\n');
+
+    expect(results.violations, summary || 'No accessibility violations').toEqual([]);
+  });
 }
 
 test('public routes render and natural cards navigate', async ({ page }) => {

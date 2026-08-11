@@ -11,19 +11,19 @@ const config: Config = {
     extend: {
       colors: {
         faction: {
-          blue: '#2563eb',
+          blue: '#1d4ed8',
           'blue-soft': '#dbeafe',
-          green: '#16a34a',
+          green: '#15803d',
           'green-soft': '#dcfce7',
           // Crossfaction gets its own token deliberately - rendering it as a
           // blue/green gradient everywhere made small UI unreadable.
-          crossfaction: '#d97706',
+          crossfaction: '#b45309',
           'crossfaction-soft': '#fef3c7',
         },
         ink: {
           DEFAULT: '#0f172a',
           muted: '#475569',
-          faint: '#94a3b8',
+          faint: '#5b6b80',
         },
       },
       fontFamily: {
