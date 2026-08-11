@@ -25,6 +25,12 @@ summary {
   outline-offset: 2px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse {
+    animation: none;
+  }
+}
+
 /* Respect the notch when installed as a PWA. */
 @supports (padding: max(0px)) {
   body {

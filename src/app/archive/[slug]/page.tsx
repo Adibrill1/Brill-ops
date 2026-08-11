@@ -6,6 +6,7 @@ import { FactionChip } from '@/components/FactionChip';
 import { CountryName } from '@/components/CountryName';
 import { StatCard } from '@/components/StatCard';
 import { TeamCard } from '@/components/TeamCard';
+import { FactionFilter } from '@/components/TeamFilters';
 import { ALL_FACTIONS } from '@/lib/factions';
 import { formatCount, formatDateRange } from '@/lib/format';
 import {
@@ -210,16 +211,23 @@ export default async function ArchivedCampaignPage({
       )}
 
       {/* ---- Teams ------------------------------------------------------- */}
-      {teams.length > 0 && (
-        <section>
-          <h2 className="mb-3 text-lg font-semibold text-ink">
-            Teams <span className="text-ink-faint">({teams.length})</span>
-          </h2>
+      <section>
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-lg font-semibold text-ink">
+              Teams <span className="text-ink-faint">({teams.length})</span>
+            </h2>
+            <FactionFilter />
+          </div>
+        {teams.length > 0 ? (
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {teams.map((t) => <TeamCard key={t.id} team={t} />)}
           </div>
-        </section>
-      )}
+        ) : (
+          <p className="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-center text-sm text-ink-muted">
+            No teams match this faction.
+          </p>
+        )}
+      </section>
 
       {/* ---- Footnotes --------------------------------------------------- */}
       {(disagreements.length > 0 || rowLevel.length > 0 || snapshot) && (
