@@ -18,7 +18,7 @@ export function SiteHeader() {
           <span className="text-base font-semibold tracking-tight text-ink">Brill Ops</span>
         </Link>
 
-        <nav className="flex items-center gap-1">
+        <nav aria-label="Primary navigation" className="flex items-center gap-1">
           {NAV.map(({ href, label, icon: Icon }) => (
             <Link
               key={href}
@@ -26,7 +26,7 @@ export function SiteHeader() {
               className="flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition hover:bg-slate-100 hover:text-ink active:bg-slate-200"
             >
               <Icon className="h-4 w-4" aria-hidden />
-              <span className="hidden sm:inline">{label}</span>
+              <span className="sr-only sm:not-sr-only">{label}</span>
             </Link>
           ))}
         </nav>

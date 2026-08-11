@@ -64,14 +64,16 @@ export default async function AgentsPage({
           {sort !== 'name' && <input type="hidden" name="sort" value={sort} />}
           {params.country && <input type="hidden" name="country" value={params.country} />}
           <div className="relative min-w-[220px] flex-1">
-          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-faint" aria-hidden />
-          <input
-            type="search"
-            name="q"
-            defaultValue={params.q ?? ''}
-            placeholder="Search by agent name, country or city…"
-            className="min-h-11 w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm shadow-sm focus:border-faction-blue focus:outline-none focus:ring-1 focus:ring-faction-blue"
-          />
+            <label htmlFor="agent-search" className="sr-only">Search agents</label>
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-faint" aria-hidden />
+            <input
+              id="agent-search"
+              type="search"
+              name="q"
+              defaultValue={params.q ?? ''}
+              placeholder="Search by agent name, country or city…"
+              className="min-h-11 w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm shadow-sm focus:border-faction-blue focus:outline-none focus:ring-1 focus:ring-faction-blue"
+            />
           </div>
           <button
             type="submit"
