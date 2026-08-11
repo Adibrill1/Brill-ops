@@ -182,9 +182,10 @@ test('keyboard focus is visible and interactive markup is not nested', async ({ 
   await expectHealthyPage(page, '/archive', 'Archive');
 
   await page.keyboard.press('Tab');
-  const focused = page.locator(':focus');
-  await expect(focused).toBeVisible();
-  const focusStyle = await focused.evaluate((element) => {
+  const skipLink = page.getByRole('link', { name: 'Skip to main content' });
+  await expect(skipLink).toBeFocused();
+  await expect(skipLink).toBeVisible();
+  const focusStyle = await skipLink.evaluate((element) => {
     const style = getComputedStyle(element);
     return {
       outlineStyle: style.outlineStyle,
@@ -197,6 +198,10 @@ test('keyboard focus is visible and interactive markup is not nested', async ({ 
       focusStyle.outlineWidth !== '0px' ||
       focusStyle.boxShadow !== 'none',
   ).toBe(true);
+
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/\/archive#main-content$/);
+  await expect(page.locator('main#main-content')).toBeFocused();
 
   const nestedInteractive = await page.locator('a a, a button, button a').count();
   expect(nestedInteractive).toBe(0);
