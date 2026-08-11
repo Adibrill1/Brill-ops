@@ -25,7 +25,7 @@ export function FactionChip({
       <span className={`h-1.5 w-1.5 rounded-full ${cls.bar}`} aria-hidden />
       {FACTION_LABEL[faction]}
       {showDescription && (
-        <span className="font-normal opacity-70">· {FACTION_DESCRIPTION[faction]}</span>
+        <span className="font-normal">· {FACTION_DESCRIPTION[faction]}</span>
       )}
     </span>
   );
