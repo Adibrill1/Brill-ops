@@ -99,6 +99,17 @@ test('agent faction and sort choices are visible button controls on mobile', asy
   expect(hasViewportOverflow).toBe(false);
 });
 
+test('mobile navigation and agent search retain accessible names', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await expectHealthyPage(page, '/agents', 'Agent directory');
+
+  const navigation = page.getByRole('navigation', { name: 'Primary navigation' });
+  for (const name of ['Campaign', 'Agents', 'Archive']) {
+    await expect(navigation.getByRole('link', { name, exact: true })).toBeVisible();
+  }
+  await expect(page.getByRole('searchbox', { name: 'Search agents' })).toBeVisible();
+});
+
 test('archive ranking and mobile faction filter preserve meaning and layout', async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 800 });
   await expectHealthyPage(page, archivePath, 'The Big Bang');
