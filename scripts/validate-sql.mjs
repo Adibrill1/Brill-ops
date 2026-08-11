@@ -13,8 +13,9 @@
  *
  *   npm i -D embedded-postgres
  *
- * then point PGVALIDATE_HOST/PGVALIDATE_PORT at it, or set PGVALIDATE_URL to any
- * disposable database. Nothing here ever touches a real project.
+ * then point PGVALIDATE_HOST/PGVALIDATE_PORT at it, or set PGVALIDATE_URL to a
+ * local database named `brill_ops_validate`. A hard guard rejects remote hosts
+ * and every other database name before opening a connection.
  *
  * Supabase supplies `auth` and `storage` schemas that plain Postgres does not, so
  * this creates minimal stand-ins first. They are stubs, deliberately: this proves
@@ -25,10 +26,56 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import pg from 'pg';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const VALIDATION_DATABASE = 'brill_ops_validate';
+
+/**
+ * This script deliberately drops and recreates the public schema. Refuse every
+ * target except a clearly named local throwaway database so a copied production
+ * URL can never turn a validation command into a destructive one.
+ */
+export function validationConnection(env = process.env) {
+  if (env.PGVALIDATE_URL) {
+    let target;
+    try {
+      target = new URL(env.PGVALIDATE_URL);
+    } catch {
+      throw new Error('PGVALIDATE_URL must be a valid PostgreSQL URL.');
+    }
+    if (!['postgres:', 'postgresql:'].includes(target.protocol)) {
+      throw new Error('PGVALIDATE_URL must use the postgres or postgresql protocol.');
+    }
+
+    const database = decodeURIComponent(target.pathname.replace(/^\//, ''));
+    const localHosts = new Set(['localhost', '127.0.0.1', '[::1]', '::1']);
+    if (!localHosts.has(target.hostname) || database !== VALIDATION_DATABASE) {
+      throw new Error(
+        `Refusing destructive SQL validation: use a local database named "${VALIDATION_DATABASE}".`,
+      );
+    }
+
+    return { connectionString: env.PGVALIDATE_URL };
+  }
+
+  const host = env.PGVALIDATE_HOST ?? '/tmp/pgtest';
+  const database = env.PGVALIDATE_DATABASE ?? VALIDATION_DATABASE;
+  const localHost = host.startsWith('/') || ['localhost', '127.0.0.1', '[::1]', '::1'].includes(host);
+  if (!localHost || database !== VALIDATION_DATABASE) {
+    throw new Error(
+      `Refusing destructive SQL validation: use a local database named "${VALIDATION_DATABASE}".`,
+    );
+  }
+
+  return {
+    host,
+    port: Number(env.PGVALIDATE_PORT ?? 54399),
+    user: env.PGVALIDATE_USER ?? 'postgres',
+    database,
+  };
+}
 
 /**
  * Minimal stand-ins for the platform schemas Supabase provides.
@@ -107,16 +154,7 @@ const EXPECTED = {
 };
 
 async function main() {
-  const client = new pg.Client(
-    process.env.PGVALIDATE_URL
-      ? { connectionString: process.env.PGVALIDATE_URL }
-      : {
-          host: process.env.PGVALIDATE_HOST ?? '/tmp/pgtest',
-          port: Number(process.env.PGVALIDATE_PORT ?? 54399),
-          user: 'postgres',
-          database: 'postgres',
-        },
-  );
+  const client = new pg.Client(validationConnection());
 
   await client.connect();
   console.log('Connected to the validation database.\n');
@@ -332,4 +370,5 @@ async function main() {
   console.log('\nAll migrations, seeds and views validated.');
 }
 
-await main();
+const invokedPath = process.argv[1] ? pathToFileURL(path.resolve(process.argv[1])).href : null;
+if (invokedPath === import.meta.url) await main();
