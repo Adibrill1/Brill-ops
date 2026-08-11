@@ -126,7 +126,7 @@ export default async function HomePage({
           <h2 className="text-lg font-semibold text-ink">
             Teams <span className="text-ink-faint">({teams.length})</span>
           </h2>
-          <TeamFilters countries={countries.map((c) => c.country)} />
+          <TeamFilters countries={countries} />
         </div>
 
         {teams.length === 0 ? (

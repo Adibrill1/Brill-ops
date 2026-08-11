@@ -48,7 +48,7 @@ export default async function AgentPage({ params }: { params: Promise<{ handle: 
             <span className="flex items-center gap-1">
               <MapPin className="h-3.5 w-3.5" aria-hidden />
               {agent.city}{agent.city && agent.country ? ', ' : ''}
-              {agent.country ? <CountryName country={agent.country} /> : (!agent.city && 'Location not recorded')}
+              {agent.country ? <CountryName country={agent.country} code={agent.country_code} /> : (!agent.city && 'Location not recorded')}
             </span>
           </p>
           {!agent.is_claimed && (

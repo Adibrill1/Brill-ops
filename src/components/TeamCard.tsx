@@ -40,7 +40,7 @@ export function TeamCard({ team }: { team: TeamWithStatus }) {
           <p className="mt-0.5 flex items-center gap-1 truncate text-xs text-ink-muted">
             <MapPin className="h-3 w-3 shrink-0" aria-hidden />
             {team.city}{team.city && team.country ? ', ' : ''}
-            {team.country && <CountryName country={team.country} />}
+            {team.country && <CountryName country={team.country} code={team.country_code} />}
           </p>
         )}
       </div>

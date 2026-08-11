@@ -103,6 +103,7 @@ export interface Team {
   name: string;
   faction: FactionColour;
   country: string | null;
+  country_code?: string | null;
   city: string | null;
   portal_address: string | null;
   construction_start_date: string | null;
@@ -169,6 +170,7 @@ export interface CampaignStats {
 
   largest_team: string | null;
   top_country: string | null;
+  top_country_code?: string | null;
   top_contributor: string | null;
 
   media_count: number;
@@ -188,6 +190,7 @@ export interface FactionStats {
 export interface CountryStats {
   campaign_id: string;
   country: string;
+  country_code?: string | null;
   participants: number;
   total_links: number | null;
   max_links_by_one_agent: number | null;
@@ -202,6 +205,7 @@ export interface AgentLifetimeStats {
   avatar_url: string | null;
   faction: AgentFaction | null;
   country: string | null;
+  country_code?: string | null;
   city: string | null;
   is_claimed: boolean;
   campaigns_participated: number;
@@ -222,6 +226,7 @@ export interface AgentCampaignStats {
   avatar_url: string | null;
   faction: AgentFaction | null;
   country: string | null;
+  country_code?: string | null;
   city: string | null;
   links_created: number | null;
   links_confidence: DataConfidence;

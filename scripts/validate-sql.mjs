@@ -216,9 +216,17 @@ async function main() {
   );
 
   const countries = (await client.query(
-    `select count(*)::int as n from campaign_country_stats`,
-  )).rows[0].n;
-  console.log(`  campaign_country_stats  ${countries} rows`);
+    `select count(*)::int as n,
+            count(*) filter (where country_code is null)::int as missing_codes
+       from campaign_country_stats`,
+  )).rows[0];
+  console.log(`  campaign_country_stats  ${countries.n} rows, ${countries.missing_codes} missing ISO codes`);
+  if (countries.missing_codes !== 0) {
+    bad.push(`${countries.missing_codes} country rows have no ISO code`);
+  }
+  if (stats.top_country_code !== 'BR') {
+    bad.push(`top country ISO code is ${stats.top_country_code}, expected BR`);
+  }
 
   const lifetime = (await client.query(
     `select handle, total_links_created, teams_joined
@@ -266,7 +274,7 @@ async function main() {
   for (const rel of [
     'campaigns', 'agents', 'teams_view', 'campaign_stats',
     'campaign_faction_stats', 'campaign_country_stats',
-    'agent_lifetime_stats', 'import_anomalies',
+    'agent_lifetime_stats', 'country_iso_codes', 'import_anomalies',
   ]) {
     try {
       const n = (await client.query(`select count(*)::int as n from ${rel}`)).rows[0].n;

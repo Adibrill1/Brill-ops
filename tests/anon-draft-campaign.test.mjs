@@ -95,3 +95,18 @@ test('the archived campaign is visible, so NoActiveCampaign has content', { skip
   );
   assert.ok(rows.length >= 1, 'at least one archived campaign should be visible to anon');
 });
+
+test('anon receives stored ISO codes through every country-bearing public view', { skip }, async () => {
+  for (const relation of ['teams_view', 'agent_campaign_stats', 'agent_lifetime_stats', 'campaign_country_stats']) {
+    const { rows } = await asAnon(
+      `select count(*)::int as missing from ${relation}
+       where country is not null and country_code is null`,
+    );
+    assert.equal(rows[0].missing, 0, `${relation} must expose an ISO code for every known country`);
+  }
+
+  const stats = await asAnon(
+    `select top_country, top_country_code from campaign_stats where slug = 'the-big-bang-2020'`,
+  );
+  assert.deepEqual(stats.rows[0], { top_country: 'Brazil', top_country_code: 'BR' });
+});
