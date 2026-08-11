@@ -1,13 +1,20 @@
 /**
- * Minimal service worker: enough to make Brill Ops installable and to keep the
- * app shell available offline.
+ * Minimal service worker: enough to make Brill Ops installable and to show a
+ * truthful offline page.
  *
  * Deliberately conservative — it never caches API or Supabase responses, because
  * a campaign dashboard showing stale statistics is worse than one that says it is
  * offline. Statistics are live by design.
  */
-const CACHE = 'brill-ops-shell-v1';
-const SHELL = ['/', '/manifest.webmanifest'];
+const CACHE = 'brill-ops-shell-v2';
+const OFFLINE_URL = '/offline';
+const SHELL = [
+  OFFLINE_URL,
+  '/manifest.webmanifest',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  '/icons/icon-maskable-512.png',
+];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)));
@@ -28,19 +35,12 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') return;
 
   const url = new URL(request.url);
-  // Never serve stale data. Same-origin navigation only.
+  // Never cache campaign pages or statistics. A failed navigation gets one
+  // static explanation instead of a stale dashboard that looks current.
   if (url.origin !== self.location.origin) return;
   if (url.pathname.startsWith('/api') || url.pathname.startsWith('/auth')) return;
 
-  event.respondWith(
-    fetch(request)
-      .then((response) => {
-        if (request.mode === 'navigate') {
-          const copy = response.clone();
-          caches.open(CACHE).then((c) => c.put(request, copy));
-        }
-        return response;
-      })
-      .catch(() => caches.match(request).then((hit) => hit ?? caches.match('/'))),
-  );
+  if (request.mode === 'navigate') {
+    event.respondWith(fetch(request).catch(() => caches.match(OFFLINE_URL)));
+  }
 });
