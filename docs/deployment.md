@@ -63,6 +63,12 @@ The script:
 - **verifies the result against the importer's figures** (124 agents, 32 teams, 12
   crossfaction, 9,449 links, 4 unknown, 342 media) and exits non-zero if any drift
 
+GitHub Actions separately runs `npm run db:validate` against a disposable Postgres
+service on every push and pull request. That check applies all migrations and seeds,
+re-runs the seeds to prove idempotency, validates view totals and verifies the anonymous
+RLS surface. The validation command is destructive by design, so it refuses remote
+hosts and any database not explicitly named `brill_ops_validate`.
+
 The Supabase CLI is still supported for local development via `supabase/config.toml`
 (`supabase start && supabase db reset`), but it is not needed to set up the hosted project.
 

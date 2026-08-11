@@ -144,6 +144,21 @@ Applied in order:
 | `0003_statistics_views.sql` | every live statistic on the site |
 | `0004_rls_policies.sql` | public read, authenticated write, archives immutable |
 | `0005_storage_buckets.sql` | `campaign-media`, `archive-media`, `avatars` |
+| `0006_api_exposure_and_grants.sql` | security-invoker views, API grants, no edit-token exposure |
+| `0007_country_iso_codes.sql` | canonical ISO country codes exposed by public views |
+
+The CI workflow starts a disposable Postgres database and runs every migration and seed
+twice, checks all imported totals and statistics views, then reads the public surface as
+the anonymous role. For the same validation locally, create a local database named
+`brill_ops_validate` and run:
+
+```bash
+PGVALIDATE_URL=postgresql://postgres:postgres@127.0.0.1:5432/brill_ops_validate \
+  npm run db:validate
+```
+
+`db:validate` drops and recreates `public`, so it deliberately refuses remote hosts and
+any database not named `brill_ops_validate`.
 
 ### Google Sign-In
 
