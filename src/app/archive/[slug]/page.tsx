@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { AlertTriangle, FileWarning } from 'lucide-react';
+import { CampaignMediaArchive } from '@/components/CampaignMediaArchive';
 import { FactionChip } from '@/components/FactionChip';
 import { CountryName } from '@/components/CountryName';
 import { StatCard } from '@/components/StatCard';
@@ -13,6 +15,7 @@ import {
   getArchiveSnapshot,
   getCampaignBySlug,
   getCampaignLeaderboard,
+  getCampaignMedia,
   getCampaignStats,
   getCountryStats,
   getFactionStats,
@@ -53,12 +56,13 @@ export default async function ArchivedCampaignPage({
   const campaign = await getCampaignBySlug(slug);
   if (!campaign) notFound();
 
-  const [stats, factions, countries, teams, leaderboard, snapshot, anomalies] = await Promise.all([
+  const [stats, factions, countries, teams, leaderboard, media, snapshot, anomalies] = await Promise.all([
     getCampaignStats(campaign.id),
     getFactionStats(campaign.id),
     getCountryStats(campaign.id),
     getTeams(campaign.id, { faction: filters.faction, sort: 'links' }),
     getCampaignLeaderboard(campaign.id, 10),
+    getCampaignMedia(campaign.id),
     getArchiveSnapshot(campaign.id),
     getImportAnomalies(campaign.id),
   ]);
@@ -70,15 +74,30 @@ export default async function ArchivedCampaignPage({
 
   return (
     <div className="space-y-10">
-      <section className="rounded-2xl bg-ink px-6 py-10 text-white">
-        <p className="text-xs font-medium uppercase tracking-widest opacity-70">Archived campaign</p>
-        <h1 className="mt-2 text-4xl font-semibold tracking-tight">{campaign.name}</h1>
-        <p className="mt-1 text-sm opacity-80">
-          {formatDateRange(campaign.start_date, campaign.end_date)}
-        </p>
-        {campaign.description && (
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed opacity-90">{campaign.description}</p>
+      <section className="relative overflow-hidden rounded-2xl bg-ink px-6 py-10 text-white">
+        {campaign.hero_image_url && (
+          <>
+            <Image
+              src={campaign.hero_image_url}
+              alt=""
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover opacity-45"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/45" aria-hidden />
+          </>
         )}
+        <div className="relative">
+          <p className="text-xs font-medium uppercase tracking-widest opacity-70">Archived campaign</p>
+          <h1 className="mt-2 text-4xl font-semibold tracking-tight">{campaign.name}</h1>
+          <p className="mt-1 text-sm opacity-80">
+            {formatDateRange(campaign.start_date, campaign.end_date)}
+          </p>
+          {campaign.description && (
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed opacity-90">{campaign.description}</p>
+          )}
+        </div>
       </section>
 
       {/* ---- Final results ---------------------------------------------- */}
@@ -173,6 +192,14 @@ export default async function ArchivedCampaignPage({
           </ol>
         </section>
       )}
+
+      <CampaignMediaArchive
+        campaignSlug={campaign.slug}
+        items={media}
+        selectedCategory={filters.media}
+        requestedPage={filters.mediaPage}
+        faction={filters.faction}
+      />
 
       {/* ---- Countries --------------------------------------------------- */}
       {countries.length > 0 && (

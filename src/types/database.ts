@@ -130,7 +130,12 @@ export interface MediaItem {
   storage_path: string | null;
   external_url: string | null;
   source_path: string | null;
+  source_sha256: string | null;
   is_uploaded: boolean;
+  mime_type: string | null;
+  bytes: number | null;
+  width: number | null;
+  height: number | null;
   caption: string | null;
   attributed_to: string | null;
   captured_at: string | null;

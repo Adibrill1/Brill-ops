@@ -99,7 +99,8 @@ cannot be confused, add a custom domain.
 1. **Vercel** → a live URL, running in demo mode.
 2. **Supabase** → project, migrations, seeds. Add the two public env vars, redeploy.
 3. **Google OAuth** → sign-in, so participants can submit and edit.
-4. **Media upload** → push the 342 archive files to the `archive-media` bucket.
+4. **Media upload** → run `npm run media:upload` for the 272 reviewed, unique archive
+   assets in the `archive-media` bucket.
 5. **Custom domain** → optional, whenever you want one.
 
 Each step leaves the site working. Nothing here is all-or-nothing.

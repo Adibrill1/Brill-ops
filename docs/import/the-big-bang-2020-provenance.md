@@ -232,9 +232,21 @@ trim is recorded in the agent's `notes` array rather than applied silently.
 
 ## 9. Media
 
-All 342 files are catalogued in the `media` table with `source_path`, `source_sha256`
-and `is_uploaded = false`. The binaries themselves are not in Git — see
+All 342 files are catalogued in the `media` table with `source_path` and
+`source_sha256`. The binaries themselves are not in Git — see
 [ADR 0002](../architecture/adr/0002-media-stays-out-of-git.md).
+
+A full contact-sheet review found that `Stars/IMG_7004` through `IMG_7123` is a
+contiguous personal/IFS@HOME camera-roll sequence, not material from The Big Bang. The
+public archive therefore contains 272 unique campaign assets: 246 community images, 16
+videos and 10 source/statistics records. Sixty-four unrelated files and six exact
+duplicates are preserved in the manifest and source folder but are not published.
+Every include/exclude decision, caption, category and featured-image choice is recorded
+in `data/archive-imports/the-big-bang-2020/media-curation.json`.
+
+Run `npm run media:upload -- --dry-run` to verify the reviewed set, then
+`npm run media:upload` with a server-only Supabase service-role key to upload it. The
+uploader verifies every SHA-256 and uses resumable uploads for the large videos.
 
 Attribution was taken from the filenames, which follow a ` - Name` convention:
 `20200731_195252 - Adam Heath.jpg`, `@DoctorWho00 - Marc Tavares.jpeg`,

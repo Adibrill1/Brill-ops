@@ -2,7 +2,7 @@
   "name": "brill-ops",
   "version": "0.1.0",
   "private": true,
-  "description": "Brill Ops \u2014 a reusable campaign management platform for Ingress community operations and crossfaction global events.",
+  "description": "Brill Ops — a reusable campaign management platform for Ingress community operations and crossfaction global events.",
   "type": "module",
   "engines": {
     "node": ">=20"
@@ -18,8 +18,10 @@
     "manifest": "node scripts/generate-source-manifest.mjs",
     "verify:source": "node scripts/generate-source-manifest.mjs --verify",
     "import:big-bang": "node scripts/import-big-bang.mjs",
+    "curate:big-bang-media": "node scripts/curate-big-bang-media.mjs",
+    "media:upload": "node scripts/upload-archive-media.mjs",
     "seed:generate": "node scripts/generate-archive-seed.mjs",
-    "import:all": "npm run manifest && npm run import:big-bang && npm run seed:generate",
+    "import:all": "npm run manifest && npm run import:big-bang && npm run curate:big-bang-media && npm run seed:generate",
     "db:setup": "node scripts/db-setup.mjs",
     "db:validate": "node scripts/validate-sql.mjs",
     "test": "node --test --experimental-strip-types \"tests/*.test.mjs\"",
@@ -45,7 +47,9 @@
     "eslint-config-next": "^15.0.3",
     "pg": "^8.22.0",
     "postcss": "^8.4.49",
+    "sharp": "0.35.0",
     "tailwindcss": "^3.4.14",
+    "tus-js-client": "^4.3.1",
     "typescript": "^5.6.3"
   },
   "overrides": {

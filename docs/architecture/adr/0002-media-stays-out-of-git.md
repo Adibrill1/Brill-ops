@@ -23,8 +23,11 @@ The binaries are **not committed**. In their place, `source-data/MANIFEST.json` 
 `MANIFEST.csv` are committed, recording every one of the 342 files with its path, byte
 size, SHA-256, kind, and the attribution encoded in its filename.
 
-The files themselves stay in `source-data/` on disk, gitignored, and are uploaded to the
-Supabase `archive-media` bucket, at which point `media.is_uploaded` flips to `true`.
+The files themselves stay in `source-data/` on disk and are gitignored. Assets approved
+by the documented curation are uploaded to the Supabase `archive-media` bucket, at
+which point their `media.is_uploaded` value flips to `true`. Unrelated files and exact
+duplicates remain represented by the manifest and curation record without being exposed
+on the public site.
 
 ## Why this still counts as "preserved"
 
@@ -48,10 +51,11 @@ download, and the 185 MB video makes the alternative impossible anyway.
 
 - `.gitignore` excludes media under `source-data/` by extension. The CSV, the manifests
   and all documentation **are** committed.
-- Losing the local folder before the Storage upload means losing the media. **Keep a
-  backup of `source-data/` until `media.is_uploaded` is true for all 342 rows.** This is
-  the single largest risk in the project right now.
-- Once uploaded, Supabase Storage is the durable copy and the manifest is the index.
+- Losing the local folder means losing originals that are intentionally not public.
+  **Keep a separate backup of all 342 source files even after the 272 reviewed public
+  assets are uploaded.**
+- For published assets, Supabase Storage is the durable serving copy and the manifest is
+  the integrity index.
 
 ## Alternatives
 
