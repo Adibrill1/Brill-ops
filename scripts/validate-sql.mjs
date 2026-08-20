@@ -164,6 +164,17 @@ async function main() {
   await client.query(SUPABASE_STUBS);
   console.log('Supabase stubs (auth, storage) in place.\n');
 
+  // scripts/db-setup.mjs creates this before running migrations. Recreate it the
+  // OLD, unsafe way on purpose, so migration 0008 has something real to repair
+  // and the RLS sweep below is actually exercised.
+  await client.query(`
+    create table if not exists _brill_ops_migrations (
+      filename    text primary key,
+      sha256      text not null,
+      applied_at  timestamptz not null default now()
+    );
+  `);
+
   console.log('Migrations:');
   for (const { name, sql } of await readSqlFiles(path.join(ROOT, 'supabase/migrations'))) {
     process.stdout.write(`  ${name}  … `);
@@ -303,6 +314,33 @@ async function main() {
   }
 
   // ---------------------------------------------------------------------------
+  // Every table in `public` must have RLS enabled.
+  //
+  // Supabase's default privileges grant SELECT on new tables to `anon`, so a
+  // table without RLS is world-readable. This is the check that would have caught
+  // the migration-ledger exposure before the advisor email did.
+  // ---------------------------------------------------------------------------
+  console.log('\nRow Level Security:');
+  const unprotected = (await client.query(`
+    select c.relname
+      from pg_class c
+      join pg_namespace n on n.oid = c.relnamespace
+     where n.nspname = 'public' and c.relkind = 'r' and c.relrowsecurity = false
+     order by c.relname
+  `)).rows.map((r) => r.relname);
+
+  if (unprotected.length) {
+    unprotected.forEach((t) => console.log(`  BAD  ${t} has no RLS`));
+    bad.push(`tables without RLS: ${unprotected.join(', ')}`);
+  } else {
+    const n = (await client.query(`
+      select count(*)::int as n from pg_class c join pg_namespace n on n.oid = c.relnamespace
+       where n.nspname = 'public' and c.relkind = 'r'
+    `)).rows[0].n;
+    console.log(`  ok   all ${n} tables in public have RLS enabled`);
+  }
+
+  // ---------------------------------------------------------------------------
   // Read the public surface as `anon`, the role the website actually uses.
   // Compiling is not the same as being readable: RLS, grants and view ownership
   // all sit between a correct schema and a visible page.
@@ -338,6 +376,14 @@ async function main() {
   // edit_token is a capability secret: holding it lets someone edit a submission
   // with no account. It must not be reachable by anon, through the view or the
   // base table.
+  try {
+    await client.query('select count(*) from _brill_ops_migrations');
+    bad.push('SECURITY: anon can read the migration ledger');
+    console.log('  BAD  anon can read _brill_ops_migrations');
+  } catch {
+    console.log('  ok   anon cannot read _brill_ops_migrations');
+  }
+
   try {
     await client.query('select edit_token from teams_view limit 1');
     bad.push('SECURITY: teams_view still exposes edit_token');

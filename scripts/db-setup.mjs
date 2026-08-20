@@ -67,14 +67,25 @@ function explainConnectionFailure(err) {
 }
 
 async function ensureLedger(client) {
+  // RLS is enabled with NO policy: deny-all except the table owner, which is the
+  // role this script connects as. Nothing should ever read the ledger over the
+  // API.
+  //
+  // This matters because Supabase's default privileges grant SELECT on every new
+  // table in `public` to `anon`. A table created here without RLS is world-
+  // readable the moment it exists — which is exactly what happened, and what
+  // Supabase's security advisor flagged. Migration 0008 repairs databases where
+  // the ledger was already created the unsafe way.
   await client.query(`
     create table if not exists _brill_ops_migrations (
       filename    text primary key,
       sha256      text not null,
       applied_at  timestamptz not null default now()
     );
+    alter table _brill_ops_migrations enable row level security;
+    revoke all on _brill_ops_migrations from anon, authenticated;
     comment on table _brill_ops_migrations is
-      'Applied-migration ledger, written by scripts/db-setup.mjs.';
+      'Applied-migration ledger, written by scripts/db-setup.mjs. RLS enabled with no policies: deny-all except the owner.';
   `);
 }
 
