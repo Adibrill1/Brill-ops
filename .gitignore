@@ -64,3 +64,6 @@ source-data/**/*.avi
 !source-data/**/*.md
 !source-data/MANIFEST.json
 !source-data/MANIFEST.csv
+
+# Local agent/editor session settings, not project source.
+.claude/
