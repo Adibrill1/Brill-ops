@@ -341,6 +341,50 @@ async function main() {
   }
 
   // ---------------------------------------------------------------------------
+  // Every function in `public` must pin search_path.
+  //
+  // Without it, unqualified names resolve against the CALLER's search_path, and
+  // Postgres searches pg_temp first by default — so anyone who can create a temp
+  // object can shadow a table the body relies on. Supabase reports this as
+  // function_search_path_mutable.
+  // ---------------------------------------------------------------------------
+  console.log('\nFunction search_path:');
+  const unpinned = (await client.query(`
+    select p.proname, pg_get_function_identity_arguments(p.oid) as args
+      from pg_proc p
+      join pg_namespace n on n.oid = p.pronamespace
+     where n.nspname = 'public'
+       and p.prokind = 'f'
+       -- Exclude functions owned by an extension (citext, pgcrypto). They live in
+       -- the public schema because that is where the extensions are installed,
+       -- they are not ours to ALTER, and Supabase does not flag them either.
+       -- (No backticks in here: this SQL sits inside a JS template literal.)
+       and not exists (
+         select 1 from pg_depend d
+          where d.objid = p.oid and d.classid = 'pg_proc'::regclass and d.deptype = 'e'
+       )
+       and (p.proconfig is null or not exists (
+             select 1 from unnest(p.proconfig) cfg where cfg like 'search_path=%'
+           ))
+     order by p.proname
+  `)).rows;
+
+  if (unpinned.length) {
+    unpinned.forEach((f) => console.log(`  BAD  ${f.proname}(${f.args}) does not pin search_path`));
+    bad.push(`functions without a pinned search_path: ${unpinned.map((f) => f.proname).join(', ')}`);
+  } else {
+    const n = (await client.query(`
+      select count(*)::int as n from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+       where n.nspname = 'public' and p.prokind = 'f'
+         and not exists (
+           select 1 from pg_depend d
+            where d.objid = p.oid and d.classid = 'pg_proc'::regclass and d.deptype = 'e'
+         )
+    `)).rows[0].n;
+    console.log(`  ok   all ${n} project functions in public pin search_path`);
+  }
+
+  // ---------------------------------------------------------------------------
   // Read the public surface as `anon`, the role the website actually uses.
   // Compiling is not the same as being readable: RLS, grants and view ownership
   // all sit between a correct schema and a visible page.
