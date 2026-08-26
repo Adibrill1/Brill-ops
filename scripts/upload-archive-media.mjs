@@ -4,6 +4,7 @@
  *
  * Safe properties:
  * - source files are read-only and SHA-256 verified before upload;
+ * - oversized originals use SHA-256-verified web derivatives;
  * - object names are content-addressed, so reruns never create duplicates;
  * - unrelated and duplicate files are excluded by committed media-curation.json;
  * - credentials are loaded from .env.local and are never printed;
@@ -11,6 +12,7 @@
  *
  * Usage:
  *   npm run media:upload -- --dry-run
+ *   npm run media:transcode  # required once for oversized videos
  *   npm run media:upload
  *   npm run media:upload -- --category=videos
  */
@@ -29,6 +31,7 @@ const BUCKET = 'archive-media';
 const CAMPAIGN_SLUG = 'the-big-bang-2020';
 const MEDIA_PATH = path.join(ROOT, 'data/archive-imports/the-big-bang-2020/media.json');
 const CURATION_PATH = path.join(ROOT, 'data/archive-imports/the-big-bang-2020/media-curation.json');
+const DERIVATIVES_PATH = path.join(ROOT, 'data/archive-imports/the-big-bang-2020/video-derivatives.json');
 const CHUNK_SIZE = 6 * 1024 * 1024;
 
 async function loadEnvLocal() {
@@ -94,8 +97,8 @@ function mimeTypeOf(sourcePath) {
   }[extension] ?? 'application/octet-stream';
 }
 
-function storagePathOf(item) {
-  return `${CAMPAIGN_SLUG}/${item.sha256.slice(0, 2)}/${item.sha256}.${extensionOf(item.source_path)}`;
+function storagePathOf(asset) {
+  return `${CAMPAIGN_SLUG}/${asset.sha256.slice(0, 2)}/${asset.sha256}.${asset.extension}`;
 }
 
 function publicUrlFor(projectUrl, storagePath) {
@@ -118,12 +121,12 @@ async function imageDimensions(filename, mimeType) {
   }
 }
 
-function uploadWithTus({ endpoint, serviceRoleKey, filename, item, storagePath, mimeType }) {
+function uploadWithTus({ endpoint, serviceRoleKey, item, asset, storagePath }) {
   return new Promise((resolve, reject) => {
     let lastReported = -1;
-    const upload = new Upload(fs.createReadStream(filename), {
+    const upload = new Upload(fs.createReadStream(asset.filename), {
       endpoint,
-      uploadSize: item.bytes,
+      uploadSize: asset.bytes,
       chunkSize: CHUNK_SIZE,
       retryDelays: [0, 3000, 5000, 10000, 20000],
       uploadDataDuringCreation: true,
@@ -135,9 +138,13 @@ function uploadWithTus({ endpoint, serviceRoleKey, filename, item, storagePath, 
       metadata: {
         bucketName: BUCKET,
         objectName: storagePath,
-        contentType: mimeType,
+        contentType: asset.mimeType,
         cacheControl: '31536000',
-        metadata: JSON.stringify({ sourceSha256: item.sha256, campaign: CAMPAIGN_SLUG }),
+        metadata: JSON.stringify({
+          sourceSha256: item.sha256,
+          derivativeSha256: asset.isDerivative ? asset.sha256 : null,
+          campaign: CAMPAIGN_SLUG,
+        }),
       },
       onProgress(bytesUploaded, bytesTotal) {
         const percent = Math.floor((bytesUploaded / bytesTotal) * 100);
@@ -154,11 +161,41 @@ function uploadWithTus({ endpoint, serviceRoleKey, filename, item, storagePath, 
   });
 }
 
+function sourceAsset(item) {
+  return {
+    filename: path.join(ROOT, item.source_path),
+    bytes: item.bytes,
+    sha256: item.sha256,
+    mimeType: mimeTypeOf(item.source_path),
+    extension: extensionOf(item.source_path),
+    width: null,
+    height: null,
+    isDerivative: false,
+  };
+}
+
+function derivativeAsset(item, derivative) {
+  if (!derivative) return sourceAsset(item);
+  if (derivative.source_sha256 !== item.sha256) {
+    throw new Error(`Derivative source SHA-256 mismatch: ${item.source_path}`);
+  }
+  return {
+    filename: path.join(ROOT, derivative.output_path),
+    bytes: derivative.bytes,
+    sha256: derivative.output_sha256,
+    mimeType: derivative.mime_type,
+    extension: extensionOf(derivative.output_path),
+    width: derivative.width,
+    height: derivative.height,
+    isDerivative: true,
+  };
+}
+
 // Storage enforces a per-file ceiling (the Free plan caps it at 50 MB, above any
 // per-bucket setting), returning HTTP 413 "Maximum size exceeded" at upload
-// creation. A handful of Big Bang videos are larger than that. Rather than abort
-// the whole run — leaving the remaining smaller assets unstored — such a file is
-// skipped, reported, and the run exits non-zero so the gap is never silent.
+// creation. Reviewed web derivatives normally keep every selected asset below
+// that ceiling. This fallback still fails visibly if an unreviewed asset is too
+// large, while allowing the remaining smaller assets to finish.
 function isStorageSizeLimitError(error) {
   const message = String(error?.message ?? '');
   return message.includes('413') || /maximum size exceeded/i.test(message);
@@ -187,7 +224,11 @@ async function main() {
   const options = parseArguments(process.argv.slice(2));
   const mediaSource = JSON.parse(await fsp.readFile(MEDIA_PATH, 'utf8'));
   const curation = JSON.parse(await fsp.readFile(CURATION_PATH, 'utf8'));
+  const derivativeManifest = JSON.parse(await fsp.readFile(DERIVATIVES_PATH, 'utf8'));
   const decisions = new Map(curation.decisions.map((decision) => [decision.source_path, decision]));
+  const derivatives = new Map(
+    derivativeManifest.derivatives.map((derivative) => [derivative.source_path, derivative]),
+  );
 
   let selected = mediaSource.media.filter((item) => decisions.get(item.source_path)?.publish === true);
   if (options.category) {
@@ -204,7 +245,11 @@ async function main() {
       counts[category] = (counts[category] ?? 0) + 1;
       return counts;
     }, {});
-    console.log(JSON.stringify({ dryRun: true, byCategory }, null, 2));
+    console.log(JSON.stringify({
+      dryRun: true,
+      webVideoDerivatives: derivativeManifest.derivatives.length,
+      byCategory,
+    }, null, 2));
     return;
   }
 
@@ -236,27 +281,37 @@ async function main() {
   const skippedTooLarge = [];
   for (const [index, item] of selected.entries()) {
     const decision = decisions.get(item.source_path);
-    const filename = path.join(ROOT, item.source_path);
-    const actualHash = await sha256File(filename);
+    const sourceFilename = path.join(ROOT, item.source_path);
+    const actualHash = await sha256File(sourceFilename);
     if (actualHash !== item.sha256) throw new Error(`SHA-256 mismatch: ${item.source_path}`);
 
-    const storagePath = storagePathOf(item);
-    const mimeType = mimeTypeOf(item.source_path);
-    const dimensions = await imageDimensions(filename, mimeType);
+    const asset = derivativeAsset(item, derivatives.get(item.source_path));
+    const assetStat = await fsp.stat(asset.filename);
+    if (assetStat.size !== asset.bytes) throw new Error(`Asset size mismatch: ${item.source_path}`);
+    const assetHash = asset.isDerivative ? await sha256File(asset.filename) : actualHash;
+    if (assetHash !== asset.sha256) throw new Error(`Derivative SHA-256 mismatch: ${item.source_path}`);
+
+    const storagePath = storagePathOf(asset);
+    const dimensions = asset.isDerivative
+      ? { width: asset.width, height: asset.height }
+      : await imageDimensions(asset.filename, asset.mimeType);
     const publicUrl = publicUrlFor(projectUrl, storagePath);
     const existing = await fetch(publicUrl, { method: 'HEAD' });
 
     process.stdout.write(`[${index + 1}/${selected.length}] ${item.source_path}`);
+    if (asset.isDerivative) {
+      process.stdout.write(` (web derivative ${(asset.bytes / 1024 / 1024).toFixed(1)} MiB)`);
+    }
     if (existing.ok) {
       reused++;
       process.stdout.write(' already stored');
     } else {
       try {
-        await uploadWithTus({ endpoint, serviceRoleKey, filename, item, storagePath, mimeType });
+        await uploadWithTus({ endpoint, serviceRoleKey, item, asset, storagePath });
       } catch (error) {
         if (isStorageSizeLimitError(error)) {
-          skippedTooLarge.push(item);
-          console.log(` skipped — ${(item.bytes / 1024 / 1024).toFixed(1)} MiB exceeds the storage per-file limit`);
+          skippedTooLarge.push({ item, asset });
+          console.log(` skipped — ${(asset.bytes / 1024 / 1024).toFixed(1)} MiB exceeds the storage per-file limit`);
           continue;
         }
         throw error;
@@ -269,14 +324,14 @@ async function main() {
       item,
       decision,
       storagePath,
-      mimeType,
+      mimeType: asset.mimeType,
       dimensions,
     });
     console.log(' ok');
   }
 
   const heroItem = mediaSource.media.find((item) => item.source_path === curation.hero_source_path);
-  const heroUrl = publicUrlFor(projectUrl, storagePathOf(heroItem));
+  const heroUrl = publicUrlFor(projectUrl, storagePathOf(sourceAsset(heroItem)));
   const { error: heroError } = await supabase
     .from('campaigns')
     .update({ hero_image_url: heroUrl })
@@ -289,12 +344,12 @@ async function main() {
     console.warn(
       `\n${skippedTooLarge.length} asset(s) exceed the project storage per-file limit and were NOT uploaded:`,
     );
-    for (const item of skippedTooLarge) {
-      console.warn(`  ${(item.bytes / 1024 / 1024).toFixed(1)} MiB  ${item.source_path}`);
+    for (const { item, asset } of skippedTooLarge) {
+      console.warn(`  ${(asset.bytes / 1024 / 1024).toFixed(1)} MiB  ${item.source_path}`);
     }
     console.warn(
       'The Free plan caps per-file uploads at 50 MB; storing these requires a Pro project ' +
-        '(raise Storage → Settings → Upload file size limit) or re-encoding them under 50 MB.',
+        '(raise Storage → Settings → Upload file size limit) or running npm run media:transcode.',
     );
     process.exitCode = 1;
   }

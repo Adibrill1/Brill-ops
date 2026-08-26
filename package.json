@@ -19,6 +19,7 @@
     "verify:source": "node scripts/generate-source-manifest.mjs --verify",
     "import:big-bang": "node scripts/import-big-bang.mjs",
     "curate:big-bang-media": "node scripts/curate-big-bang-media.mjs",
+    "media:transcode": "node scripts/transcode-archive-videos.mjs",
     "media:upload": "node scripts/upload-archive-media.mjs",
     "seed:generate": "node scripts/generate-archive-seed.mjs",
     "import:all": "npm run manifest && npm run import:big-bang && npm run curate:big-bang-media && npm run seed:generate",
@@ -53,6 +54,7 @@
     "typescript": "^5.6.3"
   },
   "overrides": {
+    "nanoid": "3.3.18",
     "postcss": "$postcss",
     "sharp": "0.35.0"
   }

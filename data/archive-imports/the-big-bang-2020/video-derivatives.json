@@ -1,0 +1,62 @@
+{
+  "campaign_slug": "the-big-bang-2020",
+  "generated_at": "2026-08-26T12:47:17.102Z",
+  "policy": "Web derivatives only. Original archive videos remain unchanged and authoritative.",
+  "storage_limit_bytes": 52428800,
+  "derivatives": [
+    {
+      "source_path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/gif star.mp4",
+      "source_sha256": "dad22e5a948adc63039f5fd4c174338d25bded67a4b7a32eae4bb942b2fbd129",
+      "output_path": ".archive-derivatives/the-big-bang-2020/gif star.web.mp4",
+      "output_sha256": "841bf425ca191169e7ac686a43722956e08f1170acb1d5d98eb10e4bd1823134",
+      "bytes": 4076881,
+      "mime_type": "video/mp4",
+      "width": 1280,
+      "height": 720,
+      "duration_seconds": 38.24,
+      "encoding": {
+        "video_codec": "h264",
+        "video_bitrate": "4000k",
+        "audio_codec": "aac",
+        "audio_bitrate": "128k",
+        "filter": "scale=1280:-2"
+      }
+    },
+    {
+      "source_path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6967.MP4",
+      "source_sha256": "4695667b23792961e776f17bcc490aa605d81bbfb8f1e7db1959c8e253b6c299",
+      "output_path": ".archive-derivatives/the-big-bang-2020/IMG_6967.web.mp4",
+      "output_sha256": "aa75f123041b9ca74db0218bf0cc2ea676ac114ba6589cd89ceab49367701296",
+      "bytes": 12674038,
+      "mime_type": "video/mp4",
+      "width": 592,
+      "height": 1280,
+      "duration_seconds": 34.2,
+      "encoding": {
+        "video_codec": "h264",
+        "video_bitrate": "3000k",
+        "audio_codec": "aac",
+        "audio_bitrate": "64k",
+        "filter": "scale=-2:1280,fps=30"
+      }
+    },
+    {
+      "source_path": "source-data/historical-campaigns/2020-07-the-big-bang/Videos/IMG_6970.MOV",
+      "source_sha256": "8ddd8e7acdf7bdb56a61fc92341c2052a9d4e35f4b6261e748c47a61ebeb7cbe",
+      "output_path": ".archive-derivatives/the-big-bang-2020/IMG_6970.web.mp4",
+      "output_sha256": "7fe388d353ed12ce429cf2f43e48479890ee0970dab7f4f6699f56814e56d288",
+      "bytes": 39424497,
+      "mime_type": "video/mp4",
+      "width": 592,
+      "height": 1280,
+      "duration_seconds": 91.345011,
+      "encoding": {
+        "video_codec": "h264",
+        "video_bitrate": "3500k",
+        "audio_codec": "aac",
+        "audio_bitrate": "64k",
+        "filter": "scale=-2:1280,fps=30"
+      }
+    }
+  ]
+}

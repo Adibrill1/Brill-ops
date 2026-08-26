@@ -65,6 +65,8 @@ or green; only a *group* can be Crossfaction.
 ├── scripts/
 │   ├── generate-source-manifest.mjs   inventory + checksum every source file
 │   ├── import-big-bang.mjs            CSV + screenshots → structured JSON
+│   ├── transcode-archive-videos.mjs   oversized originals → verified web derivatives
+│   ├── upload-archive-media.mjs       reviewed media → Supabase Storage
 │   └── generate-archive-seed.mjs      JSON → idempotent SQL
 │
 ├── docs/

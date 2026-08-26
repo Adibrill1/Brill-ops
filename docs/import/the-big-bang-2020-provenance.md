@@ -248,6 +248,13 @@ Run `npm run media:upload -- --dry-run` to verify the reviewed set, then
 `npm run media:upload` with a server-only Supabase service-role key to upload it. The
 uploader verifies every SHA-256 and uses resumable uploads for the large videos.
 
+Three original videos exceed the Free-plan per-object limit. `npm run media:transcode`
+creates H.264/AAC web derivatives below 50 MiB in the gitignored
+`.archive-derivatives/` directory. Their source and output hashes, dimensions and
+encoding settings are committed in `video-derivatives.json`; the originals remain
+unchanged and authoritative. The uploader verifies both hashes before publishing the
+derivative against the original media row.
+
 Attribution was taken from the filenames, which follow a ` - Name` convention:
 `20200731_195252 - Adam Heath.jpg`, `@DoctorWho00 - Marc Tavares.jpeg`,
 `Screenshot_20200731_222917_org.exarhteam.iitc_mobile - Ute Heikaemper.jpg`. That is

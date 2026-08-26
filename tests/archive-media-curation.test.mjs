@@ -10,6 +10,10 @@ const curation = JSON.parse(await readFile(
   new URL('../data/archive-imports/the-big-bang-2020/media-curation.json', import.meta.url),
   'utf8',
 ));
+const derivatives = JSON.parse(await readFile(
+  new URL('../data/archive-imports/the-big-bang-2020/video-derivatives.json', import.meta.url),
+  'utf8',
+));
 
 test('every source media row has exactly one reviewed publication decision', () => {
   assert.equal(media.media.length, 342);
@@ -53,5 +57,34 @@ test('the selected hero and every highlight are public and captioned', () => {
   assert.deepEqual(
     highlights.map((item) => item.featured_order).sort((a, b) => a - b),
     Array.from({ length: 13 }, (_, index) => index + 1),
+  );
+});
+
+test('every oversized published video has an auditable web derivative below 50 MiB', () => {
+  const published = new Set(
+    curation.decisions.filter((item) => item.publish).map((item) => item.source_path),
+  );
+  const oversizedVideos = media.media.filter((item) =>
+    published.has(item.source_path) && item.kind === 'video' && item.bytes > 50 * 1024 * 1024,
+  );
+
+  assert.equal(oversizedVideos.length, 3);
+  assert.equal(derivatives.derivatives.length, oversizedVideos.length);
+  assert.deepEqual(
+    new Set(derivatives.derivatives.map((item) => item.source_path)),
+    new Set(oversizedVideos.map((item) => item.source_path)),
+  );
+  const oversizedByPath = new Map(oversizedVideos.map((item) => [item.source_path, item]));
+  assert.ok(derivatives.derivatives.every((item) =>
+    item.bytes < 50 * 1024 * 1024
+    && item.mime_type === 'video/mp4'
+    && item.width > 0
+    && item.height > 0
+    && item.source_sha256 === oversizedByPath.get(item.source_path)?.sha256
+    && /^[a-f0-9]{64}$/.test(item.output_sha256),
+  ));
+  assert.equal(
+    new Set(derivatives.derivatives.map((item) => item.output_sha256)).size,
+    derivatives.derivatives.length,
   );
 });

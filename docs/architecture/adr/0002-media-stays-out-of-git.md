@@ -56,6 +56,9 @@ download, and the 185 MB video makes the alternative impossible anyway.
   assets are uploaded.**
 - For published assets, Supabase Storage is the durable serving copy and the manifest is
   the integrity index.
+- Originals above the active Storage per-object limit are served through reviewed,
+  SHA-256-recorded H.264/AAC derivatives. The original bytes remain authoritative and
+  are never overwritten by the web copy.
 
 ## Alternatives
 
