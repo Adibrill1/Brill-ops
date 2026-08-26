@@ -1,0 +1,59 @@
+name: Supabase keepalive
+
+# Keeps the Supabase project warm with a tiny, anonymous, RLS-bound read.
+#
+# It performs a single GET against PostgREST for one safe column of one row from
+# the public `campaigns` table (readable by `anon` under the RLS policy
+# `campaigns_public_read`, which exposes only active/archived campaigns — never
+# drafts). No schema, RLS, or data is changed. It never uses the service_role
+# key, and it never prints the key, the Authorization header, or the response
+# body. A non-2xx response, a DNS error, or a network failure fails the run.
+#
+# NOTE ON PAUSING: an authenticated API request is real project activity, so a
+# periodic call of this kind is the community-standard way to keep a free-tier
+# project from pausing. Supabase does not publish a formal guarantee that a
+# scheduled ping prevents pausing, so treat this as best-effort, not a promise.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # ~ every 3 days at 07:17 UTC — deliberately an odd hour/minute, off-peak.
+    - cron: "17 7 */3 * *"
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    name: Anonymous PostgREST read
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping Supabase REST as anon
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_ANON_KEY:-}" ]; then
+            echo "::error::SUPABASE_URL and SUPABASE_ANON_KEY repository secrets must be set." >&2
+            exit 1
+          fi
+
+          # One safe column, one row. RLS applies (anon sees only public rows).
+          # --fail-with-body makes any non-2xx exit non-zero; --retry* rides out
+          # transient network blips; timeouts bound the run. The anon key travels
+          # only in request headers and is never echoed; only the status is shown.
+          status="$(
+            curl \
+              --silent --show-error --fail-with-body \
+              --connect-timeout 10 --max-time 30 \
+              --retry 3 --retry-delay 5 --retry-connrefused \
+              --output /dev/null --write-out '%{http_code}' \
+              -H "apikey: ${SUPABASE_ANON_KEY}" \
+              -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
+              "${SUPABASE_URL}/rest/v1/campaigns?select=slug&limit=1"
+          )"
+
+          echo "Supabase keepalive succeeded (HTTP ${status})."
