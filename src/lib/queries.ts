@@ -386,6 +386,8 @@ export async function getCampaignMedia(campaignId: string, limit = 400): Promise
     .select('id, campaign_id, team_id, agent_id, role, storage_bucket, storage_path, external_url, source_path, source_sha256, is_uploaded, mime_type, bytes, width, height, caption, attributed_to, captured_at, captured_at_confidence')
     .eq('campaign_id', campaignId)
     .eq('is_uploaded', true)
+    .not('storage_bucket', 'is', null)
+    .not('storage_path', 'is', null)
     .order('captured_at', { ascending: true })
     .limit(limit), 'media');
   return (data ?? []) as MediaItem[];
