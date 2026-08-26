@@ -154,6 +154,16 @@ function uploadWithTus({ endpoint, serviceRoleKey, filename, item, storagePath, 
   });
 }
 
+// Storage enforces a per-file ceiling (the Free plan caps it at 50 MB, above any
+// per-bucket setting), returning HTTP 413 "Maximum size exceeded" at upload
+// creation. A handful of Big Bang videos are larger than that. Rather than abort
+// the whole run — leaving the remaining smaller assets unstored — such a file is
+// skipped, reported, and the run exits non-zero so the gap is never silent.
+function isStorageSizeLimitError(error) {
+  const message = String(error?.message ?? '');
+  return message.includes('413') || /maximum size exceeded/i.test(message);
+}
+
 async function markUploaded({ supabase, campaignId, item, decision, storagePath, mimeType, dimensions }) {
   const { error } = await supabase
     .from('media')
@@ -223,6 +233,7 @@ async function main() {
 
   let uploaded = 0;
   let reused = 0;
+  const skippedTooLarge = [];
   for (const [index, item] of selected.entries()) {
     const decision = decisions.get(item.source_path);
     const filename = path.join(ROOT, item.source_path);
@@ -240,7 +251,16 @@ async function main() {
       reused++;
       process.stdout.write(' already stored');
     } else {
-      await uploadWithTus({ endpoint, serviceRoleKey, filename, item, storagePath, mimeType });
+      try {
+        await uploadWithTus({ endpoint, serviceRoleKey, filename, item, storagePath, mimeType });
+      } catch (error) {
+        if (isStorageSizeLimitError(error)) {
+          skippedTooLarge.push(item);
+          console.log(` skipped — ${(item.bytes / 1024 / 1024).toFixed(1)} MiB exceeds the storage per-file limit`);
+          continue;
+        }
+        throw error;
+      }
       uploaded++;
     }
     await markUploaded({
@@ -264,6 +284,20 @@ async function main() {
   if (heroError) throw new Error(`Hero update failed: ${heroError.message}`);
 
   console.log(`Complete: ${uploaded} uploaded, ${reused} reused, hero assigned.`);
+
+  if (skippedTooLarge.length > 0) {
+    console.warn(
+      `\n${skippedTooLarge.length} asset(s) exceed the project storage per-file limit and were NOT uploaded:`,
+    );
+    for (const item of skippedTooLarge) {
+      console.warn(`  ${(item.bytes / 1024 / 1024).toFixed(1)} MiB  ${item.source_path}`);
+    }
+    console.warn(
+      'The Free plan caps per-file uploads at 50 MB; storing these requires a Pro project ' +
+        '(raise Storage → Settings → Upload file size limit) or re-encoding them under 50 MB.',
+    );
+    process.exitCode = 1;
+  }
 }
 
 await main().catch((error) => {
